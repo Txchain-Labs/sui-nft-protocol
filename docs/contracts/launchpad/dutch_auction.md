@@ -1,4 +1,3 @@
-
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction"></a>
 
 # Module `0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b::dutch_auction`
@@ -16,31 +15,29 @@ To create a market sale the administrator can simply call <code>create_market</c
 Each sale segment can have a whitelisting process, each with their own
 whitelist tokens.
 
-
--  [Resource `DutchAuctionMarket`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_DutchAuctionMarket)
--  [Struct `Bid`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_Bid)
--  [Struct `MarketKey`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_MarketKey)
--  [Constants](#@Constants_0)
--  [Function `new`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_new)
--  [Function `init_market`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_init_market)
--  [Function `init_venue`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_init_venue)
--  [Function `create_venue`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_create_venue)
--  [Function `borrow_market`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_borrow_market)
--  [Function `create_bid`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_create_bid)
--  [Function `create_bid_whitelisted`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_create_bid_whitelisted)
--  [Function `cancel_bid`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_cancel_bid)
--  [Function `sale_cancel`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_sale_cancel)
--  [Function `sale_conclude`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_sale_conclude)
--  [Function `reserve_price`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_reserve_price)
--  [Function `bids`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_bids)
--  [Function `bid_owner`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_bid_owner)
--  [Function `bid_amount`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_bid_amount)
--  [Function `create_bid_`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_create_bid_)
--  [Function `cancel_bid_`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_cancel_bid_)
--  [Function `cancel_auction`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_cancel_auction)
--  [Function `refund_bid`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_refund_bid)
--  [Function `conclude_auction`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_conclude_auction)
-
+- [Resource `DutchAuctionMarket`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_DutchAuctionMarket)
+- [Struct `Bid`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_Bid)
+- [Struct `MarketKey`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_MarketKey)
+- [Constants](#@Constants_0)
+- [Function `new`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_new)
+- [Function `init_market`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_init_market)
+- [Function `init_venue`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_init_venue)
+- [Function `create_venue`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_create_venue)
+- [Function `borrow_market`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_borrow_market)
+- [Function `create_bid`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_create_bid)
+- [Function `create_bid_whitelisted`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_create_bid_whitelisted)
+- [Function `cancel_bid`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_cancel_bid)
+- [Function `sale_cancel`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_sale_cancel)
+- [Function `sale_conclude`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_sale_conclude)
+- [Function `reserve_price`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_reserve_price)
+- [Function `bids`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_bids)
+- [Function `bid_owner`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_bid_owner)
+- [Function `bid_amount`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_bid_amount)
+- [Function `create_bid_`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_create_bid_)
+- [Function `cancel_bid_`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_cancel_bid_)
+- [Function `cancel_auction`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_cancel_auction)
+- [Function `refund_bid`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_refund_bid)
+- [Function `conclude_auction`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_conclude_auction)
 
 <pre><code><b>use</b> <a href="">0x1::option</a>;
 <b>use</b> <a href="">0x1::vector</a>;
@@ -58,22 +55,15 @@ whitelist tokens.
 <b>use</b> <a href="venue.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_venue">0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b::venue</a>;
 </code></pre>
 
-
-
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_DutchAuctionMarket"></a>
 
 ## Resource `DutchAuctionMarket`
 
-
-
 <pre><code><b>struct</b> <a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_DutchAuctionMarket">DutchAuctionMarket</a>&lt;FT&gt; <b>has</b> store, key
 </code></pre>
 
-
-
 <details>
 <summary>Fields</summary>
-
 
 <dl>
 <dt>
@@ -103,7 +93,6 @@ whitelist tokens.
 </dd>
 </dl>
 
-
 </details>
 
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_Bid"></a>
@@ -112,15 +101,11 @@ whitelist tokens.
 
 A bid for one NFT
 
-
 <pre><code><b>struct</b> <a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_Bid">Bid</a>&lt;FT&gt; <b>has</b> store
 </code></pre>
 
-
-
 <details>
 <summary>Fields</summary>
-
 
 <dl>
 <dt>
@@ -139,23 +124,17 @@ A bid for one NFT
 </dd>
 </dl>
 
-
 </details>
 
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_MarketKey"></a>
 
 ## Struct `MarketKey`
 
-
-
 <pre><code><b>struct</b> <a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_MarketKey">MarketKey</a> <b>has</b> <b>copy</b>, drop, store
 </code></pre>
 
-
-
 <details>
 <summary>Fields</summary>
-
 
 <dl>
 <dt>
@@ -166,67 +145,47 @@ A bid for one NFT
 </dd>
 </dl>
 
-
 </details>
 
 <a name="@Constants_0"></a>
 
 ## Constants
 
-
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_EInvalidOrder"></a>
 
 Order was not found
 
-
 <pre><code><b>const</b> <a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_EInvalidOrder">EInvalidOrder</a>: u64 = 2;
 </code></pre>
-
-
 
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_EInvalidSender"></a>
 
 Transaction sender must be order owner
 
-
 <pre><code><b>const</b> <a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_EInvalidSender">EInvalidSender</a>: u64 = 3;
 </code></pre>
-
-
 
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_EOrderPriceBelowReserve"></a>
 
 Order price was below auction reserve price
 
-
 <pre><code><b>const</b> <a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_EOrderPriceBelowReserve">EOrderPriceBelowReserve</a>: u64 = 1;
 </code></pre>
 
-
-
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_U64_MAX"></a>
-
-
 
 <pre><code><b>const</b> <a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_U64_MAX">U64_MAX</a>: u64 = 18446744073709551615;
 </code></pre>
-
-
 
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_new"></a>
 
 ## Function `new`
 
-
-
 <pre><code><b>public</b> <b>fun</b> <a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_new">new</a>&lt;FT&gt;(inventory_id: <a href="_ID">object::ID</a>, reserve_price: u64, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): <a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_DutchAuctionMarket">dutch_auction::DutchAuctionMarket</a>&lt;FT&gt;
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_new">new</a>&lt;FT&gt;(
     inventory_id: ID,
@@ -242,8 +201,6 @@ Order price was below auction reserve price
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_init_market"></a>
@@ -252,15 +209,11 @@ Order price was below auction reserve price
 
 Creates a <code><a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_DutchAuctionMarket">DutchAuctionMarket</a>&lt;FT&gt;</code> and transfers to transaction sender
 
-
 <pre><code><b>public</b> entry <b>fun</b> <a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_init_market">init_market</a>&lt;FT&gt;(inventory_id: <a href="_ID">object::ID</a>, reserve_price: u64, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_init_market">init_market</a>&lt;FT&gt;(
     inventory_id: ID,
@@ -272,8 +225,6 @@ Creates a <code><a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_init_venue"></a>
@@ -282,15 +233,11 @@ Creates a <code><a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149
 
 Initializes a <code>Venue</code> with <code><a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_DutchAuctionMarket">DutchAuctionMarket</a>&lt;FT&gt;</code>
 
-
 <pre><code><b>public</b> entry <b>fun</b> <a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_init_venue">init_venue</a>&lt;T, FT&gt;(<a href="listing.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_listing">listing</a>: &<b>mut</b> <a href="listing.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_listing_Listing">listing::Listing</a>, inventory_id: <a href="_ID">object::ID</a>, is_whitelisted: bool, reserve_price: u64, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_init_venue">init_venue</a>&lt;T, FT&gt;(
     <a href="listing.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_listing">listing</a>: &<b>mut</b> Listing,
@@ -305,8 +252,6 @@ Initializes a <code>Venue</code> with <code><a href="dutch_auction.md#0xc7453163
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_create_venue"></a>
@@ -315,15 +260,11 @@ Initializes a <code>Venue</code> with <code><a href="dutch_auction.md#0xc7453163
 
 Creates a <code>Venue</code> with <code><a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_DutchAuctionMarket">DutchAuctionMarket</a>&lt;FT&gt;</code>
 
-
 <pre><code><b>public</b> <b>fun</b> <a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_create_venue">create_venue</a>&lt;T, FT&gt;(<a href="listing.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_listing">listing</a>: &<b>mut</b> <a href="listing.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_listing_Listing">listing::Listing</a>, inventory_id: <a href="_ID">object::ID</a>, is_whitelisted: bool, reserve_price: u64, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): <a href="_ID">object::ID</a>
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_create_venue">create_venue</a>&lt;T, FT&gt;(
     <a href="listing.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_listing">listing</a>: &<b>mut</b> Listing,
@@ -339,8 +280,6 @@ Creates a <code>Venue</code> with <code><a href="dutch_auction.md#0xc74531639fad
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_borrow_market"></a>
@@ -349,22 +288,16 @@ Creates a <code>Venue</code> with <code><a href="dutch_auction.md#0xc74531639fad
 
 Borrows <code><a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_DutchAuctionMarket">DutchAuctionMarket</a>&lt;FT&gt;</code> from <code>Venue</code>
 
-
 <pre><code><b>public</b> <b>fun</b> <a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_borrow_market">borrow_market</a>&lt;FT&gt;(<a href="venue.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_venue">venue</a>: &<a href="venue.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_venue_Venue">venue::Venue</a>): &<a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_DutchAuctionMarket">dutch_auction::DutchAuctionMarket</a>&lt;FT&gt;
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_borrow_market">borrow_market</a>&lt;FT&gt;(<a href="venue.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_venue">venue</a>: &Venue): &<a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_DutchAuctionMarket">DutchAuctionMarket</a>&lt;FT&gt; {
     <a href="venue.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_venue_borrow_market">venue::borrow_market</a>(<a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_MarketKey">MarketKey</a> {}, <a href="venue.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_venue">venue</a>)
 }
 </code></pre>
-
-
 
 </details>
 
@@ -374,15 +307,11 @@ Borrows <code><a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed
 
 Creates a bid in a FIFO manner, previous bids are retained
 
-
 <pre><code><b>public</b> entry <b>fun</b> <a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_create_bid">create_bid</a>&lt;FT&gt;(wallet: &<b>mut</b> <a href="_Coin">coin::Coin</a>&lt;FT&gt;, <a href="listing.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_listing">listing</a>: &<b>mut</b> <a href="listing.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_listing_Listing">listing::Listing</a>, venue_id: <a href="_ID">object::ID</a>, price: u64, quantity: u64, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_create_bid">create_bid</a>&lt;FT&gt;(
     wallet: &<b>mut</b> Coin&lt;FT&gt;,
@@ -409,24 +338,17 @@ Creates a bid in a FIFO manner, previous bids are retained
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_create_bid_whitelisted"></a>
 
 ## Function `create_bid_whitelisted`
 
-
-
 <pre><code><b>public</b> entry <b>fun</b> <a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_create_bid_whitelisted">create_bid_whitelisted</a>&lt;FT&gt;(wallet: &<b>mut</b> <a href="_Coin">coin::Coin</a>&lt;FT&gt;, <a href="listing.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_listing">listing</a>: &<b>mut</b> <a href="listing.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_listing_Listing">listing::Listing</a>, venue_id: <a href="_ID">object::ID</a>, whitelist_token: <a href="market_whitelist.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_market_whitelist_Certificate">market_whitelist::Certificate</a>, price: u64, quantity: u64, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_create_bid_whitelisted">create_bid_whitelisted</a>&lt;FT&gt;(
     wallet: &<b>mut</b> Coin&lt;FT&gt;,
@@ -458,8 +380,6 @@ Creates a bid in a FIFO manner, previous bids are retained
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_cancel_bid"></a>
@@ -470,15 +390,11 @@ Cancels a single bid at the given price level in a FIFO manner
 
 Bids can always be canceled no matter whether the auction is live.
 
-
 <pre><code><b>public</b> entry <b>fun</b> <a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_cancel_bid">cancel_bid</a>&lt;FT&gt;(wallet: &<b>mut</b> <a href="_Coin">coin::Coin</a>&lt;FT&gt;, <a href="listing.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_listing">listing</a>: &<b>mut</b> <a href="listing.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_listing_Listing">listing::Listing</a>, venue_id: <a href="_ID">object::ID</a>, price: u64, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_cancel_bid">cancel_bid</a>&lt;FT&gt;(
     wallet: &<b>mut</b> Coin&lt;FT&gt;,
@@ -495,8 +411,6 @@ Bids can always be canceled no matter whether the auction is live.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_sale_cancel"></a>
@@ -508,15 +422,11 @@ All bids will be cancelled and refunded.
 
 Permissioned endpoint to be called by <code>admin</code>.
 
-
 <pre><code><b>public</b> entry <b>fun</b> <a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_sale_cancel">sale_cancel</a>&lt;FT&gt;(<a href="listing.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_listing">listing</a>: &<b>mut</b> <a href="listing.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_listing_Listing">listing::Listing</a>, venue_id: <a href="_ID">object::ID</a>, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_sale_cancel">sale_cancel</a>&lt;FT&gt;(
     <a href="listing.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_listing">listing</a>: &<b>mut</b> Listing,
@@ -540,8 +450,6 @@ Permissioned endpoint to be called by <code>admin</code>.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_sale_conclude"></a>
@@ -553,15 +461,11 @@ NFTs will be allocated to the winning biddeers.
 
 Permissioned endpoint to be called by <code>admin</code>.
 
-
 <pre><code><b>public</b> entry <b>fun</b> <a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_sale_conclude">sale_conclude</a>&lt;T: store, key, FT&gt;(<a href="listing.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_listing">listing</a>: &<b>mut</b> <a href="listing.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_listing_Listing">listing::Listing</a>, venue_id: <a href="_ID">object::ID</a>, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_sale_conclude">sale_conclude</a>&lt;T: key + store, FT&gt;(
     <a href="listing.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_listing">listing</a>: &<b>mut</b> Listing,
@@ -637,8 +541,6 @@ Permissioned endpoint to be called by <code>admin</code>.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_reserve_price"></a>
@@ -647,22 +549,16 @@ Permissioned endpoint to be called by <code>admin</code>.
 
 Get the auction's reserve price
 
-
 <pre><code><b>public</b> <b>fun</b> <a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_reserve_price">reserve_price</a>&lt;FT&gt;(market: &<a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_DutchAuctionMarket">dutch_auction::DutchAuctionMarket</a>&lt;FT&gt;): u64
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_reserve_price">reserve_price</a>&lt;FT&gt;(market: &<a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_DutchAuctionMarket">DutchAuctionMarket</a>&lt;FT&gt;): u64 {
     market.reserve_price
 }
 </code></pre>
-
-
 
 </details>
 
@@ -672,22 +568,16 @@ Get the auction's reserve price
 
 Get the auction's bids
 
-
 <pre><code><b>public</b> <b>fun</b> <a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_bids">bids</a>&lt;FT&gt;(market: &<a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_DutchAuctionMarket">dutch_auction::DutchAuctionMarket</a>&lt;FT&gt;): &<a href="_CritbitTree">crit_bit::CritbitTree</a>&lt;<a href="">vector</a>&lt;<a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_Bid">dutch_auction::Bid</a>&lt;FT&gt;&gt;&gt;
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_bids">bids</a>&lt;FT&gt;(market: &<a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_DutchAuctionMarket">DutchAuctionMarket</a>&lt;FT&gt;): &CritbitTree&lt;<a href="">vector</a>&lt;<a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_Bid">Bid</a>&lt;FT&gt;&gt;&gt; {
     &market.bids
 }
 </code></pre>
-
-
 
 </details>
 
@@ -695,23 +585,16 @@ Get the auction's bids
 
 ## Function `bid_owner`
 
-
-
 <pre><code><b>public</b> <b>fun</b> <a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_bid_owner">bid_owner</a>&lt;FT&gt;(bid: &<a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_Bid">dutch_auction::Bid</a>&lt;FT&gt;): <b>address</b>
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_bid_owner">bid_owner</a>&lt;FT&gt;(bid: &<a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_Bid">Bid</a>&lt;FT&gt;): <b>address</b> {
     bid.owner
 }
 </code></pre>
-
-
 
 </details>
 
@@ -719,23 +602,16 @@ Get the auction's bids
 
 ## Function `bid_amount`
 
-
-
 <pre><code><b>public</b> <b>fun</b> <a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_bid_amount">bid_amount</a>&lt;FT&gt;(bid: &<a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_Bid">dutch_auction::Bid</a>&lt;FT&gt;): &<a href="_Balance">balance::Balance</a>&lt;FT&gt;
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_bid_amount">bid_amount</a>&lt;FT&gt;(bid: &<a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_Bid">Bid</a>&lt;FT&gt;): &Balance&lt;FT&gt; {
     &bid.amount
 }
 </code></pre>
-
-
 
 </details>
 
@@ -743,16 +619,11 @@ Get the auction's bids
 
 ## Function `create_bid_`
 
-
-
 <pre><code><b>fun</b> <a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_create_bid_">create_bid_</a>&lt;FT&gt;(auction: &<b>mut</b> <a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_DutchAuctionMarket">dutch_auction::DutchAuctionMarket</a>&lt;FT&gt;, wallet: &<b>mut</b> <a href="_Coin">coin::Coin</a>&lt;FT&gt;, price: u64, quantity: u64, owner: <b>address</b>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>fun</b> <a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_create_bid_">create_bid_</a>&lt;FT&gt;(
     auction: &<b>mut</b> <a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_DutchAuctionMarket">DutchAuctionMarket</a>&lt;FT&gt;,
@@ -790,8 +661,6 @@ Get the auction's bids
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_cancel_bid_"></a>
@@ -800,15 +669,11 @@ Get the auction's bids
 
 Cancels a single order in a FIFO manner
 
-
 <pre><code><b>fun</b> <a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_cancel_bid_">cancel_bid_</a>&lt;FT&gt;(auction: &<b>mut</b> <a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_DutchAuctionMarket">dutch_auction::DutchAuctionMarket</a>&lt;FT&gt;, wallet: &<b>mut</b> <a href="_Coin">coin::Coin</a>&lt;FT&gt;, price: u64, sender: <b>address</b>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>fun</b> <a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_cancel_bid_">cancel_bid_</a>&lt;FT&gt;(
     auction: &<b>mut</b> <a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_DutchAuctionMarket">DutchAuctionMarket</a>&lt;FT&gt;,
@@ -847,24 +712,17 @@ Cancels a single order in a FIFO manner
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_cancel_auction"></a>
 
 ## Function `cancel_auction`
 
-
-
 <pre><code><b>fun</b> <a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_cancel_auction">cancel_auction</a>&lt;FT&gt;(book: &<b>mut</b> <a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_DutchAuctionMarket">dutch_auction::DutchAuctionMarket</a>&lt;FT&gt;, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>fun</b> <a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_cancel_auction">cancel_auction</a>&lt;FT&gt;(
     book: &<b>mut</b> <a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_DutchAuctionMarket">DutchAuctionMarket</a>&lt;FT&gt;,
@@ -892,24 +750,17 @@ Cancels a single order in a FIFO manner
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_refund_bid"></a>
 
 ## Function `refund_bid`
 
-
-
 <pre><code><b>fun</b> <a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_refund_bid">refund_bid</a>&lt;FT&gt;(bid: <a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_Bid">dutch_auction::Bid</a>&lt;FT&gt;, wallet: &<b>mut</b> <a href="_Coin">coin::Coin</a>&lt;FT&gt;, sender: &<b>address</b>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>fun</b> <a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_refund_bid">refund_bid</a>&lt;FT&gt;(
     bid: <a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_Bid">Bid</a>&lt;FT&gt;,
@@ -923,8 +774,6 @@ Cancels a single order in a FIFO manner
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_conclude_auction"></a>
@@ -933,15 +782,11 @@ Cancels a single order in a FIFO manner
 
 Returns the fill_price and bids that must be filled
 
-
 <pre><code><b>fun</b> <a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_conclude_auction">conclude_auction</a>&lt;FT&gt;(auction: &<b>mut</b> <a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_DutchAuctionMarket">dutch_auction::DutchAuctionMarket</a>&lt;FT&gt;, nfts_to_sell: u64): (u64, <a href="">vector</a>&lt;<a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_Bid">dutch_auction::Bid</a>&lt;FT&gt;&gt;)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>fun</b> <a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_conclude_auction">conclude_auction</a>&lt;FT&gt;(
     auction: &<b>mut</b> <a href="dutch_auction.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_dutch_auction_DutchAuctionMarket">DutchAuctionMarket</a>&lt;FT&gt;,
@@ -981,7 +826,5 @@ Returns the fill_price and bids that must be filled
     (fill_price, bids_to_fill)
 }
 </code></pre>
-
-
 
 </details>

@@ -1,15 +1,10 @@
-import {PUBLISHED_AT} from "..";
-import {ObjectArg, obj} from "../../_framework/util";
-import {TransactionBlock} from "@mysten/sui.js/transactions";
+import { PUBLISHED_AT } from "..";
+import { ObjectArg, obj } from "../../_framework/util";
+import { TransactionBlock } from "@mysten/sui.js/transactions";
 
-export function init(
-    txb: TransactionBlock,
-    otw: ObjectArg
-) {
-    return txb.moveCall({
-        target: `${PUBLISHED_AT}::permissions::init`,
-        arguments: [
-            obj(txb, otw)
-        ],
-    })
+export function init(txb: TransactionBlock, otw: ObjectArg) {
+  return txb.moveCall({
+    target: `${PUBLISHED_AT}::permissions::init`,
+    arguments: [obj(txb, otw)],
+  });
 }

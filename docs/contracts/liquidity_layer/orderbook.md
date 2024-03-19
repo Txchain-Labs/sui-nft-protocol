@@ -1,4 +1,3 @@
-
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook"></a>
 
 # Module `0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788::orderbook`
@@ -8,6 +7,7 @@ A bid is a request to buy one NFT from a specific collection.
 An ask is one NFT with a min price condition.
 
 One can
+
 - create a new orderbook between a given collection and a bid token;
 - set publicly accessible actions to be witness protected;
 - open a new bid;
@@ -19,7 +19,6 @@ One can
 - edit positions;
 - trade both native and 3rd party collections.
 
-
 <a name="@Other_resources_0"></a>
 
 ## Other resources
@@ -27,87 +26,85 @@ One can
 - https://docs.originbyte.io/origin-byte/about-our-programs/liquidity-layer/orderbook
 - https://origin-byte.github.io/orderbook.html
 
-
--  [Other resources](#@Other_resources_0)
--  [Struct `Witness`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Witness)
--  [Struct `TradeIntermediateDfKey`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_TradeIntermediateDfKey)
--  [Resource `Orderbook`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook)
--  [Struct `WitnessProtectedActions`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_WitnessProtectedActions)
-    -  [Important](#@Important_1)
--  [Struct `Bid`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Bid)
--  [Struct `Ask`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Ask)
--  [Resource `TradeIntermediate`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_TradeIntermediate)
--  [Struct `TradeInfo`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_TradeInfo)
--  [Struct `OrderbookCreatedEvent`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_OrderbookCreatedEvent)
--  [Struct `AskCreatedEvent`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_AskCreatedEvent)
--  [Struct `AskClosedEvent`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_AskClosedEvent)
--  [Struct `BidCreatedEvent`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_BidCreatedEvent)
--  [Struct `BidClosedEvent`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_BidClosedEvent)
--  [Struct `TradeFilledEvent`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_TradeFilledEvent)
--  [Constants](#@Constants_2)
--  [Function `new`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_new)
--  [Function `new_unprotected`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_new_unprotected)
--  [Function `create`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create)
--  [Function `create_unprotected`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create_unprotected)
--  [Function `init_orderbook`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_init_orderbook)
--  [Function `init_unprotected_orderbook`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_init_unprotected_orderbook)
--  [Function `new_external`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_new_external)
--  [Function `create_external`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create_external)
--  [Function `init_external`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_init_external)
--  [Function `new_`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_new_)
--  [Function `create_bid`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create_bid)
--  [Function `create_bid_protected`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create_bid_protected)
--  [Function `create_bid_with_commission`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create_bid_with_commission)
--  [Function `create_bid_with_commission_protected`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create_bid_with_commission_protected)
--  [Function `market_buy`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_market_buy)
--  [Function `cancel_bid`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_cancel_bid)
--  [Function `cancel_ask`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_cancel_ask)
--  [Function `create_ask`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create_ask)
--  [Function `create_ask_protected`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create_ask_protected)
--  [Function `create_ask_with_commission`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create_ask_with_commission)
--  [Function `create_ask_with_commission_protected`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create_ask_with_commission_protected)
--  [Function `market_sell`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_market_sell)
--  [Function `edit_ask`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_edit_ask)
--  [Function `edit_bid`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_edit_bid)
--  [Function `buy_nft`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_buy_nft)
--  [Function `buy_nft_protected`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_buy_nft_protected)
--  [Function `finish_trade`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_finish_trade)
--  [Function `finish_trade_if_kiosks_match`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_finish_trade_if_kiosks_match)
--  [Function `change_tick_size`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_change_tick_size)
--  [Function `change_tick_size_with_witness`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_change_tick_size_with_witness)
--  [Function `set_protection`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_set_protection)
--  [Function `set_protection_with_witness`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_set_protection_with_witness)
--  [Function `disable_trading`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_disable_trading)
--  [Function `enable_trading`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_enable_trading)
--  [Function `borrow_bids`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_borrow_bids)
--  [Function `bid_offer`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_bid_offer)
--  [Function `bid_owner`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_bid_owner)
--  [Function `borrow_asks`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_borrow_asks)
--  [Function `ask_price`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_ask_price)
--  [Function `ask_owner`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_ask_owner)
--  [Function `is_create_ask_protected`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_is_create_ask_protected)
--  [Function `is_create_bid_protected`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_is_create_bid_protected)
--  [Function `is_buy_nft_protected`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_is_buy_nft_protected)
--  [Function `trade_id`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_trade_id)
--  [Function `trade_price`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_trade_price)
--  [Function `trade`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_trade)
--  [Function `create_bid_`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create_bid_)
--  [Function `match_buy_with_ask_`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_match_buy_with_ask_)
--  [Function `match_sell_with_bid_`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_match_sell_with_bid_)
--  [Function `cancel_bid_except_commission`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_cancel_bid_except_commission)
--  [Function `cancel_bid_`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_cancel_bid_)
--  [Function `edit_bid_`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_edit_bid_)
--  [Function `create_ask_`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create_ask_)
--  [Function `cancel_ask_`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_cancel_ask_)
--  [Function `buy_nft_`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_buy_nft_)
--  [Function `finish_trade_`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_finish_trade_)
--  [Function `remove_ask`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_remove_ask)
--  [Function `assert_tick_level`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_assert_tick_level)
--  [Function `check_tick_level`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_check_tick_level)
--  [Function `assert_version`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_assert_version)
--  [Function `migrate_as_creator`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_migrate_as_creator)
--  [Function `migrate_as_pub`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_migrate_as_pub)
-
+- [Other resources](#@Other_resources_0)
+- [Struct `Witness`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Witness)
+- [Struct `TradeIntermediateDfKey`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_TradeIntermediateDfKey)
+- [Resource `Orderbook`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook)
+- [Struct `WitnessProtectedActions`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_WitnessProtectedActions)
+  - [Important](#@Important_1)
+- [Struct `Bid`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Bid)
+- [Struct `Ask`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Ask)
+- [Resource `TradeIntermediate`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_TradeIntermediate)
+- [Struct `TradeInfo`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_TradeInfo)
+- [Struct `OrderbookCreatedEvent`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_OrderbookCreatedEvent)
+- [Struct `AskCreatedEvent`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_AskCreatedEvent)
+- [Struct `AskClosedEvent`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_AskClosedEvent)
+- [Struct `BidCreatedEvent`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_BidCreatedEvent)
+- [Struct `BidClosedEvent`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_BidClosedEvent)
+- [Struct `TradeFilledEvent`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_TradeFilledEvent)
+- [Constants](#@Constants_2)
+- [Function `new`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_new)
+- [Function `new_unprotected`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_new_unprotected)
+- [Function `create`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create)
+- [Function `create_unprotected`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create_unprotected)
+- [Function `init_orderbook`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_init_orderbook)
+- [Function `init_unprotected_orderbook`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_init_unprotected_orderbook)
+- [Function `new_external`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_new_external)
+- [Function `create_external`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create_external)
+- [Function `init_external`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_init_external)
+- [Function `new_`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_new_)
+- [Function `create_bid`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create_bid)
+- [Function `create_bid_protected`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create_bid_protected)
+- [Function `create_bid_with_commission`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create_bid_with_commission)
+- [Function `create_bid_with_commission_protected`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create_bid_with_commission_protected)
+- [Function `market_buy`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_market_buy)
+- [Function `cancel_bid`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_cancel_bid)
+- [Function `cancel_ask`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_cancel_ask)
+- [Function `create_ask`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create_ask)
+- [Function `create_ask_protected`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create_ask_protected)
+- [Function `create_ask_with_commission`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create_ask_with_commission)
+- [Function `create_ask_with_commission_protected`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create_ask_with_commission_protected)
+- [Function `market_sell`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_market_sell)
+- [Function `edit_ask`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_edit_ask)
+- [Function `edit_bid`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_edit_bid)
+- [Function `buy_nft`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_buy_nft)
+- [Function `buy_nft_protected`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_buy_nft_protected)
+- [Function `finish_trade`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_finish_trade)
+- [Function `finish_trade_if_kiosks_match`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_finish_trade_if_kiosks_match)
+- [Function `change_tick_size`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_change_tick_size)
+- [Function `change_tick_size_with_witness`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_change_tick_size_with_witness)
+- [Function `set_protection`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_set_protection)
+- [Function `set_protection_with_witness`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_set_protection_with_witness)
+- [Function `disable_trading`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_disable_trading)
+- [Function `enable_trading`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_enable_trading)
+- [Function `borrow_bids`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_borrow_bids)
+- [Function `bid_offer`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_bid_offer)
+- [Function `bid_owner`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_bid_owner)
+- [Function `borrow_asks`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_borrow_asks)
+- [Function `ask_price`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_ask_price)
+- [Function `ask_owner`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_ask_owner)
+- [Function `is_create_ask_protected`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_is_create_ask_protected)
+- [Function `is_create_bid_protected`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_is_create_bid_protected)
+- [Function `is_buy_nft_protected`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_is_buy_nft_protected)
+- [Function `trade_id`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_trade_id)
+- [Function `trade_price`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_trade_price)
+- [Function `trade`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_trade)
+- [Function `create_bid_`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create_bid_)
+- [Function `match_buy_with_ask_`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_match_buy_with_ask_)
+- [Function `match_sell_with_bid_`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_match_sell_with_bid_)
+- [Function `cancel_bid_except_commission`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_cancel_bid_except_commission)
+- [Function `cancel_bid_`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_cancel_bid_)
+- [Function `edit_bid_`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_edit_bid_)
+- [Function `create_ask_`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create_ask_)
+- [Function `cancel_ask_`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_cancel_ask_)
+- [Function `buy_nft_`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_buy_nft_)
+- [Function `finish_trade_`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_finish_trade_)
+- [Function `remove_ask`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_remove_ask)
+- [Function `assert_tick_level`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_assert_tick_level)
+- [Function `check_tick_level`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_check_tick_level)
+- [Function `assert_version`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_assert_version)
+- [Function `migrate_as_creator`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_migrate_as_creator)
+- [Function `migrate_as_pub`](#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_migrate_as_pub)
 
 <pre><code><b>use</b> <a href="">0x16c5f17f2d55584a6e6daa442ccf83b4530d10546a8e7dedda9ba324e012fc40::witness</a>;
 <b>use</b> <a href="">0x1::ascii</a>;
@@ -132,8 +129,6 @@ One can
 <b>use</b> <a href="">0xffe9703dc31c17b294c37b2ffae7815b197d3e823bbb9f9b9f285f60afb524f2::fee_balance</a>;
 </code></pre>
 
-
-
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Witness"></a>
 
 ## Struct `Witness`
@@ -142,15 +137,11 @@ Add this witness type to allowlists via
 <code>transfer_allowlist::insert_authority</code> to allow orderbook trades with
 that allowlist.
 
-
 <pre><code><b>struct</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Witness">Witness</a> <b>has</b> drop
 </code></pre>
 
-
-
 <details>
 <summary>Fields</summary>
-
 
 <dl>
 <dt>
@@ -161,23 +152,17 @@ that allowlist.
 </dd>
 </dl>
 
-
 </details>
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_TradeIntermediateDfKey"></a>
 
 ## Struct `TradeIntermediateDfKey`
 
-
-
 <pre><code><b>struct</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_TradeIntermediateDfKey">TradeIntermediateDfKey</a>&lt;T, FT&gt; <b>has</b> <b>copy</b>, drop, store
 </code></pre>
 
-
-
 <details>
 <summary>Fields</summary>
-
 
 <dl>
 <dt>
@@ -188,7 +173,6 @@ that allowlist.
 </dd>
 </dl>
 
-
 </details>
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook"></a>
@@ -196,18 +180,15 @@ that allowlist.
 ## Resource `Orderbook`
 
 A critbit order book implementation. Contains two ordered trees:
+
 1. bids ASC
 2. asks DESC
-
 
 <pre><code><b>struct</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">Orderbook</a>&lt;T: store, key, FT&gt; <b>has</b> store, key
 </code></pre>
 
-
-
 <details>
 <summary>Fields</summary>
-
 
 <dl>
 <dt>
@@ -242,7 +223,8 @@ A critbit order book implementation. Contains two ordered trees:
  An ask order stores an NFT to be traded. The price associated with
  such an order is saying:
 
- > for this NFT, I want to receive at least this amount of FT.
+> for this NFT, I want to receive at least this amount of FT.
+
 </dd>
 <dt>
 <code>bids: <a href="_CritbitTree">critbit_u64::CritbitTree</a>&lt;<a href="">vector</a>&lt;<a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Bid">orderbook::Bid</a>&lt;FT&gt;&gt;&gt;</code>
@@ -251,7 +233,8 @@ A critbit order book implementation. Contains two ordered trees:
  A bid order stores amount of tokens of type "B"(id) to trade. A bid
  order is saying:
 
- > for any NFT in this collection, I will spare this many tokens
+> for any NFT in this collection, I will spare this many tokens
+
 </dd>
 <dt>
 <code>transfer_signer: <a href="_UID">object::UID</a></code>
@@ -260,7 +243,6 @@ A critbit order book implementation. Contains two ordered trees:
 
 </dd>
 </dl>
-
 
 </details>
 
@@ -275,7 +257,6 @@ function.
 This means contracts can build on top of this orderbook their custom
 logic if they desire so, or they can just use the entry point functions
 which might be good enough for most use cases.
-
 
 <a name="@Important_1"></a>
 
@@ -292,15 +273,11 @@ not enable to perform that specific action at all.
 
 We don't restrict canceling positions to protect the users.
 
-
 <pre><code><b>struct</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_WitnessProtectedActions">WitnessProtectedActions</a> <b>has</b> drop, store
 </code></pre>
 
-
-
 <details>
 <summary>Fields</summary>
-
 
 <dl>
 <dt>
@@ -323,7 +300,6 @@ We don't restrict canceling positions to protect the users.
 </dd>
 </dl>
 
-
 </details>
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Bid"></a>
@@ -332,15 +308,11 @@ We don't restrict canceling positions to protect the users.
 
 An offer for a single NFT in a collection.
 
-
 <pre><code><b>struct</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Bid">Bid</a>&lt;FT&gt; <b>has</b> store
 </code></pre>
 
-
-
 <details>
 <summary>Fields</summary>
-
 
 <dl>
 <dt>
@@ -372,7 +344,6 @@ An offer for a single NFT in a collection.
 </dd>
 </dl>
 
-
 </details>
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Ask"></a>
@@ -387,15 +358,11 @@ When an ask is matched with a bid, we transfer the ownership of the
 [<code><a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Ask">Ask</a></code>] object to the bid owner (buyer).
 The buyer can then claim the NFT via [<code>claim_nft</code>] endpoint.
 
-
 <pre><code><b>struct</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Ask">Ask</a> <b>has</b> store
 </code></pre>
 
-
-
 <details>
 <summary>Fields</summary>
-
 
 <dl>
 <dt>
@@ -432,7 +399,6 @@ The buyer can then claim the NFT via [<code>claim_nft</code>] endpoint.
 </dd>
 </dl>
 
-
 </details>
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_TradeIntermediate"></a>
@@ -442,15 +408,11 @@ The buyer can then claim the NFT via [<code>claim_nft</code>] endpoint.
 <code><a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_TradeIntermediate">TradeIntermediate</a></code> is made a shared object and can be called in a
 permissionless transaction <code>finish_trade</code>.
 
-
 <pre><code><b>struct</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_TradeIntermediate">TradeIntermediate</a>&lt;T, FT&gt; <b>has</b> store, key
 </code></pre>
 
-
-
 <details>
 <summary>Fields</summary>
-
 
 <dl>
 <dt>
@@ -503,7 +465,6 @@ permissionless transaction <code>finish_trade</code>.
 </dd>
 </dl>
 
-
 </details>
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_TradeInfo"></a>
@@ -513,15 +474,11 @@ permissionless transaction <code>finish_trade</code>.
 Helper struct to be used on the client side. Helps the client side
 to identity the trade_id which is needed to call <code>finish_trade</code>
 
-
 <pre><code><b>struct</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_TradeInfo">TradeInfo</a> <b>has</b> <b>copy</b>, drop, store
 </code></pre>
 
-
-
 <details>
 <summary>Fields</summary>
-
 
 <dl>
 <dt>
@@ -538,23 +495,17 @@ to identity the trade_id which is needed to call <code>finish_trade</code>
 </dd>
 </dl>
 
-
 </details>
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_OrderbookCreatedEvent"></a>
 
 ## Struct `OrderbookCreatedEvent`
 
-
-
 <pre><code><b>struct</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_OrderbookCreatedEvent">OrderbookCreatedEvent</a> <b>has</b> <b>copy</b>, drop
 </code></pre>
 
-
-
 <details>
 <summary>Fields</summary>
-
 
 <dl>
 <dt>
@@ -577,23 +528,17 @@ to identity the trade_id which is needed to call <code>finish_trade</code>
 </dd>
 </dl>
 
-
 </details>
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_AskCreatedEvent"></a>
 
 ## Struct `AskCreatedEvent`
 
-
-
 <pre><code><b>struct</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_AskCreatedEvent">AskCreatedEvent</a> <b>has</b> <b>copy</b>, drop
 </code></pre>
 
-
-
 <details>
 <summary>Fields</summary>
-
 
 <dl>
 <dt>
@@ -639,7 +584,6 @@ to identity the trade_id which is needed to call <code>finish_trade</code>
 
 </dd>
 </dl>
-
 
 </details>
 
@@ -649,15 +593,11 @@ to identity the trade_id which is needed to call <code>finish_trade</code>
 
 When de-listed, not when sold!
 
-
 <pre><code><b>struct</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_AskClosedEvent">AskClosedEvent</a> <b>has</b> <b>copy</b>, drop
 </code></pre>
 
-
-
 <details>
 <summary>Fields</summary>
-
 
 <dl>
 <dt>
@@ -698,23 +638,17 @@ When de-listed, not when sold!
 </dd>
 </dl>
 
-
 </details>
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_BidCreatedEvent"></a>
 
 ## Struct `BidCreatedEvent`
 
-
-
 <pre><code><b>struct</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_BidCreatedEvent">BidCreatedEvent</a> <b>has</b> <b>copy</b>, drop
 </code></pre>
 
-
-
 <details>
 <summary>Fields</summary>
-
 
 <dl>
 <dt>
@@ -754,7 +688,6 @@ When de-listed, not when sold!
 
 </dd>
 </dl>
-
 
 </details>
 
@@ -764,15 +697,11 @@ When de-listed, not when sold!
 
 When de-listed, not when bought!
 
-
 <pre><code><b>struct</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_BidClosedEvent">BidClosedEvent</a> <b>has</b> <b>copy</b>, drop
 </code></pre>
 
-
-
 <details>
 <summary>Fields</summary>
-
 
 <dl>
 <dt>
@@ -812,7 +741,6 @@ When de-listed, not when bought!
 
 </dd>
 </dl>
-
 
 </details>
 
@@ -828,15 +756,11 @@ In such case, the property <code>trade_intermediate</code> is <code>Some</code>.
 If the NFT was bought directly (<code>buy_nft</code>), then
 the property <code>trade_intermediate</code> is <code>None</code>.
 
-
 <pre><code><b>struct</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_TradeFilledEvent">TradeFilledEvent</a> <b>has</b> <b>copy</b>, drop
 </code></pre>
 
-
-
 <details>
 <summary>Fields</summary>
-
 
 <dl>
 <dt>
@@ -887,7 +811,8 @@ the property <code>trade_intermediate</code> is <code>None</code>.
 <dd>
  Is <code>None</code> if the NFT was bought directly (<code>buy_nft</code>)
 
- Is <code>Some</code> if the NFT was bought via <code>create_bid</code> or <code>create_ask</code>.
+Is <code>Some</code> if the NFT was bought via <code>create_bid</code> or <code>create_ask</code>.
+
 </dd>
 <dt>
 <code>nft_type: <a href="_String">ascii::String</a></code>
@@ -903,49 +828,31 @@ the property <code>trade_intermediate</code> is <code>None</code>.
 </dd>
 </dl>
 
-
 </details>
 
 <a name="@Constants_2"></a>
 
 ## Constants
 
-
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_ENotUpgraded"></a>
-
-
 
 <pre><code><b>const</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_ENotUpgraded">ENotUpgraded</a>: u64 = 999;
 </code></pre>
 
-
-
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_EWrongVersion"></a>
-
-
 
 <pre><code><b>const</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_EWrongVersion">EWrongVersion</a>: u64 = 1000;
 </code></pre>
 
-
-
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_VERSION"></a>
-
-
 
 <pre><code><b>const</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_VERSION">VERSION</a>: u64 = 1;
 </code></pre>
 
-
-
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_DEFAULT_TICK_SIZE"></a>
-
-
 
 <pre><code><b>const</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_DEFAULT_TICK_SIZE">DEFAULT_TICK_SIZE</a>: u64 = 1000000;
 </code></pre>
-
-
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_EActionNotPublic"></a>
 
@@ -953,93 +860,66 @@ A protected action was called without a witness.
 This action can only be called from an implementation in the collection
 smart contract.
 
-
 <pre><code><b>const</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_EActionNotPublic">EActionNotPublic</a>: u64 = 1;
 </code></pre>
-
-
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_ECannotTradeWithSelf"></a>
 
 The NFT lives in a kiosk which also wanted to buy it
 
-
 <pre><code><b>const</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_ECannotTradeWithSelf">ECannotTradeWithSelf</a>: u64 = 3;
 </code></pre>
-
-
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_ECommissionTooHigh"></a>
 
 Cannot make sell commission higher than listed price
 
-
 <pre><code><b>const</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_ECommissionTooHigh">ECommissionTooHigh</a>: u64 = 2;
 </code></pre>
-
-
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_EKioskIdMismatch"></a>
 
 Expected different kiosk
 
-
 <pre><code><b>const</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_EKioskIdMismatch">EKioskIdMismatch</a>: u64 = 5;
 </code></pre>
-
-
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_EMarketOrderNotFilled"></a>
 
 Market orders fail with this error if they cannot be filled
 
-
 <pre><code><b>const</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_EMarketOrderNotFilled">EMarketOrderNotFilled</a>: u64 = 6;
 </code></pre>
-
-
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_ENotExternalPolicy"></a>
 
 Trying to access an endpoint for creating an orderbook for collections
 that are external to the OriginByte ecosystem, without itself being external
 
-
 <pre><code><b>const</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_ENotExternalPolicy">ENotExternalPolicy</a>: u64 = 8;
 </code></pre>
-
-
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_ENotOriginBytePolicy"></a>
 
 Trying to create an orderbook via a witness protected endpoint
 without TransferPolicy being registered with OriginByte
 
-
 <pre><code><b>const</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_ENotOriginBytePolicy">ENotOriginBytePolicy</a>: u64 = 7;
 </code></pre>
-
-
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_EOrderDoesNotExist"></a>
 
 No order matches the given price level or ownership level
 
-
 <pre><code><b>const</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_EOrderDoesNotExist">EOrderDoesNotExist</a>: u64 = 6;
 </code></pre>
-
-
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_EOrderOwnerMustBeSender"></a>
 
 User doesn't own this order
 
-
 <pre><code><b>const</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_EOrderOwnerMustBeSender">EOrderOwnerMustBeSender</a>: u64 = 4;
 </code></pre>
-
-
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_new"></a>
 
@@ -1051,23 +931,17 @@ To implement specific logic in your smart contract, you can toggle the
 protection on specific actions. That will make them only accessible via
 witness protected methods.
 
-
 <a name="@Panics_3"></a>
 
 ###### Panics
 
-
 Panics if <code>TransferPolicy&lt;T&gt;</code> is not an OriginByte policy.
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_new">new</a>&lt;T: store, key, FT&gt;(_witness: <a href="_Witness">witness::Witness</a>&lt;T&gt;, <a href="">transfer_policy</a>: &<a href="_TransferPolicy">transfer_policy::TransferPolicy</a>&lt;T&gt;, buy_nft: bool, create_ask: bool, create_bid: bool, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">orderbook::Orderbook</a>&lt;T, FT&gt;
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_new">new</a>&lt;T: key + store, FT&gt;(
     _witness: DelegatedWitness&lt;T&gt;,
@@ -1086,8 +960,6 @@ Panics if <code>TransferPolicy&lt;T&gt;</code> is not an OriginByte policy.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_new_unprotected"></a>
@@ -1100,23 +972,17 @@ To implement specific logic in your smart contract, you can toggle the
 protection on specific actions. That will make them only accessible via
 witness protected methods.
 
-
 <a name="@Panics_4"></a>
 
 ###### Panics
 
-
 Panics if <code>TransferPolicy&lt;T&gt;</code> is not an OriginByte policy.
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_new_unprotected">new_unprotected</a>&lt;T: store, key, FT&gt;(<a href="">witness</a>: <a href="_Witness">witness::Witness</a>&lt;T&gt;, <a href="">transfer_policy</a>: &<a href="_TransferPolicy">transfer_policy::TransferPolicy</a>&lt;T&gt;, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">orderbook::Orderbook</a>&lt;T, FT&gt;
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_new_unprotected">new_unprotected</a>&lt;T: key + store, FT&gt;(
     <a href="">witness</a>: DelegatedWitness&lt;T&gt;,
@@ -1127,8 +993,6 @@ Panics if <code>TransferPolicy&lt;T&gt;</code> is not an OriginByte policy.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create"></a>
@@ -1138,23 +1002,17 @@ Panics if <code>TransferPolicy&lt;T&gt;</code> is not an OriginByte policy.
 Create a new <code><a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">Orderbook</a>&lt;T, FT&gt;</code> and immediately share it, returning
 it's ID
 
-
 <a name="@Panics_5"></a>
 
 ###### Panics
 
-
 Panics if <code>TransferPolicy&lt;T&gt;</code> is not an OriginByte policy.
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create">create</a>&lt;T: store, key, FT&gt;(<a href="">witness</a>: <a href="_Witness">witness::Witness</a>&lt;T&gt;, <a href="">transfer_policy</a>: &<a href="_TransferPolicy">transfer_policy::TransferPolicy</a>&lt;T&gt;, buy_nft: bool, create_ask: bool, create_bid: bool, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): <a href="_ID">object::ID</a>
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create">create</a>&lt;T: key + store, FT&gt;(
     <a href="">witness</a>: DelegatedWitness&lt;T&gt;,
@@ -1173,8 +1031,6 @@ Panics if <code>TransferPolicy&lt;T&gt;</code> is not an OriginByte policy.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create_unprotected"></a>
@@ -1184,23 +1040,17 @@ Panics if <code>TransferPolicy&lt;T&gt;</code> is not an OriginByte policy.
 Create a new unprotected <code><a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">Orderbook</a>&lt;T, FT&gt;</code> and immediately share it
 returning it's ID
 
-
 <a name="@Panics_6"></a>
 
 ###### Panics
 
-
 Panics if <code>TransferPolicy&lt;T&gt;</code> is not an OriginByte policy.
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create_unprotected">create_unprotected</a>&lt;T: store, key, FT&gt;(<a href="">witness</a>: <a href="_Witness">witness::Witness</a>&lt;T&gt;, <a href="">transfer_policy</a>: &<a href="_TransferPolicy">transfer_policy::TransferPolicy</a>&lt;T&gt;, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): <a href="_ID">object::ID</a>
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create_unprotected">create_unprotected</a>&lt;T: key + store, FT&gt;(
     <a href="">witness</a>: DelegatedWitness&lt;T&gt;,
@@ -1211,8 +1061,6 @@ Panics if <code>TransferPolicy&lt;T&gt;</code> is not an OriginByte policy.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_init_orderbook"></a>
@@ -1221,23 +1069,17 @@ Panics if <code>TransferPolicy&lt;T&gt;</code> is not an OriginByte policy.
 
 Create a new <code><a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">Orderbook</a>&lt;T, FT&gt;</code> and immediately share it
 
-
 <a name="@Panics_7"></a>
 
 ###### Panics
 
-
 Panics if <code>TransferPolicy&lt;T&gt;</code> is not an OriginByte policy.
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_init_orderbook">init_orderbook</a>&lt;T: store, key, FT&gt;(publisher: &<a href="_Publisher">package::Publisher</a>, <a href="">transfer_policy</a>: &<a href="_TransferPolicy">transfer_policy::TransferPolicy</a>&lt;T&gt;, buy_nft: bool, create_ask: bool, create_bid: bool, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_init_orderbook">init_orderbook</a>&lt;T: key + store, FT&gt;(
     publisher: &Publisher,
@@ -1258,8 +1100,6 @@ Panics if <code>TransferPolicy&lt;T&gt;</code> is not an OriginByte policy.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_init_unprotected_orderbook"></a>
@@ -1268,23 +1108,17 @@ Panics if <code>TransferPolicy&lt;T&gt;</code> is not an OriginByte policy.
 
 Create a new unprotected <code><a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">Orderbook</a>&lt;T, FT&gt;</code> and immediately share it
 
-
 <a name="@Panics_8"></a>
 
 ###### Panics
 
-
 Panics if <code>TransferPolicy&lt;T&gt;</code> is not an OriginByte policy.
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_init_unprotected_orderbook">init_unprotected_orderbook</a>&lt;T: store, key, FT&gt;(publisher: &<a href="_Publisher">package::Publisher</a>, <a href="">transfer_policy</a>: &<a href="_TransferPolicy">transfer_policy::TransferPolicy</a>&lt;T&gt;, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_init_unprotected_orderbook">init_unprotected_orderbook</a>&lt;T: key + store, FT&gt;(
     publisher: &Publisher,
@@ -1296,8 +1130,6 @@ Panics if <code>TransferPolicy&lt;T&gt;</code> is not an OriginByte policy.
     );
 }
 </code></pre>
-
-
 
 </details>
 
@@ -1311,23 +1143,17 @@ To implement specific logic in your smart contract, you can toggle the
 protection on specific actions. That will make them only accessible via
 witness protected methods.
 
-
 <a name="@Panics_9"></a>
 
 ###### Panics
 
-
 Panics if <code>TransferPolicy&lt;T&gt;</code> is an OriginByte policy.
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_new_external">new_external</a>&lt;T: store, key, FT&gt;(<a href="">transfer_policy</a>: &<a href="_TransferPolicy">transfer_policy::TransferPolicy</a>&lt;T&gt;, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">orderbook::Orderbook</a>&lt;T, FT&gt;
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_new_external">new_external</a>&lt;T: key + store, FT&gt;(
     <a href="">transfer_policy</a>: &TransferPolicy&lt;T&gt;,
@@ -1349,8 +1175,6 @@ Panics if <code>TransferPolicy&lt;T&gt;</code> is an OriginByte policy.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create_external"></a>
@@ -1364,23 +1188,17 @@ To implement specific logic in your smart contract, you can toggle the
 protection on specific actions. That will make them only accessible via
 witness protected methods.
 
-
 <a name="@Panics_10"></a>
 
 ###### Panics
 
-
 Panics if <code>TransferPolicy&lt;T&gt;</code> is an OriginByte policy.
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create_external">create_external</a>&lt;T: store, key, FT&gt;(<a href="">transfer_policy</a>: &<a href="_TransferPolicy">transfer_policy::TransferPolicy</a>&lt;T&gt;, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): <a href="_ID">object::ID</a>
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create_external">create_external</a>&lt;T: key + store, FT&gt;(
     <a href="">transfer_policy</a>: &TransferPolicy&lt;T&gt;,
@@ -1392,8 +1210,6 @@ Panics if <code>TransferPolicy&lt;T&gt;</code> is an OriginByte policy.
     orderbook_id
 }
 </code></pre>
-
-
 
 </details>
 
@@ -1408,23 +1224,17 @@ To implement specific logic in your smart contract, you can toggle the
 protection on specific actions. That will make them only accessible via
 witness protected methods.
 
-
 <a name="@Panics_11"></a>
 
 ###### Panics
 
-
 Panics if <code>TransferPolicy&lt;T&gt;</code> is an OriginByte policy.
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_init_external">init_external</a>&lt;T: store, key, FT&gt;(<a href="">transfer_policy</a>: &<a href="_TransferPolicy">transfer_policy::TransferPolicy</a>&lt;T&gt;, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_init_external">init_external</a>&lt;T: key + store, FT&gt;(
     <a href="">transfer_policy</a>: &TransferPolicy&lt;T&gt;,
@@ -1434,8 +1244,6 @@ Panics if <code>TransferPolicy&lt;T&gt;</code> is an OriginByte policy.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_new_"></a>
@@ -1444,15 +1252,11 @@ Panics if <code>TransferPolicy&lt;T&gt;</code> is an OriginByte policy.
 
 Create a new <code><a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">Orderbook</a>&lt;T, FT&gt;</code>
 
-
 <pre><code><b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_new_">new_</a>&lt;T: store, key, FT&gt;(protected_actions: <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_WitnessProtectedActions">orderbook::WitnessProtectedActions</a>, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">orderbook::Orderbook</a>&lt;T, FT&gt;
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_new_">new_</a>&lt;T: key + store, FT&gt;(
     protected_actions: <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_WitnessProtectedActions">WitnessProtectedActions</a>,
@@ -1478,8 +1282,6 @@ Create a new <code><a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create_bid"></a>
@@ -1497,22 +1299,18 @@ Otherwise we add the bid to the orderbook's state.
 
 The client provides the Kiosk into which they wish to receive an NFT.
 
-* buyer kiosk must be in Originbyte ecosystem
-* sender must be owner of buyer kiosk
-* the buyer kiosk must allow deposits of <code>T</code>
+- buyer kiosk must be in Originbyte ecosystem
+- sender must be owner of buyer kiosk
+- the buyer kiosk must allow deposits of <code>T</code>
 
 Returns <code>Some</code> with amount if matched.
 The amount is always equal or less than price.
 
-
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create_bid">create_bid</a>&lt;T: store, key, FT&gt;(book: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">orderbook::Orderbook</a>&lt;T, FT&gt;, buyer_kiosk: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, price: u64, wallet: &<b>mut</b> <a href="_Coin">coin::Coin</a>&lt;FT&gt;, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): <a href="_Option">option::Option</a>&lt;<a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_TradeInfo">orderbook::TradeInfo</a>&gt;
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create_bid">create_bid</a>&lt;T: key + store, FT&gt;(
     book: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">Orderbook</a>&lt;T, FT&gt;,
@@ -1526,8 +1324,6 @@ The amount is always equal or less than price.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create_bid_protected"></a>
@@ -1537,15 +1333,11 @@ The amount is always equal or less than price.
 Same as [<code>create_bid</code>] but protected by
 [collection witness](https://docs.originbyte.io/origin-byte/about-our-programs/liquidity-layer/orderbook#witness-protected-actions).
 
-
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create_bid_protected">create_bid_protected</a>&lt;T: store, key, FT&gt;(_witness: <a href="_Witness">witness::Witness</a>&lt;T&gt;, book: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">orderbook::Orderbook</a>&lt;T, FT&gt;, buyer_kiosk: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, price: u64, wallet: &<b>mut</b> <a href="_Coin">coin::Coin</a>&lt;FT&gt;, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): <a href="_Option">option::Option</a>&lt;<a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_TradeInfo">orderbook::TradeInfo</a>&gt;
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create_bid_protected">create_bid_protected</a>&lt;T: key + store, FT&gt;(
     _witness: DelegatedWitness&lt;T&gt;,
@@ -1559,8 +1351,6 @@ Same as [<code>create_bid</code>] but protected by
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create_bid_with_commission"></a>
@@ -1570,15 +1360,11 @@ Same as [<code>create_bid</code>] but protected by
 Same as [<code>create_bid</code>] but with a
 [commission](https://docs.originbyte.io/origin-byte/about-our-programs/liquidity-layer/orderbook#commission).
 
-
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create_bid_with_commission">create_bid_with_commission</a>&lt;T: store, key, FT&gt;(book: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">orderbook::Orderbook</a>&lt;T, FT&gt;, buyer_kiosk: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, price: u64, beneficiary: <b>address</b>, commission_ft: u64, wallet: &<b>mut</b> <a href="_Coin">coin::Coin</a>&lt;FT&gt;, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): <a href="_Option">option::Option</a>&lt;<a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_TradeInfo">orderbook::TradeInfo</a>&gt;
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create_bid_with_commission">create_bid_with_commission</a>&lt;T: key + store, FT&gt;(
     book: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">Orderbook</a>&lt;T, FT&gt;,
@@ -1600,8 +1386,6 @@ Same as [<code>create_bid</code>] but with a
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create_bid_with_commission_protected"></a>
@@ -1611,15 +1395,11 @@ Same as [<code>create_bid</code>] but with a
 Same as [<code>create_bid_protected</code>] but with a
 [commission](https://docs.originbyte.io/origin-byte/about-our-programs/liquidity-layer/orderbook#commission).
 
-
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create_bid_with_commission_protected">create_bid_with_commission_protected</a>&lt;T: store, key, FT&gt;(_witness: <a href="_Witness">witness::Witness</a>&lt;T&gt;, book: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">orderbook::Orderbook</a>&lt;T, FT&gt;, buyer_kiosk: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, price: u64, beneficiary: <b>address</b>, commission_ft: u64, wallet: &<b>mut</b> <a href="_Coin">coin::Coin</a>&lt;FT&gt;, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): <a href="_Option">option::Option</a>&lt;<a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_TradeInfo">orderbook::TradeInfo</a>&gt;
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create_bid_with_commission_protected">create_bid_with_commission_protected</a>&lt;T: key + store, FT&gt;(
     _witness: DelegatedWitness&lt;T&gt;,
@@ -1641,8 +1421,6 @@ Same as [<code>create_bid_protected</code>] but with a
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_market_buy"></a>
@@ -1660,21 +1438,17 @@ If market order is not filled, then the tx fails.
 
 The client provides the Kiosk into which they wish to receive an NFT.
 
-* buyer kiosk must be in Originbyte ecosystem
-* sender must be owner of buyer kiosk
-* the buyer kiosk must allow deposits of <code>T</code>
+- buyer kiosk must be in Originbyte ecosystem
+- sender must be owner of buyer kiosk
+- the buyer kiosk must allow deposits of <code>T</code>
 
 Returns the paid amount.
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_market_buy">market_buy</a>&lt;T: store, key, FT&gt;(book: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">orderbook::Orderbook</a>&lt;T, FT&gt;, buyer_kiosk: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, wallet: &<b>mut</b> <a href="_Coin">coin::Coin</a>&lt;FT&gt;, max_price: u64, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_TradeInfo">orderbook::TradeInfo</a>
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_market_buy">market_buy</a>&lt;T: key + store, FT&gt;(
     book: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">Orderbook</a>&lt;T, FT&gt;,
@@ -1694,8 +1468,6 @@ Returns the paid amount.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_cancel_bid"></a>
@@ -1705,15 +1477,11 @@ Returns the paid amount.
 Cancel a bid owned by the sender at given price. If there are two bids
 with the same price, the one created later is cancelled.
 
-
 <pre><code><b>public</b> entry <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_cancel_bid">cancel_bid</a>&lt;T: store, key, FT&gt;(book: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">orderbook::Orderbook</a>&lt;T, FT&gt;, bid_price_level: u64, wallet: &<b>mut</b> <a href="_Coin">coin::Coin</a>&lt;FT&gt;, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_cancel_bid">cancel_bid</a>&lt;T: key + store, FT&gt;(
     book: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">Orderbook</a>&lt;T, FT&gt;,
@@ -1725,8 +1493,6 @@ with the same price, the one created later is cancelled.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_cancel_ask"></a>
@@ -1736,15 +1502,11 @@ with the same price, the one created later is cancelled.
 To cancel an offer on a specific NFT, the client provides the price they
 listed it for.
 
-
 <pre><code><b>public</b> entry <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_cancel_ask">cancel_ask</a>&lt;T: store, key, FT&gt;(book: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">orderbook::Orderbook</a>&lt;T, FT&gt;, seller_kiosk: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, nft_price_level: u64, nft_id: <a href="_ID">object::ID</a>, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_cancel_ask">cancel_ask</a>&lt;T: key + store, FT&gt;(
     book: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">Orderbook</a>&lt;T, FT&gt;,
@@ -1756,8 +1518,6 @@ listed it for.
     <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_cancel_ask_">cancel_ask_</a>(book, seller_kiosk, nft_price_level, nft_id, ctx);
 }
 </code></pre>
-
-
 
 </details>
 
@@ -1772,22 +1532,18 @@ In such a case, a new shared object [<code><a href="orderbook.md#0x381bc6b9fd89d
 Otherwise we exclusively lock the NFT in the seller's kiosk for the
 orderbook to collect later.
 
-* the sender must be owner of kiosk
-* the kiosk must be in Originbyte universe
-* the NFT mustn't be listed anywhere else yet
+- the sender must be owner of kiosk
+- the kiosk must be in Originbyte universe
+- the NFT mustn't be listed anywhere else yet
 
 Returns <code>Some</code> with the amount if matched.
 Amount is always equal or more than <code>requested_tokens</code>.
 
-
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create_ask">create_ask</a>&lt;T: store, key, FT&gt;(book: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">orderbook::Orderbook</a>&lt;T, FT&gt;, seller_kiosk: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, requested_tokens: u64, nft_id: <a href="_ID">object::ID</a>, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): <a href="_Option">option::Option</a>&lt;<a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_TradeInfo">orderbook::TradeInfo</a>&gt;
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create_ask">create_ask</a>&lt;T: key + store, FT&gt;(
     book: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">Orderbook</a>&lt;T, FT&gt;,
@@ -1803,8 +1559,6 @@ Amount is always equal or more than <code>requested_tokens</code>.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create_ask_protected"></a>
@@ -1814,15 +1568,11 @@ Amount is always equal or more than <code>requested_tokens</code>.
 Same as [<code>create_ask</code>] but protected by
 [collection witness](https://docs.originbyte.io/origin-byte/about-our-programs/liquidity-layer/orderbook#witness-protected-actions).
 
-
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create_ask_protected">create_ask_protected</a>&lt;T: store, key, FT&gt;(_witness: <a href="_Witness">witness::Witness</a>&lt;T&gt;, book: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">orderbook::Orderbook</a>&lt;T, FT&gt;, seller_kiosk: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, requested_tokens: u64, nft_id: <a href="_ID">object::ID</a>, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): <a href="_Option">option::Option</a>&lt;<a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_TradeInfo">orderbook::TradeInfo</a>&gt;
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create_ask_protected">create_ask_protected</a>&lt;T: key + store, FT&gt;(
     _witness: DelegatedWitness&lt;T&gt;,
@@ -1838,8 +1588,6 @@ Same as [<code>create_ask</code>] but protected by
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create_ask_with_commission"></a>
@@ -1849,15 +1597,11 @@ Same as [<code>create_ask</code>] but protected by
 Same as [<code>create_ask</code>] but with a
 [commission](https://docs.originbyte.io/origin-byte/about-our-programs/liquidity-layer/orderbook#commission).
 
-
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create_ask_with_commission">create_ask_with_commission</a>&lt;T: store, key, FT&gt;(book: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">orderbook::Orderbook</a>&lt;T, FT&gt;, seller_kiosk: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, requested_tokens: u64, nft_id: <a href="_ID">object::ID</a>, beneficiary: <b>address</b>, commission_ft: u64, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): <a href="_Option">option::Option</a>&lt;<a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_TradeInfo">orderbook::TradeInfo</a>&gt;
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create_ask_with_commission">create_ask_with_commission</a>&lt;T: key + store, FT&gt;(
     book: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">Orderbook</a>&lt;T, FT&gt;,
@@ -1885,8 +1629,6 @@ Same as [<code>create_ask</code>] but with a
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create_ask_with_commission_protected"></a>
@@ -1896,22 +1638,17 @@ Same as [<code>create_ask</code>] but with a
 Same as [<code>create_ask_protected</code>] but with a
 [commission](https://docs.originbyte.io/origin-byte/about-our-programs/liquidity-layer/orderbook#commission).
 
-
 <a name="@Panics_12"></a>
 
 ###### Panics
 
 The <code>commission</code> arg must be less than <code>requested_tokens</code>.
 
-
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create_ask_with_commission_protected">create_ask_with_commission_protected</a>&lt;T: store, key, FT&gt;(_witness: <a href="_Witness">witness::Witness</a>&lt;T&gt;, book: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">orderbook::Orderbook</a>&lt;T, FT&gt;, seller_kiosk: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, requested_tokens: u64, nft_id: <a href="_ID">object::ID</a>, beneficiary: <b>address</b>, commission_ft: u64, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): <a href="_Option">option::Option</a>&lt;<a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_TradeInfo">orderbook::TradeInfo</a>&gt;
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create_ask_with_commission_protected">create_ask_with_commission_protected</a>&lt;T: key + store, FT&gt;(
     _witness: DelegatedWitness&lt;T&gt;,
@@ -1940,8 +1677,6 @@ The <code>commission</code> arg must be less than <code>requested_tokens</code>.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_market_sell"></a>
@@ -1954,21 +1689,17 @@ trade is immediately executed.
 In such a case, a new shared object [<code><a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_TradeIntermediate">TradeIntermediate</a></code>] is created.
 Otherwise we fail the transaction.
 
-* the sender must be owner of kiosk
-* the kiosk must be in Originbyte universe
-* the NFT mustn't be listed anywhere else yet
+- the sender must be owner of kiosk
+- the kiosk must be in Originbyte universe
+- the NFT mustn't be listed anywhere else yet
 
 Returns the paid amount for the NFT.
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_market_sell">market_sell</a>&lt;T: store, key, FT&gt;(book: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">orderbook::Orderbook</a>&lt;T, FT&gt;, seller_kiosk: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, min_price: u64, nft_id: <a href="_ID">object::ID</a>, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_TradeInfo">orderbook::TradeInfo</a>
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_market_sell">market_sell</a>&lt;T: key + store, FT&gt;(
     book: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">Orderbook</a>&lt;T, FT&gt;,
@@ -1992,8 +1723,6 @@ Returns the paid amount for the NFT.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_edit_ask"></a>
@@ -2006,15 +1735,11 @@ Firstly, we always emit <code>AskRemovedEvent</code> for the old ask.
 Then either <code><a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_AskCreatedEvent">AskCreatedEvent</a></code> or <code><a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_TradeFilledEvent">TradeFilledEvent</a></code>.
 Depends on whether the ask is filled immediately or not.
 
-
 <pre><code><b>public</b> entry <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_edit_ask">edit_ask</a>&lt;T: store, key, FT&gt;(book: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">orderbook::Orderbook</a>&lt;T, FT&gt;, seller_kiosk: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, old_price: u64, nft_id: <a href="_ID">object::ID</a>, new_price: u64, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_edit_ask">edit_ask</a>&lt;T: key + store, FT&gt;(
     book: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">Orderbook</a>&lt;T, FT&gt;,
@@ -2033,8 +1758,6 @@ Depends on whether the ask is filled immediately or not.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_edit_bid"></a>
@@ -2043,15 +1766,11 @@ Depends on whether the ask is filled immediately or not.
 
 Cancels the old bid and creates a new one with new price.
 
-
 <pre><code><b>public</b> entry <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_edit_bid">edit_bid</a>&lt;T: store, key, FT&gt;(book: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">orderbook::Orderbook</a>&lt;T, FT&gt;, buyer_kiosk: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, old_price: u64, new_price: u64, wallet: &<b>mut</b> <a href="_Coin">coin::Coin</a>&lt;FT&gt;, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_edit_bid">edit_bid</a>&lt;T: key + store, FT&gt;(
     book: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">Orderbook</a>&lt;T, FT&gt;,
@@ -2065,8 +1784,6 @@ Cancels the old bid and creates a new one with new price.
     <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_edit_bid_">edit_bid_</a>(book, buyer_kiosk, old_price, new_price, wallet, ctx);
 }
 </code></pre>
-
-
 
 </details>
 
@@ -2091,17 +1808,13 @@ performs he transfer straight away.
 See the documentation for <code>nft_protocol::transfer_request</code> to understand
 how to deal with the returned [<code>TransferRequest</code>] type.
 
-* both kiosks must be in the OB universe
-
+- both kiosks must be in the OB universe
 
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_buy_nft">buy_nft</a>&lt;T: store, key, FT&gt;(book: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">orderbook::Orderbook</a>&lt;T, FT&gt;, seller_kiosk: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, buyer_kiosk: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, nft_id: <a href="_ID">object::ID</a>, price: u64, wallet: &<b>mut</b> <a href="_Coin">coin::Coin</a>&lt;FT&gt;, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): <a href="_TransferRequest">transfer_request::TransferRequest</a>&lt;T&gt;
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_buy_nft">buy_nft</a>&lt;T: key + store, FT&gt;(
     book: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">Orderbook</a>&lt;T, FT&gt;,
@@ -2119,8 +1832,6 @@ how to deal with the returned [<code>TransferRequest</code>] type.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_buy_nft_protected"></a>
@@ -2130,15 +1841,11 @@ how to deal with the returned [<code>TransferRequest</code>] type.
 Same as [<code>buy_nft</code>] but protected by
 [collection witness](https://docs.originbyte.io/origin-byte/about-our-programs/liquidity-layer/orderbook#witness-protected-actions).
 
-
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_buy_nft_protected">buy_nft_protected</a>&lt;T: store, key, FT&gt;(_witness: <a href="_Witness">witness::Witness</a>&lt;T&gt;, book: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">orderbook::Orderbook</a>&lt;T, FT&gt;, seller_kiosk: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, buyer_kiosk: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, nft_id: <a href="_ID">object::ID</a>, price: u64, wallet: &<b>mut</b> <a href="_Coin">coin::Coin</a>&lt;FT&gt;, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): <a href="_TransferRequest">transfer_request::TransferRequest</a>&lt;T&gt;
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_buy_nft_protected">buy_nft_protected</a>&lt;T: key + store, FT&gt;(
     _witness: DelegatedWitness&lt;T&gt;,
@@ -2155,8 +1862,6 @@ Same as [<code>buy_nft</code>] but protected by
     )
 }
 </code></pre>
-
-
 
 </details>
 
@@ -2176,18 +1881,14 @@ permissionlessly resolved via this endpoint.
 See the documentation for <code>nft_protocol::transfer_request</code> to understand
 how to deal with the returned [<code>TransferRequest</code>] type.
 
-* the buyer's kiosk must allow permissionless deposits of <code>T</code> unless
-buyer is the signer
-
+- the buyer's kiosk must allow permissionless deposits of <code>T</code> unless
+  buyer is the signer
 
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_finish_trade">finish_trade</a>&lt;T: store, key, FT&gt;(book: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">orderbook::Orderbook</a>&lt;T, FT&gt;, trade_id: <a href="_ID">object::ID</a>, seller_kiosk: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, buyer_kiosk: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): <a href="_TransferRequest">transfer_request::TransferRequest</a>&lt;T&gt;
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_finish_trade">finish_trade</a>&lt;T: key + store, FT&gt;(
     book: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">Orderbook</a>&lt;T, FT&gt;,
@@ -2200,24 +1901,17 @@ buyer is the signer
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_finish_trade_if_kiosks_match"></a>
 
 ## Function `finish_trade_if_kiosks_match`
 
-
-
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_finish_trade_if_kiosks_match">finish_trade_if_kiosks_match</a>&lt;T: store, key, FT&gt;(book: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">orderbook::Orderbook</a>&lt;T, FT&gt;, trade_id: <a href="_ID">object::ID</a>, seller_kiosk: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, buyer_kiosk: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): <a href="_Option">option::Option</a>&lt;<a href="_TransferRequest">transfer_request::TransferRequest</a>&lt;T&gt;&gt;
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_finish_trade_if_kiosks_match">finish_trade_if_kiosks_match</a>&lt;T: key + store, FT&gt;(
     book: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">Orderbook</a>&lt;T, FT&gt;,
@@ -2240,8 +1934,6 @@ buyer is the signer
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_change_tick_size"></a>
@@ -2250,23 +1942,17 @@ buyer is the signer
 
 Change tick size of orderbook
 
-
 <a name="@Panics_13"></a>
 
 ###### Panics
 
-
 Panics if provided <code>Publisher</code> did not publish type <code>T</code>
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_change_tick_size">change_tick_size</a>&lt;T: store, key, FT&gt;(publisher: &<a href="_Publisher">package::Publisher</a>, <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook">orderbook</a>: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">orderbook::Orderbook</a>&lt;T, FT&gt;, tick_size: u64)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_change_tick_size">change_tick_size</a>&lt;T: key + store, FT&gt;(
     publisher: &Publisher,
@@ -2279,8 +1965,6 @@ Panics if provided <code>Publisher</code> did not publish type <code>T</code>
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_change_tick_size_with_witness"></a>
@@ -2289,15 +1973,11 @@ Panics if provided <code>Publisher</code> did not publish type <code>T</code>
 
 Change tick size of orderbook
 
-
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_change_tick_size_with_witness">change_tick_size_with_witness</a>&lt;T: store, key, FT&gt;(_witness: <a href="_Witness">witness::Witness</a>&lt;T&gt;, <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook">orderbook</a>: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">orderbook::Orderbook</a>&lt;T, FT&gt;, tick_size: u64)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_change_tick_size_with_witness">change_tick_size_with_witness</a>&lt;T: key + store, FT&gt;(
     _witness: DelegatedWitness&lt;T&gt;,
@@ -2309,8 +1989,6 @@ Change tick size of orderbook
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_set_protection"></a>
@@ -2319,23 +1997,17 @@ Change tick size of orderbook
 
 Change protection level of an existing orderbook
 
-
 <a name="@Panics_14"></a>
 
 ###### Panics
 
-
 Panics if provided <code>Publisher</code> did not publish type <code>T</code>
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_set_protection">set_protection</a>&lt;T: store, key, FT&gt;(publisher: &<a href="_Publisher">package::Publisher</a>, <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook">orderbook</a>: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">orderbook::Orderbook</a>&lt;T, FT&gt;, buy_nft: bool, create_ask: bool, create_bid: bool)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_set_protection">set_protection</a>&lt;T: key + store, FT&gt;(
     publisher: &Publisher,
@@ -2354,8 +2026,6 @@ Panics if provided <code>Publisher</code> did not publish type <code>T</code>
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_set_protection_with_witness"></a>
@@ -2364,15 +2034,11 @@ Panics if provided <code>Publisher</code> did not publish type <code>T</code>
 
 Change protection level of an existing orderbook
 
-
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_set_protection_with_witness">set_protection_with_witness</a>&lt;T: store, key, FT&gt;(_witness: <a href="_Witness">witness::Witness</a>&lt;T&gt;, <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook">orderbook</a>: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">orderbook::Orderbook</a>&lt;T, FT&gt;, buy_nft: bool, create_ask: bool, create_bid: bool)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_set_protection_with_witness">set_protection_with_witness</a>&lt;T: key + store, FT&gt;(
     _witness: DelegatedWitness&lt;T&gt;,
@@ -2387,8 +2053,6 @@ Change protection level of an existing orderbook
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_disable_trading"></a>
@@ -2397,23 +2061,17 @@ Change protection level of an existing orderbook
 
 Helper method to protect all endpoints thus disabling trading
 
-
 <a name="@Panics_15"></a>
 
 ###### Panics
 
-
 Panics if provided <code>Publisher</code> did not publish type <code>T</code>
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_disable_trading">disable_trading</a>&lt;T: store, key, FT&gt;(publisher: &<a href="_Publisher">package::Publisher</a>, <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook">orderbook</a>: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">orderbook::Orderbook</a>&lt;T, FT&gt;)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_disable_trading">disable_trading</a>&lt;T: key + store, FT&gt;(
     publisher: &Publisher,
@@ -2425,8 +2083,6 @@ Panics if provided <code>Publisher</code> did not publish type <code>T</code>
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_enable_trading"></a>
@@ -2435,23 +2091,17 @@ Panics if provided <code>Publisher</code> did not publish type <code>T</code>
 
 Helper method to unprotect all endpoints thus enabling trading
 
-
 <a name="@Panics_16"></a>
 
 ###### Panics
 
-
 Panics if provided <code>Publisher</code> did not publish type <code>T</code>
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_enable_trading">enable_trading</a>&lt;T: store, key, FT&gt;(publisher: &<a href="_Publisher">package::Publisher</a>, <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook">orderbook</a>: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">orderbook::Orderbook</a>&lt;T, FT&gt;)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_enable_trading">enable_trading</a>&lt;T: key + store, FT&gt;(
     publisher: &Publisher,
@@ -2463,24 +2113,17 @@ Panics if provided <code>Publisher</code> did not publish type <code>T</code>
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_borrow_bids"></a>
 
 ## Function `borrow_bids`
 
-
-
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_borrow_bids">borrow_bids</a>&lt;T: store, key, FT&gt;(book: &<a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">orderbook::Orderbook</a>&lt;T, FT&gt;): &<a href="_CritbitTree">critbit_u64::CritbitTree</a>&lt;<a href="">vector</a>&lt;<a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Bid">orderbook::Bid</a>&lt;FT&gt;&gt;&gt;
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_borrow_bids">borrow_bids</a>&lt;T: key + store, FT&gt;(
     book: &<a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">Orderbook</a>&lt;T, FT&gt;,
@@ -2489,31 +2132,22 @@ Panics if provided <code>Publisher</code> did not publish type <code>T</code>
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_bid_offer"></a>
 
 ## Function `bid_offer`
 
-
-
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_bid_offer">bid_offer</a>&lt;FT&gt;(bid: &<a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Bid">orderbook::Bid</a>&lt;FT&gt;): &<a href="_Balance">balance::Balance</a>&lt;FT&gt;
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_bid_offer">bid_offer</a>&lt;FT&gt;(bid: &<a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Bid">Bid</a>&lt;FT&gt;): &Balance&lt;FT&gt; {
     &bid.offer
 }
 </code></pre>
-
-
 
 </details>
 
@@ -2521,23 +2155,16 @@ Panics if provided <code>Publisher</code> did not publish type <code>T</code>
 
 ## Function `bid_owner`
 
-
-
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_bid_owner">bid_owner</a>&lt;FT&gt;(bid: &<a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Bid">orderbook::Bid</a>&lt;FT&gt;): <b>address</b>
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_bid_owner">bid_owner</a>&lt;FT&gt;(bid: &<a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Bid">Bid</a>&lt;FT&gt;): <b>address</b> {
     bid.owner
 }
 </code></pre>
-
-
 
 </details>
 
@@ -2545,16 +2172,11 @@ Panics if provided <code>Publisher</code> did not publish type <code>T</code>
 
 ## Function `borrow_asks`
 
-
-
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_borrow_asks">borrow_asks</a>&lt;T: store, key, FT&gt;(book: &<a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">orderbook::Orderbook</a>&lt;T, FT&gt;): &<a href="_CritbitTree">critbit_u64::CritbitTree</a>&lt;<a href="">vector</a>&lt;<a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Ask">orderbook::Ask</a>&gt;&gt;
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_borrow_asks">borrow_asks</a>&lt;T: key + store, FT&gt;(
     book: &<a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">Orderbook</a>&lt;T, FT&gt;,
@@ -2563,31 +2185,22 @@ Panics if provided <code>Publisher</code> did not publish type <code>T</code>
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_ask_price"></a>
 
 ## Function `ask_price`
 
-
-
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_ask_price">ask_price</a>(ask: &<a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Ask">orderbook::Ask</a>): u64
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_ask_price">ask_price</a>(ask: &<a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Ask">Ask</a>): u64 {
     ask.price
 }
 </code></pre>
-
-
 
 </details>
 
@@ -2595,23 +2208,16 @@ Panics if provided <code>Publisher</code> did not publish type <code>T</code>
 
 ## Function `ask_owner`
 
-
-
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_ask_owner">ask_owner</a>(ask: &<a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Ask">orderbook::Ask</a>): <b>address</b>
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_ask_owner">ask_owner</a>(ask: &<a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Ask">Ask</a>): <b>address</b> {
     ask.owner
 }
 </code></pre>
-
-
 
 </details>
 
@@ -2619,16 +2225,11 @@ Panics if provided <code>Publisher</code> did not publish type <code>T</code>
 
 ## Function `is_create_ask_protected`
 
-
-
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_is_create_ask_protected">is_create_ask_protected</a>&lt;T: store, key, FT&gt;(<a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook">orderbook</a>: &<a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">orderbook::Orderbook</a>&lt;T, FT&gt;): bool
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_is_create_ask_protected">is_create_ask_protected</a>&lt;T: key + store, FT&gt;(
     <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook">orderbook</a>: &<a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">Orderbook</a>&lt;T, FT&gt;,
@@ -2637,24 +2238,17 @@ Panics if provided <code>Publisher</code> did not publish type <code>T</code>
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_is_create_bid_protected"></a>
 
 ## Function `is_create_bid_protected`
 
-
-
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_is_create_bid_protected">is_create_bid_protected</a>&lt;T: store, key, FT&gt;(<a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook">orderbook</a>: &<a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">orderbook::Orderbook</a>&lt;T, FT&gt;): bool
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_is_create_bid_protected">is_create_bid_protected</a>&lt;T: key + store, FT&gt;(
     <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook">orderbook</a>: &<a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">Orderbook</a>&lt;T, FT&gt;,
@@ -2663,24 +2257,17 @@ Panics if provided <code>Publisher</code> did not publish type <code>T</code>
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_is_buy_nft_protected"></a>
 
 ## Function `is_buy_nft_protected`
 
-
-
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_is_buy_nft_protected">is_buy_nft_protected</a>&lt;T: store, key, FT&gt;(<a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook">orderbook</a>: &<a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">orderbook::Orderbook</a>&lt;T, FT&gt;): bool
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_is_buy_nft_protected">is_buy_nft_protected</a>&lt;T: key + store, FT&gt;(
     <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook">orderbook</a>: &<a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">Orderbook</a>&lt;T, FT&gt;,
@@ -2689,31 +2276,22 @@ Panics if provided <code>Publisher</code> did not publish type <code>T</code>
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_trade_id"></a>
 
 ## Function `trade_id`
 
-
-
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_trade_id">trade_id</a>(trade: &<a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_TradeInfo">orderbook::TradeInfo</a>): <a href="_ID">object::ID</a>
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_trade_id">trade_id</a>(trade: &<a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_TradeInfo">TradeInfo</a>): ID {
     trade.trade_id
 }
 </code></pre>
-
-
 
 </details>
 
@@ -2721,23 +2299,16 @@ Panics if provided <code>Publisher</code> did not publish type <code>T</code>
 
 ## Function `trade_price`
 
-
-
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_trade_price">trade_price</a>(trade: &<a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_TradeInfo">orderbook::TradeInfo</a>): u64
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_trade_price">trade_price</a>(trade: &<a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_TradeInfo">TradeInfo</a>): u64 {
     trade.trade_price
 }
 </code></pre>
-
-
 
 </details>
 
@@ -2745,16 +2316,11 @@ Panics if provided <code>Publisher</code> did not publish type <code>T</code>
 
 ## Function `trade`
 
-
-
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_trade">trade</a>&lt;T: store, key, FT&gt;(book: &<a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">orderbook::Orderbook</a>&lt;T, FT&gt;, trade_id: <a href="_ID">object::ID</a>): &<a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_TradeIntermediate">orderbook::TradeIntermediate</a>&lt;T, FT&gt;
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_trade">trade</a>&lt;T: key + store, FT&gt;(
     book: &<a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">Orderbook</a>&lt;T, FT&gt;,
@@ -2764,32 +2330,26 @@ Panics if provided <code>Publisher</code> did not publish type <code>T</code>
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create_bid_"></a>
 
 ## Function `create_bid_`
 
-* buyer kiosk must be in Originbyte ecosystem
-* sender must be owner of buyer kiosk
-* kiosk must allow permissionless deposits of <code>T</code>
+- buyer kiosk must be in Originbyte ecosystem
+- sender must be owner of buyer kiosk
+- kiosk must allow permissionless deposits of <code>T</code>
 
 Either <code><a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_TradeIntermediate">TradeIntermediate</a></code> is shared, or bid is added to the state.
 
 Returns <code>Some</code> with amount if matched.
 The amount is always equal or less than price.
 
-
 <pre><code><b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create_bid_">create_bid_</a>&lt;T: store, key, FT&gt;(book: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">orderbook::Orderbook</a>&lt;T, FT&gt;, buyer_kiosk: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, price: u64, bid_commission: <a href="_Option">option::Option</a>&lt;<a href="trading.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_trading_BidCommission">trading::BidCommission</a>&lt;FT&gt;&gt;, wallet: &<b>mut</b> <a href="_Coin">coin::Coin</a>&lt;FT&gt;, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): <a href="_Option">option::Option</a>&lt;<a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_TradeInfo">orderbook::TradeInfo</a>&gt;
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create_bid_">create_bid_</a>&lt;T: key + store, FT&gt;(
     book: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">Orderbook</a>&lt;T, FT&gt;,
@@ -2876,24 +2436,17 @@ The amount is always equal or less than price.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_match_buy_with_ask_"></a>
 
 ## Function `match_buy_with_ask_`
 
-
-
 <pre><code><b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_match_buy_with_ask_">match_buy_with_ask_</a>&lt;T: store, key, FT&gt;(book: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">orderbook::Orderbook</a>&lt;T, FT&gt;, lowest_ask_price: u64, buyer_kiosk_id: <a href="_ID">object::ID</a>, bid_commission: <a href="_Option">option::Option</a>&lt;<a href="trading.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_trading_BidCommission">trading::BidCommission</a>&lt;FT&gt;&gt;, wallet: &<b>mut</b> <a href="_Coin">coin::Coin</a>&lt;FT&gt;, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): <a href="_ID">object::ID</a>
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_match_buy_with_ask_">match_buy_with_ask_</a>&lt;T: key + store, FT&gt;(
     book: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">Orderbook</a>&lt;T, FT&gt;,
@@ -2968,24 +2521,17 @@ The amount is always equal or less than price.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_match_sell_with_bid_"></a>
 
 ## Function `match_sell_with_bid_`
 
-
-
 <pre><code><b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_match_sell_with_bid_">match_sell_with_bid_</a>&lt;T: store, key, FT&gt;(book: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">orderbook::Orderbook</a>&lt;T, FT&gt;, highest_bid_price: u64, seller_kiosk_id: <a href="_ID">object::ID</a>, ask_commission: <a href="_Option">option::Option</a>&lt;<a href="trading.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_trading_AskCommission">trading::AskCommission</a>&gt;, nft_id: <a href="_ID">object::ID</a>, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): <a href="_ID">object::ID</a>
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_match_sell_with_bid_">match_sell_with_bid_</a>&lt;T: key + store, FT&gt;(
     book: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">Orderbook</a>&lt;T, FT&gt;,
@@ -3058,8 +2604,6 @@ The amount is always equal or less than price.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_cancel_bid_except_commission"></a>
@@ -3070,15 +2614,11 @@ Removes bid from the state and returns the commission which contains
 tokens that the buyer was meant to pay as a commission on a successful
 trade.
 
-
 <pre><code><b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_cancel_bid_except_commission">cancel_bid_except_commission</a>&lt;T: store, key, FT&gt;(book: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">orderbook::Orderbook</a>&lt;T, FT&gt;, bid_price_level: u64, wallet: &<b>mut</b> <a href="_Coin">coin::Coin</a>&lt;FT&gt;, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): <a href="_Option">option::Option</a>&lt;<a href="trading.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_trading_BidCommission">trading::BidCommission</a>&lt;FT&gt;&gt;
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_cancel_bid_except_commission">cancel_bid_except_commission</a>&lt;T: key + store, FT&gt;(
     book: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">Orderbook</a>&lt;T, FT&gt;,
@@ -3135,24 +2675,17 @@ trade.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_cancel_bid_"></a>
 
 ## Function `cancel_bid_`
 
-
-
 <pre><code><b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_cancel_bid_">cancel_bid_</a>&lt;T: store, key, FT&gt;(book: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">orderbook::Orderbook</a>&lt;T, FT&gt;, bid_price_level: u64, wallet: &<b>mut</b> <a href="_Coin">coin::Coin</a>&lt;FT&gt;, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_cancel_bid_">cancel_bid_</a>&lt;T: key + store, FT&gt;(
     book: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">Orderbook</a>&lt;T, FT&gt;,
@@ -3177,24 +2710,17 @@ trade.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_edit_bid_"></a>
 
 ## Function `edit_bid_`
 
-
-
 <pre><code><b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_edit_bid_">edit_bid_</a>&lt;T: store, key, FT&gt;(book: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">orderbook::Orderbook</a>&lt;T, FT&gt;, buyer_kiosk: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, old_price: u64, new_price: u64, wallet: &<b>mut</b> <a href="_Coin">coin::Coin</a>&lt;FT&gt;, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_edit_bid_">edit_bid_</a>&lt;T: key + store, FT&gt;(
     book: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">Orderbook</a>&lt;T, FT&gt;,
@@ -3211,30 +2737,24 @@ trade.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create_ask_"></a>
 
 ## Function `create_ask_`
 
-* the sender must be owner of kiosk
-* the kiosk must be in Originbyte universe
-* NFT is exclusively listed in the kiosk
+- the sender must be owner of kiosk
+- the kiosk must be in Originbyte universe
+- NFT is exclusively listed in the kiosk
 
 Returns <code>Some</code> with the amount if matched.
 Amount is always equal or more than <code>requested_tokens</code>.
 
-
 <pre><code><b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create_ask_">create_ask_</a>&lt;T: store, key, FT&gt;(book: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">orderbook::Orderbook</a>&lt;T, FT&gt;, seller_kiosk: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, price: u64, ask_commission: <a href="_Option">option::Option</a>&lt;<a href="trading.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_trading_AskCommission">trading::AskCommission</a>&gt;, nft_id: <a href="_ID">object::ID</a>, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): <a href="_Option">option::Option</a>&lt;<a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_TradeInfo">orderbook::TradeInfo</a>&gt;
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_create_ask_">create_ask_</a>&lt;T: key + store, FT&gt;(
     book: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">Orderbook</a>&lt;T, FT&gt;,
@@ -3322,25 +2842,19 @@ Amount is always equal or more than <code>requested_tokens</code>.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_cancel_ask_"></a>
 
 ## Function `cancel_ask_`
 
-* cancels the exclusive listing
-
+- cancels the exclusive listing
 
 <pre><code><b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_cancel_ask_">cancel_ask_</a>&lt;T: store, key, FT&gt;(book: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">orderbook::Orderbook</a>&lt;T, FT&gt;, <a href="">kiosk</a>: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, nft_price_level: u64, nft_id: <a href="_ID">object::ID</a>, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): <a href="_Option">option::Option</a>&lt;<a href="trading.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_trading_AskCommission">trading::AskCommission</a>&gt;
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_cancel_ask_">cancel_ask_</a>&lt;T: key + store, FT&gt;(
     book: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">Orderbook</a>&lt;T, FT&gt;,
@@ -3376,24 +2890,17 @@ Amount is always equal or more than <code>requested_tokens</code>.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_buy_nft_"></a>
 
 ## Function `buy_nft_`
 
-
-
 <pre><code><b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_buy_nft_">buy_nft_</a>&lt;T: store, key, FT&gt;(book: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">orderbook::Orderbook</a>&lt;T, FT&gt;, seller_kiosk: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, buyer_kiosk: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, nft_id: <a href="_ID">object::ID</a>, price: u64, wallet: &<b>mut</b> <a href="_Coin">coin::Coin</a>&lt;FT&gt;, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): <a href="_TransferRequest">transfer_request::TransferRequest</a>&lt;T&gt;
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_buy_nft_">buy_nft_</a>&lt;T: key + store, FT&gt;(
     book: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">Orderbook</a>&lt;T, FT&gt;,
@@ -3460,24 +2967,17 @@ Amount is always equal or more than <code>requested_tokens</code>.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_finish_trade_"></a>
 
 ## Function `finish_trade_`
 
-
-
 <pre><code><b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_finish_trade_">finish_trade_</a>&lt;T: store, key, FT&gt;(book: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">orderbook::Orderbook</a>&lt;T, FT&gt;, trade_id: <a href="_ID">object::ID</a>, seller_kiosk: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, buyer_kiosk: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): <a href="_TransferRequest">transfer_request::TransferRequest</a>&lt;T&gt;
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_finish_trade_">finish_trade_</a>&lt;T: key + store, FT&gt;(
     book: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">Orderbook</a>&lt;T, FT&gt;,
@@ -3552,8 +3052,6 @@ Amount is always equal or more than <code>requested_tokens</code>.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_remove_ask"></a>
@@ -3563,15 +3061,11 @@ Amount is always equal or more than <code>requested_tokens</code>.
 Finds an ask of a given NFT advertized for the given price. Removes it
 from the asks vector preserving order and returns it.
 
-
 <pre><code><b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_remove_ask">remove_ask</a>(asks: &<b>mut</b> <a href="_CritbitTree">critbit_u64::CritbitTree</a>&lt;<a href="">vector</a>&lt;<a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Ask">orderbook::Ask</a>&gt;&gt;, price: u64, nft_id: <a href="_ID">object::ID</a>): <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Ask">orderbook::Ask</a>
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_remove_ask">remove_ask</a>(asks: &<b>mut</b> CritbitTree&lt;<a href="">vector</a>&lt;<a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Ask">Ask</a>&gt;&gt;, price: u64, nft_id: ID): <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Ask">Ask</a> {
     <b>let</b> (has_key, price_level_idx) = critbit::find_leaf(asks, price);
@@ -3605,31 +3099,22 @@ from the asks vector preserving order and returns it.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_assert_tick_level"></a>
 
 ## Function `assert_tick_level`
 
-
-
 <pre><code><b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_assert_tick_level">assert_tick_level</a>(price: u64, tick_size: u64)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_assert_tick_level">assert_tick_level</a>(price: u64, tick_size: u64) {
     <b>assert</b>!(<a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_check_tick_level">check_tick_level</a>(price, tick_size), 0);
 }
 </code></pre>
-
-
 
 </details>
 
@@ -3637,23 +3122,16 @@ from the asks vector preserving order and returns it.
 
 ## Function `check_tick_level`
 
-
-
 <pre><code><b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_check_tick_level">check_tick_level</a>(price: u64, tick_size: u64): bool
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_check_tick_level">check_tick_level</a>(price: u64, tick_size: u64): bool {
     price &gt;= tick_size
 }
 </code></pre>
-
-
 
 </details>
 
@@ -3661,23 +3139,16 @@ from the asks vector preserving order and returns it.
 
 ## Function `assert_version`
 
-
-
 <pre><code><b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_assert_version">assert_version</a>&lt;T: store, key, FT&gt;(self: &<a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">orderbook::Orderbook</a>&lt;T, FT&gt;)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_assert_version">assert_version</a>&lt;T: key + store, FT&gt;(self: &<a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">Orderbook</a>&lt;T, FT&gt;) {
     <b>assert</b>!(self.version == <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_VERSION">VERSION</a>, <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_EWrongVersion">EWrongVersion</a>);
 }
 </code></pre>
-
-
 
 </details>
 
@@ -3685,16 +3156,11 @@ from the asks vector preserving order and returns it.
 
 ## Function `migrate_as_creator`
 
-
-
 <pre><code>entry <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_migrate_as_creator">migrate_as_creator</a>&lt;T: store, key, FT&gt;(self: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">orderbook::Orderbook</a>&lt;T, FT&gt;, pub: &<a href="_Publisher">package::Publisher</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code>entry <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_migrate_as_creator">migrate_as_creator</a>&lt;T: key + store, FT&gt;(
     self: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">Orderbook</a>&lt;T, FT&gt;,
@@ -3705,24 +3171,17 @@ from the asks vector preserving order and returns it.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_migrate_as_pub"></a>
 
 ## Function `migrate_as_pub`
 
-
-
 <pre><code>entry <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_migrate_as_pub">migrate_as_pub</a>&lt;T: store, key, FT&gt;(self: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">orderbook::Orderbook</a>&lt;T, FT&gt;, pub: &<a href="_Publisher">package::Publisher</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code>entry <b>fun</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_migrate_as_pub">migrate_as_pub</a>&lt;T: key + store, FT&gt;(
     self: &<b>mut</b> <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_Orderbook">Orderbook</a>&lt;T, FT&gt;,
@@ -3732,7 +3191,5 @@ from the asks vector preserving order and returns it.
     self.version = <a href="orderbook.md#0x381bc6b9fd89d748226db81e98e6c22c6246c37d4a13acefc862e4a70c73a788_orderbook_VERSION">VERSION</a>;
 }
 </code></pre>
-
-
 
 </details>

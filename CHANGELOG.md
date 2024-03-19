@@ -9,6 +9,7 @@ Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to
 ## [mainnet-v1.19.1-ob-1.7.0] - 2024-03-08
 
 ## Added
+
 - Whitelist sets now allow launchpad creator to manage whitelists in a
   more ergonomic manner by centralising the accounting of whitelisted addresses
   in the listing object.
@@ -18,37 +19,44 @@ Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to
   to be activated permissionlessly based on the on-chain runtime clock.
 
 ## Changed
+
 - Updated SUI version to 1.19.1
 
 ## [1.6.0-mainnet] - 2024-01-08
 
 ## Changed
+
 - Updated SUI version to 1.15.2
 
 ## [1.5.0-mainnet] - 2023-10-16
 
 ## Changed
+
 - Updated SUI version to 1.11.2
 
 ## [1.4.2-mainnet] - 2023-09-13
 
 ## Changed
+
 - Fix removing royalty shares
 
 ## [1.4.1-mainnet] - 2023-08-28
 
 ## Added
+
 - Royalty fee change endpoint
 
 ## [1.4.0-mainnet] - 2023-08-20
 
 ## Added
+
 - New edit commission endpoints
 - Allow Kiosk extensions
 
 ## [1.3.0-mainnet] - 2023-06-28
 
 ## Added
+
 - Permissionless transfer between owned kiosks
 - Immutable NFT borrow kiosk-accessors
 - Allow NFT borrow mut whilst NFT is exclusively authed
@@ -57,16 +65,19 @@ Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to
 - Listing Rebates feature
 
 ## Changed
+
 - Patched Dutch Auction NFT Kiosk distribution
 
 ## [1.2.1-mainnet] - 2023-06-27
 
 ## Added
+
 - Fallback logic for `inventory` in `Listing`. It checks first if Inventory is present in a dynamic field and if not it check if it's present in a dynamic object field
 
 ## [1.2.0-mainnet] - 2023-06-08
 
 ## Added
+
 - Added ability for an entity to delegate a transfer auth signature via `ob_kiosk::ob_kiosk::delegate_exclusive_auth`
 - LaunchpadV1 `Listing` and `Marketplace` admins can now delegate the management to members of their choice via `ob_launchpad::listing::add_member` and `ob_launchpad::listing::remove_member`
 - LaunchpadV1 Warehouse NFTs are stored now in `dof` instead of `df`
@@ -75,6 +86,7 @@ Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to
 - Added `liquidity_layer_v1::orderbook::market_buy_with_commission` and `liquidity_layer_v1::orderbook::market_sell_with_commission`
 
 ### Changed
+
 - Reverted royalty calculation over ask commission, as there was a certain risk of losing
   funds if the transaction was incorrectly orchestrated on the client side. Deprecates previously added `nft_protocol::royalty_strategy_bps::confirm_transfer_with_fees`.
 - Orderbook shared objects are now upgraded on the fly
@@ -88,17 +100,20 @@ Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to
 ## [1.1.0-mainnet] - 2023-05-10
 
 ### Added
+
 - Added `listing::admin_redeem_nft` to allow administrators to collect back NFTs that were sold
 - Added `fee_balance` modules in new Request Extensions package. Adds fees as balance from a trade as a dynamic field to `TransferRequest`. Adding this module to a separate package avoids having to upgrade request package as well and by consequence upgrading all OB Kiosk objects.
 - Deployed LiquidityLayer with a new Transfer Signer pattern. In a nutshell we had transfer_signer &UID to the struct in order to sign kiosk transfer authorisations. This allows for smooth future migrations as the UID can be detached from the old Orderbook into a new Orderbook struct.
 
 ### Changed
+
 - `royalty::distribute_royalties` is now an entry function thus allowing creators to more easily collect proceeds
 - Royalties are now calculated not only on the net-trade amount but also on the ask-commission amount. This means that to collect fees, the client must call `royalty_strategy::confirm_transfer_with_fees` or `royalty_strategy::confirm_transfer_with_balance_with_fees`
 
 ## [1.0.0-mainnet] - 2023-04-29
 
 ### Added
+
 - Init Orderbook tests
 - Launchpad V2 Tests
 - P2P list tests
@@ -107,6 +122,7 @@ Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to
 - All packages now have `init` and `pub` responsible for creating `Publisher` and `FrozenPublisher`
 
 ### Changed
+
 - Bugfix: Function `ob_launchpad::flat_fee::collect_proceeds_and_fees` was not dividing
   `10_000` to scale down basis points
 - BugFix: Fixed bug in SizedVec
@@ -123,6 +139,7 @@ Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to
 ## [1.0.0] - 2023-04-27
 
 ### Added
+
 - `Authlist` for P2P transfers
 - Finalised Launchpad V2
 - Interoperability with base Kiosk via `install_extension`, `uninstall_extension`
@@ -130,6 +147,7 @@ Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to
 - Withdraw Policy rule for withdrawing to authorised wallet addresses
 
 ### Changed
+
 - `TradeIntermediate` is no longer a standalone object, instead it is added
   to the `Orderbook` as a dynamic field
 - Splited protocol into separate packages
@@ -141,7 +159,8 @@ Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to
 ## [0.30.0] - 2023-04-20
 
 ### Added
-- Market orders in the  `orderbook`
+
+- Market orders in the `orderbook`
 - Tags is not longer a domain but a helper module for building Displays
 - Global `MintSupply` domain for collections
 - Added burn functions for domains
@@ -152,22 +171,25 @@ Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to
 - Session Tokens and Access Policy Actions for dNFTs
 
 ### Changed
+
 - Allowlists can now be used across different Policy/Request types
 - Launchpad V1 is now a separate contract
 - Removed `collection_type` from `MintCap`
 
-
 ## [0.29.0] - 2023-04-14
 
 ### Added
+
 - Added English Auctions to Launchpad
 
 ### Changed
+
 - Bugfix Kiosk: Signer must be owner in order to call `transfer_signed`
 
 ## [0.28.0] - 2023-04-04
 
 ### Added
+
 - Added `Quorum` as an abstraction for managin Administrative object
 - Added `AccessPolicy` to manage granular mutable access to NFTs in the `Kiosk`
 - Added `Launchpad` V2 with the plans of deprecating Launchpad V1 running up to mainnet
@@ -176,6 +198,7 @@ Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to
 - Added `CapAggregator` for grouping Capability objects of the same concern.
 
 ### Changed
+
 - Protocol Type Freedom: The wrapper `Nft<T>` is now optional
 - Kiosk integration: `Safe` has been deprecated in favor of `Kiosk`
 

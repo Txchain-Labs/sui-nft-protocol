@@ -1,4 +1,3 @@
-
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk"></a>
 
 # Module `0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b::ob_kiosk`
@@ -13,107 +12,106 @@ signatures but call functions in this module to access the functionality.
 We hide the <code>sui::kiosk::KioskOwnerCap</code> type, it cannot be accessed.
 
 Differences over the base object:
+
 - Once a OB <code>Kiosk</code> is owned by a user address, it can never change owner.
-This mitigates royalty enforcement avoidance by trading <code>KioskOwnerCap</code>s.
+  This mitigates royalty enforcement avoidance by trading <code>KioskOwnerCap</code>s.
 - Authorization with <code><a href="_sender">tx_context::sender</a></code> rather than an <code>OwnerCap</code>.
-This means one less object to keep track of.
+  This means one less object to keep track of.
 - Permissionless deposits configuration.
-This means deposits can be made without the owner signature.
+  This means deposits can be made without the owner signature.
 - NFTs can be optionally always live in <code>Kiosk</code>, hence creating an option
-for a bullet proof royalty enforcement.
-While the base type attempts to replicate this functionality, due to the
-necessity of using <code>KioskOwnerCap</code> for deposits, it is not possible to
-use it in context of trading where seller is the one matching the trade.
+  for a bullet proof royalty enforcement.
+  While the base type attempts to replicate this functionality, due to the
+  necessity of using <code>KioskOwnerCap</code> for deposits, it is not possible to
+  use it in context of trading where seller is the one matching the trade.
 - NFTs can be listed for a specific entity, be it a smart contract or a user.
-Only allowed entities (by the owner) can withdraw NFTs.
+  Only allowed entities (by the owner) can withdraw NFTs.
 - There is no <code>sui::kiosk::PurchaseCap</code> for exclusive listings.
-We provide a unified interface for exclusive and non-exclusive listing.
-Also, once less object to keep track of.
+  We provide a unified interface for exclusive and non-exclusive listing.
+  Also, once less object to keep track of.
 - We don't have functionality to list NFTs within the <code>Kiosk</code> itself.
-Rather, clients are encouraged to use the liquidity layer.
+  Rather, clients are encouraged to use the liquidity layer.
 - Permissionless <code>Kiosk</code> needs to signer, apps don't have to wrap both
-the <code>KioskOwnerCap</code> and the <code>Kiosk</code> in a smart contract.
+  the <code>KioskOwnerCap</code> and the <code>Kiosk</code> in a smart contract.
 
-
--  [Struct `VersionDfKey`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_VersionDfKey)
--  [Struct `Witness`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_Witness)
--  [Resource `OwnerToken`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_OwnerToken)
--  [Struct `NftRef`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_NftRef)
--  [Struct `DepositSetting`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_DepositSetting)
--  [Struct `NftRefsDfKey`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_NftRefsDfKey)
--  [Struct `KioskOwnerCapDfKey`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_KioskOwnerCapDfKey)
--  [Struct `DepositSettingDfKey`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_DepositSettingDfKey)
--  [Struct `AuthTransferRequestDfKey`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_AuthTransferRequestDfKey)
--  [Struct `OB_KIOSK`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_OB_KIOSK)
--  [Constants](#@Constants_0)
--  [Function `new`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_new)
--  [Function `create_for_sender`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_create_for_sender)
--  [Function `init_for_sender`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_init_for_sender)
--  [Function `new_for_address`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_new_for_address)
--  [Function `create_for_address`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_create_for_address)
--  [Function `init_for_address`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_init_for_address)
--  [Function `new_permissionless`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_new_permissionless)
--  [Function `create_permissionless`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_create_permissionless)
--  [Function `init_permissionless`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_init_permissionless)
--  [Function `set_permissionless_to_permissioned`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_set_permissionless_to_permissioned)
--  [Function `deposit`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_deposit)
--  [Function `deposit_batch`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_deposit_batch)
--  [Function `auth_transfer`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_auth_transfer)
--  [Function `auth_exclusive_transfer`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_auth_exclusive_transfer)
--  [Function `p2p_transfer`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_p2p_transfer)
--  [Function `p2p_transfer_and_create_target_kiosk`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_p2p_transfer_and_create_target_kiosk)
--  [Function `transfer_delegated`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_transfer_delegated)
--  [Function `transfer_signed`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_transfer_signed)
--  [Function `transfer_locked_nft`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_transfer_locked_nft)
--  [Function `withdraw_nft`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_withdraw_nft)
--  [Function `withdraw_nft_signed`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_withdraw_nft_signed)
--  [Function `transfer_between_owned`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_transfer_between_owned)
--  [Function `install_extension`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_install_extension)
--  [Function `uninstall_extension`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_uninstall_extension)
--  [Function `register_nft`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_register_nft)
--  [Function `transfer_nft_`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_transfer_nft_)
--  [Function `withdraw_nft_`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_withdraw_nft_)
--  [Function `get_nft`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_get_nft)
--  [Function `new_`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_new_)
--  [Function `set_transfer_request_auth`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_set_transfer_request_auth)
--  [Function `set_transfer_request_auth_`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_set_transfer_request_auth_)
--  [Function `get_transfer_request_auth`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_get_transfer_request_auth)
--  [Function `get_transfer_request_auth_`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_get_transfer_request_auth_)
--  [Function `delist_nft_as_owner`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_delist_nft_as_owner)
--  [Function `remove_auth_transfer_as_owner`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_remove_auth_transfer_as_owner)
--  [Function `remove_auth_transfer`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_remove_auth_transfer)
--  [Function `restrict_deposits`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_restrict_deposits)
--  [Function `enable_any_deposit`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_enable_any_deposit)
--  [Function `disable_deposits_of_collection`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_disable_deposits_of_collection)
--  [Function `enable_deposits_of_collection`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_enable_deposits_of_collection)
--  [Function `borrow_nft_mut`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_borrow_nft_mut)
--  [Function `return_nft`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_return_nft)
--  [Function `is_ob_kiosk`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_is_ob_kiosk)
--  [Function `can_deposit`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_can_deposit)
--  [Function `can_deposit_permissionlessly`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_can_deposit_permissionlessly)
--  [Function `assert_nft_type`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_nft_type)
--  [Function `assert_can_deposit`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_can_deposit)
--  [Function `assert_can_deposit_permissionlessly`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_can_deposit_permissionlessly)
--  [Function `assert_owner_address`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_owner_address)
--  [Function `assert_permission`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_permission)
--  [Function `assert_has_nft`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_has_nft)
--  [Function `assert_missing_ref`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_missing_ref)
--  [Function `assert_not_exclusively_listed`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_not_exclusively_listed)
--  [Function `assert_not_listed`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_not_listed)
--  [Function `assert_is_ob_kiosk`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_is_ob_kiosk)
--  [Function `assert_kiosk_id`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_kiosk_id)
--  [Function `assert_ref_not_exclusively_listed`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_ref_not_exclusively_listed)
--  [Function `assert_ref_not_listed`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_ref_not_listed)
--  [Function `check_entity_and_pop_ref`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_check_entity_and_pop_ref)
--  [Function `deposit_setting_mut`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_deposit_setting_mut)
--  [Function `nft_refs_mut`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_nft_refs_mut)
--  [Function `pop_cap`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_pop_cap)
--  [Function `set_cap`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_set_cap)
--  [Function `init`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_init)
--  [Function `assert_version`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_version)
--  [Function `migrate`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_migrate)
--  [Function `migrate_as_pub`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_migrate_as_pub)
-
+- [Struct `VersionDfKey`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_VersionDfKey)
+- [Struct `Witness`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_Witness)
+- [Resource `OwnerToken`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_OwnerToken)
+- [Struct `NftRef`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_NftRef)
+- [Struct `DepositSetting`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_DepositSetting)
+- [Struct `NftRefsDfKey`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_NftRefsDfKey)
+- [Struct `KioskOwnerCapDfKey`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_KioskOwnerCapDfKey)
+- [Struct `DepositSettingDfKey`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_DepositSettingDfKey)
+- [Struct `AuthTransferRequestDfKey`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_AuthTransferRequestDfKey)
+- [Struct `OB_KIOSK`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_OB_KIOSK)
+- [Constants](#@Constants_0)
+- [Function `new`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_new)
+- [Function `create_for_sender`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_create_for_sender)
+- [Function `init_for_sender`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_init_for_sender)
+- [Function `new_for_address`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_new_for_address)
+- [Function `create_for_address`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_create_for_address)
+- [Function `init_for_address`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_init_for_address)
+- [Function `new_permissionless`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_new_permissionless)
+- [Function `create_permissionless`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_create_permissionless)
+- [Function `init_permissionless`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_init_permissionless)
+- [Function `set_permissionless_to_permissioned`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_set_permissionless_to_permissioned)
+- [Function `deposit`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_deposit)
+- [Function `deposit_batch`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_deposit_batch)
+- [Function `auth_transfer`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_auth_transfer)
+- [Function `auth_exclusive_transfer`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_auth_exclusive_transfer)
+- [Function `p2p_transfer`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_p2p_transfer)
+- [Function `p2p_transfer_and_create_target_kiosk`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_p2p_transfer_and_create_target_kiosk)
+- [Function `transfer_delegated`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_transfer_delegated)
+- [Function `transfer_signed`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_transfer_signed)
+- [Function `transfer_locked_nft`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_transfer_locked_nft)
+- [Function `withdraw_nft`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_withdraw_nft)
+- [Function `withdraw_nft_signed`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_withdraw_nft_signed)
+- [Function `transfer_between_owned`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_transfer_between_owned)
+- [Function `install_extension`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_install_extension)
+- [Function `uninstall_extension`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_uninstall_extension)
+- [Function `register_nft`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_register_nft)
+- [Function `transfer_nft_`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_transfer_nft_)
+- [Function `withdraw_nft_`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_withdraw_nft_)
+- [Function `get_nft`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_get_nft)
+- [Function `new_`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_new_)
+- [Function `set_transfer_request_auth`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_set_transfer_request_auth)
+- [Function `set_transfer_request_auth_`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_set_transfer_request_auth_)
+- [Function `get_transfer_request_auth`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_get_transfer_request_auth)
+- [Function `get_transfer_request_auth_`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_get_transfer_request_auth_)
+- [Function `delist_nft_as_owner`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_delist_nft_as_owner)
+- [Function `remove_auth_transfer_as_owner`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_remove_auth_transfer_as_owner)
+- [Function `remove_auth_transfer`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_remove_auth_transfer)
+- [Function `restrict_deposits`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_restrict_deposits)
+- [Function `enable_any_deposit`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_enable_any_deposit)
+- [Function `disable_deposits_of_collection`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_disable_deposits_of_collection)
+- [Function `enable_deposits_of_collection`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_enable_deposits_of_collection)
+- [Function `borrow_nft_mut`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_borrow_nft_mut)
+- [Function `return_nft`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_return_nft)
+- [Function `is_ob_kiosk`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_is_ob_kiosk)
+- [Function `can_deposit`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_can_deposit)
+- [Function `can_deposit_permissionlessly`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_can_deposit_permissionlessly)
+- [Function `assert_nft_type`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_nft_type)
+- [Function `assert_can_deposit`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_can_deposit)
+- [Function `assert_can_deposit_permissionlessly`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_can_deposit_permissionlessly)
+- [Function `assert_owner_address`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_owner_address)
+- [Function `assert_permission`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_permission)
+- [Function `assert_has_nft`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_has_nft)
+- [Function `assert_missing_ref`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_missing_ref)
+- [Function `assert_not_exclusively_listed`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_not_exclusively_listed)
+- [Function `assert_not_listed`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_not_listed)
+- [Function `assert_is_ob_kiosk`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_is_ob_kiosk)
+- [Function `assert_kiosk_id`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_kiosk_id)
+- [Function `assert_ref_not_exclusively_listed`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_ref_not_exclusively_listed)
+- [Function `assert_ref_not_listed`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_ref_not_listed)
+- [Function `check_entity_and_pop_ref`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_check_entity_and_pop_ref)
+- [Function `deposit_setting_mut`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_deposit_setting_mut)
+- [Function `nft_refs_mut`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_nft_refs_mut)
+- [Function `pop_cap`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_pop_cap)
+- [Function `set_cap`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_set_cap)
+- [Function `init`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_init)
+- [Function `assert_version`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_version)
+- [Function `migrate`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_migrate)
+- [Function `migrate_as_pub`](#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_migrate_as_pub)
 
 <pre><code><b>use</b> <a href="">0x1::option</a>;
 <b>use</b> <a href="">0x1::string</a>;
@@ -137,22 +135,15 @@ the <code>KioskOwnerCap</code> and the <code>Kiosk</code> in a smart contract.
 <b>use</b> <a href="">0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43::withdraw_request</a>;
 </code></pre>
 
-
-
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_VersionDfKey"></a>
 
 ## Struct `VersionDfKey`
 
-
-
 <pre><code><b>struct</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_VersionDfKey">VersionDfKey</a> <b>has</b> <b>copy</b>, drop, store
 </code></pre>
 
-
-
 <details>
 <summary>Fields</summary>
-
 
 <dl>
 <dt>
@@ -162,7 +153,6 @@ the <code>KioskOwnerCap</code> and the <code>Kiosk</code> in a smart contract.
 
 </dd>
 </dl>
-
 
 </details>
 
@@ -173,15 +163,11 @@ the <code>KioskOwnerCap</code> and the <code>Kiosk</code> in a smart contract.
 In the context of Originbyte, we use this type to prove module access.
 Only this module can instantiate this type.
 
-
 <pre><code><b>struct</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_Witness">Witness</a> <b>has</b> drop
 </code></pre>
 
-
-
 <details>
 <summary>Fields</summary>
-
 
 <dl>
 <dt>
@@ -191,7 +177,6 @@ Only this module can instantiate this type.
 
 </dd>
 </dl>
-
 
 </details>
 
@@ -209,15 +194,11 @@ It serves purely as a discovery mechanism for off-chain clients.
 They get query objects with filter by this type, owned by a specific
 address.
 
-
 <pre><code><b>struct</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_OwnerToken">OwnerToken</a> <b>has</b> key
 </code></pre>
 
-
-
 <details>
 <summary>Fields</summary>
-
 
 <dl>
 <dt>
@@ -240,7 +221,6 @@ address.
 </dd>
 </dl>
 
-
 </details>
 
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_NftRef"></a>
@@ -253,15 +233,11 @@ Stored under <code><a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d765
 Holds info about NFT listing which is used to determine if an entity
 is allowed to redeem the NFT.
 
-
 <pre><code><b>struct</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_NftRef">NftRef</a> <b>has</b> drop, store
 </code></pre>
 
-
-
 <details>
 <summary>Fields</summary>
-
 
 <dl>
 <dt>
@@ -270,9 +246,10 @@ is allowed to redeem the NFT.
 <dd>
  Entities which can use their <code>&UID</code> to redeem the NFT.
 
- We use address to be more versatile since <code>ID</code> can be converted to
- address.
- This way we support signers to be auths.
+We use address to be more versatile since <code>ID</code> can be converted to
+address.
+This way we support signers to be auths.
+
 </dd>
 <dt>
 <code>is_exclusively_listed: bool</code>
@@ -283,7 +260,6 @@ is allowed to redeem the NFT.
 </dd>
 </dl>
 
-
 </details>
 
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_DepositSetting"></a>
@@ -293,15 +269,11 @@ is allowed to redeem the NFT.
 Configures how deposits without owner signing are limited
 Stored under <code><a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_DepositSettingDfKey">DepositSettingDfKey</a></code> as a dynamic field.
 
-
 <pre><code><b>struct</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_DepositSetting">DepositSetting</a> <b>has</b> drop, store
 </code></pre>
 
-
-
 <details>
 <summary>Fields</summary>
-
 
 <dl>
 <dt>
@@ -318,7 +290,6 @@ Stored under <code><a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d765
 </dd>
 </dl>
 
-
 </details>
 
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_NftRefsDfKey"></a>
@@ -327,15 +298,11 @@ Stored under <code><a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d765
 
 For <code>Kiosk::id</code> value <code>Table&lt;ID, <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_NftRef">NftRef</a>&gt;</code>
 
-
 <pre><code><b>struct</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_NftRefsDfKey">NftRefsDfKey</a> <b>has</b> <b>copy</b>, drop, store
 </code></pre>
 
-
-
 <details>
 <summary>Fields</summary>
-
 
 <dl>
 <dt>
@@ -345,7 +312,6 @@ For <code>Kiosk::id</code> value <code>Table&lt;ID, <a href="ob_kiosk.md#0x95a44
 
 </dd>
 </dl>
-
 
 </details>
 
@@ -355,15 +321,11 @@ For <code>Kiosk::id</code> value <code>Table&lt;ID, <a href="ob_kiosk.md#0x95a44
 
 For <code>Kiosk::id</code> value <code>KioskOwnerCap</code>
 
-
 <pre><code><b>struct</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_KioskOwnerCapDfKey">KioskOwnerCapDfKey</a> <b>has</b> <b>copy</b>, drop, store
 </code></pre>
 
-
-
 <details>
 <summary>Fields</summary>
-
 
 <dl>
 <dt>
@@ -373,7 +335,6 @@ For <code>Kiosk::id</code> value <code>KioskOwnerCap</code>
 
 </dd>
 </dl>
-
 
 </details>
 
@@ -383,15 +344,11 @@ For <code>Kiosk::id</code> value <code>KioskOwnerCap</code>
 
 For <code>Kiosk::id</code> value <code><a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_DepositSetting">DepositSetting</a></code>
 
-
 <pre><code><b>struct</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_DepositSettingDfKey">DepositSettingDfKey</a> <b>has</b> <b>copy</b>, drop, store
 </code></pre>
 
-
-
 <details>
 <summary>Fields</summary>
-
 
 <dl>
 <dt>
@@ -401,7 +358,6 @@ For <code>Kiosk::id</code> value <code><a href="ob_kiosk.md#0x95a441d389b07437d0
 
 </dd>
 </dl>
-
 
 </details>
 
@@ -411,15 +367,11 @@ For <code>Kiosk::id</code> value <code><a href="ob_kiosk.md#0x95a441d389b07437d0
 
 For <code>TransferRequest::metadata</code> value <code>TypeName</code>
 
-
 <pre><code><b>struct</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_AuthTransferRequestDfKey">AuthTransferRequestDfKey</a> <b>has</b> <b>copy</b>, drop, store
 </code></pre>
 
-
-
 <details>
 <summary>Fields</summary>
-
 
 <dl>
 <dt>
@@ -429,7 +381,6 @@ For <code>TransferRequest::metadata</code> value <code>TypeName</code>
 
 </dd>
 </dl>
-
 
 </details>
 
@@ -437,16 +388,11 @@ For <code>TransferRequest::metadata</code> value <code>TypeName</code>
 
 ## Struct `OB_KIOSK`
 
-
-
 <pre><code><b>struct</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_OB_KIOSK">OB_KIOSK</a> <b>has</b> drop
 </code></pre>
 
-
-
 <details>
 <summary>Fields</summary>
-
 
 <dl>
 <dt>
@@ -457,183 +403,127 @@ For <code>TransferRequest::metadata</code> value <code>TypeName</code>
 </dd>
 </dl>
 
-
 </details>
 
 <a name="@Constants_0"></a>
 
 ## Constants
 
-
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_ENotAuthorized"></a>
 
 The transfer is not authorized for the given entity
 
-
 <pre><code><b>const</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_ENotAuthorized">ENotAuthorized</a>: u64 = 8;
 </code></pre>
-
-
 
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_ENotOwner"></a>
 
 Trying to withdraw profits and sender is not owner
 
-
 <pre><code><b>const</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_ENotOwner">ENotOwner</a>: u64 = 7;
 </code></pre>
 
-
-
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_ENotUpgraded"></a>
-
-
 
 <pre><code><b>const</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_ENotUpgraded">ENotUpgraded</a>: u64 = 999;
 </code></pre>
 
-
-
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_EWrongVersion"></a>
-
-
 
 <pre><code><b>const</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_EWrongVersion">EWrongVersion</a>: u64 = 1000;
 </code></pre>
 
-
-
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_VERSION"></a>
-
-
 
 <pre><code><b>const</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_VERSION">VERSION</a>: u64 = 1;
 </code></pre>
-
-
 
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_ECannotDeposit"></a>
 
 Permissionless deposits are not enabled and sender is not the owner
 
-
 <pre><code><b>const</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_ECannotDeposit">ECannotDeposit</a>: u64 = 11;
 </code></pre>
-
-
 
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_ECannotUninstallWithCurrentBookeeping"></a>
 
 You're trying to uninstall the OriginByte extension but there are still
 entries in the <code>NftRefs</code> table
 
-
 <pre><code><b>const</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_ECannotUninstallWithCurrentBookeeping">ECannotUninstallWithCurrentBookeeping</a>: u64 = 14;
 </code></pre>
-
-
 
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_EIncorrectKioskId"></a>
 
 The ID provided does not match the Kiosk
 
-
 <pre><code><b>const</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_EIncorrectKioskId">EIncorrectKioskId</a>: u64 = 6;
 </code></pre>
-
-
 
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_EIncorrectOwnerToken"></a>
 
 The token provided does not correspond to the Kiosk
 
-
 <pre><code><b>const</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_EIncorrectOwnerToken">EIncorrectOwnerToken</a>: u64 = 13;
 </code></pre>
-
-
 
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_EKioskNotOriginByteVersion"></a>
 
 The provided Kiosk is not an OriginByte extension
 
-
 <pre><code><b>const</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_EKioskNotOriginByteVersion">EKioskNotOriginByteVersion</a>: u64 = 5;
 </code></pre>
-
-
 
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_EKioskNotPermissionless"></a>
 
 Error for operations which demand that the kiosk owner is set to
 <code><a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_PermissionlessAddr">PermissionlessAddr</a></code>
 
-
 <pre><code><b>const</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_EKioskNotPermissionless">EKioskNotPermissionless</a>: u64 = 9;
 </code></pre>
-
-
 
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_EMissingNft"></a>
 
 Trying to access an NFT that is not in the kiosk
 
-
 <pre><code><b>const</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_EMissingNft">EMissingNft</a>: u64 = 1;
 </code></pre>
-
-
 
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_ENftAlreadyExclusivelyListed"></a>
 
 NFT is already listed exclusively
 
-
 <pre><code><b>const</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_ENftAlreadyExclusivelyListed">ENftAlreadyExclusivelyListed</a>: u64 = 2;
 </code></pre>
-
-
 
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_ENftAlreadyListed"></a>
 
 NFT is already listed
 
-
 <pre><code><b>const</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_ENftAlreadyListed">ENftAlreadyListed</a>: u64 = 3;
 </code></pre>
-
-
 
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_ENftIsListedInBaseKiosk"></a>
 
 To register an NFT in the OB extension, it cannot be already listed in the
 base Kiosk
 
-
 <pre><code><b>const</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_ENftIsListedInBaseKiosk">ENftIsListedInBaseKiosk</a>: u64 = 12;
 </code></pre>
-
-
 
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_ENftTypeMismatch"></a>
 
 The NFT type does not match the desired type
 
-
 <pre><code><b>const</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_ENftTypeMismatch">ENftTypeMismatch</a>: u64 = 10;
 </code></pre>
-
-
 
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_EPermissionlessDepositsDisabled"></a>
 
 Trying to withdraw profits and sender is not owner
 
-
 <pre><code><b>const</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_EPermissionlessDepositsDisabled">EPermissionlessDepositsDisabled</a>: u64 = 4;
 </code></pre>
-
-
 
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_PermissionlessAddr"></a>
 
@@ -643,11 +533,8 @@ would normally verify that the owner is the signer are permissionless.
 This is useful for wrapping kiosk functionality in a smart contract.
 Create a new permissionless kiosk with <code>new_permissionless</code>.
 
-
 <pre><code><b>const</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_PermissionlessAddr">PermissionlessAddr</a>: <b>address</b> = b;
 </code></pre>
-
-
 
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_new"></a>
 
@@ -657,32 +544,27 @@ Creates a new Kiosk in the OB ecosystem.
 By default, all deposits are allowed permissionlessly.
 
 The scope of deposits can be controlled with
+
 - <code>restrict_deposits</code> to allow only owner to deposit;
 - <code>enable_any_deposit</code> to again set deposits to be permissionless;
 - <code>disable_deposits_of_collection</code> to prevent specific collection to
-deposit (ignored if all deposits enabled)
+  deposit (ignored if all deposits enabled)
 - <code>enable_deposits_of_collection</code> to again specific collection to deposit
-(useful in conjunction with restricting all deposits)
+  (useful in conjunction with restricting all deposits)
 
 Note that those collections which have restricted deposits will NOT be
 allowed to be transferred to the kiosk even on trades.
 
-
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_new">new</a>(ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): (<a href="_Kiosk">kiosk::Kiosk</a>, <a href="_ID">object::ID</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_new">new</a>(ctx: &<b>mut</b> TxContext): (Kiosk, ID) {
     <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_new_for_address">new_for_address</a>(<a href="_sender">tx_context::sender</a>(ctx), ctx)
 }
 </code></pre>
-
-
 
 </details>
 
@@ -692,15 +574,11 @@ allowed to be transferred to the kiosk even on trades.
 
 Calls <code>new</code> and shares the kiosk
 
-
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_create_for_sender">create_for_sender</a>(ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): (<a href="_ID">object::ID</a>, <a href="_ID">object::ID</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_create_for_sender">create_for_sender</a>(ctx: &<b>mut</b> TxContext): (ID, ID) {
     <b>let</b> (<a href="">kiosk</a>, token_id) = <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_new">new</a>(ctx);
@@ -711,31 +589,22 @@ Calls <code>new</code> and shares the kiosk
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_init_for_sender"></a>
 
 ## Function `init_for_sender`
 
-
-
 <pre><code><b>public</b> entry <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_init_for_sender">init_for_sender</a>(ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_init_for_sender">init_for_sender</a>(ctx: &<b>mut</b> TxContext) {
     <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_create_for_sender">create_for_sender</a>(ctx);
 }
 </code></pre>
-
-
 
 </details>
 
@@ -743,16 +612,11 @@ Calls <code>new</code> and shares the kiosk
 
 ## Function `new_for_address`
 
-
-
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_new_for_address">new_for_address</a>(owner: <b>address</b>, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): (<a href="_Kiosk">kiosk::Kiosk</a>, <a href="_ID">object::ID</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_new_for_address">new_for_address</a>(owner: <b>address</b>, ctx: &<b>mut</b> TxContext): (Kiosk, ID) {
     <b>let</b> <a href="">kiosk</a> = <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_new_">new_</a>(owner, ctx);
@@ -773,24 +637,17 @@ Calls <code>new</code> and shares the kiosk
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_create_for_address"></a>
 
 ## Function `create_for_address`
 
-
-
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_create_for_address">create_for_address</a>(owner: <b>address</b>, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): (<a href="_ID">object::ID</a>, <a href="_ID">object::ID</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_create_for_address">create_for_address</a>(owner: <b>address</b>, ctx: &<b>mut</b> TxContext): (ID, ID) {
     <b>let</b> (<a href="">kiosk</a>, token_id) = <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_new_for_address">new_for_address</a>(owner, ctx);
@@ -801,31 +658,22 @@ Calls <code>new</code> and shares the kiosk
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_init_for_address"></a>
 
 ## Function `init_for_address`
 
-
-
 <pre><code><b>public</b> entry <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_init_for_address">init_for_address</a>(owner: <b>address</b>, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_init_for_address">init_for_address</a>(owner: <b>address</b>, ctx: &<b>mut</b> TxContext) {
     <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_create_for_address">create_for_address</a>(owner, ctx);
 }
 </code></pre>
-
-
 
 </details>
 
@@ -838,22 +686,16 @@ are callable.
 This means that the kiosk MUST be wrapped.
 Otherwise, anyone could call those functions.
 
-
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_new_permissionless">new_permissionless</a>(ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): <a href="_Kiosk">kiosk::Kiosk</a>
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_new_permissionless">new_permissionless</a>(ctx: &<b>mut</b> TxContext): Kiosk {
     <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_new_">new_</a>(<a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_PermissionlessAddr">PermissionlessAddr</a>, ctx)
 }
 </code></pre>
-
-
 
 </details>
 
@@ -861,16 +703,11 @@ Otherwise, anyone could call those functions.
 
 ## Function `create_permissionless`
 
-
-
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_create_permissionless">create_permissionless</a>(ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): <a href="_ID">object::ID</a>
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_create_permissionless">create_permissionless</a>(ctx: &<b>mut</b> TxContext): ID {
     <b>let</b> <a href="">kiosk</a> = <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_new_permissionless">new_permissionless</a>(ctx);
@@ -881,31 +718,22 @@ Otherwise, anyone could call those functions.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_init_permissionless"></a>
 
 ## Function `init_permissionless`
 
-
-
 <pre><code><b>public</b> entry <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_init_permissionless">init_permissionless</a>(ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_init_permissionless">init_permissionless</a>(ctx: &<b>mut</b> TxContext) {
     <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_create_permissionless">create_permissionless</a>(ctx);
 }
 </code></pre>
-
-
 
 </details>
 
@@ -922,15 +750,11 @@ permissionless.
 The address that is set as the owner of the kiosk is the address that
 will remain the owner forever.
 
-
 <pre><code><b>public</b> entry <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_set_permissionless_to_permissioned">set_permissionless_to_permissioned</a>(self: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, user: <b>address</b>, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_set_permissionless_to_permissioned">set_permissionless_to_permissioned</a>(
     self: &<b>mut</b> Kiosk, user: <b>address</b>, ctx: &<b>mut</b> TxContext
@@ -948,8 +772,6 @@ will remain the owner forever.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_deposit"></a>
@@ -960,15 +782,11 @@ Always works if the sender is the owner.
 Fails if permissionless deposits are not enabled for <code>T</code>.
 See <code><a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_DepositSetting">DepositSetting</a></code>.
 
-
 <pre><code><b>public</b> entry <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_deposit">deposit</a>&lt;T: store, key&gt;(self: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, nft: T, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_deposit">deposit</a>&lt;T: key + store&gt;(
     self: &<b>mut</b> Kiosk, nft: T, ctx: &<b>mut</b> TxContext,
@@ -991,24 +809,17 @@ See <code><a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_deposit_batch"></a>
 
 ## Function `deposit_batch`
 
-
-
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_deposit_batch">deposit_batch</a>&lt;T: store, key&gt;(self: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, nfts: <a href="">vector</a>&lt;T&gt;, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_deposit_batch">deposit_batch</a>&lt;T: key + store&gt;(
     self: &<b>mut</b> Kiosk, nfts: <a href="">vector</a>&lt;T&gt;, ctx: &<b>mut</b> TxContext,
@@ -1041,8 +852,6 @@ See <code><a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_auth_transfer"></a>
@@ -1056,15 +865,11 @@ must be the signer in <code>transfer_signed</code>.
 Use the <code><a href="_id_to_address">object::id_to_address</a></code> to authorize entities which only live
 on chain.
 
-
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_auth_transfer">auth_transfer</a>(self: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, nft_id: <a href="_ID">object::ID</a>, entity: <b>address</b>, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_auth_transfer">auth_transfer</a>(
     self: &<b>mut</b> Kiosk,
@@ -1082,8 +887,6 @@ on chain.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_auth_exclusive_transfer"></a>
@@ -1099,15 +902,11 @@ Only the given entity can then delist their listing.
 This is a dangerous action to be used only with audited contracts
 because the NFT is locked until given entity agrees to release it.
 
-
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_auth_exclusive_transfer">auth_exclusive_transfer</a>(self: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, nft_id: <a href="_ID">object::ID</a>, entity_id: &<a href="_UID">object::UID</a>, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_auth_exclusive_transfer">auth_exclusive_transfer</a>(
     self: &<b>mut</b> Kiosk,
@@ -1126,8 +925,6 @@ because the NFT is locked until given entity agrees to release it.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_p2p_transfer"></a>
@@ -1140,15 +937,11 @@ having to pay royalties.
 
 This will always work if the signer is the owner of the kiosk.
 
-
 <pre><code>entry <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_p2p_transfer">p2p_transfer</a>&lt;T: store, key&gt;(source: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, target: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, nft_id: <a href="_ID">object::ID</a>, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code>entry <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_p2p_transfer">p2p_transfer</a>&lt;T: key + store&gt;(
     source: &<b>mut</b> Kiosk,
@@ -1171,24 +964,17 @@ This will always work if the signer is the owner of the kiosk.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_p2p_transfer_and_create_target_kiosk"></a>
 
 ## Function `p2p_transfer_and_create_target_kiosk`
 
-
-
 <pre><code>entry <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_p2p_transfer_and_create_target_kiosk">p2p_transfer_and_create_target_kiosk</a>&lt;T: store, key&gt;(source: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, target: <b>address</b>, nft_id: <a href="_ID">object::ID</a>, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): (<a href="_ID">object::ID</a>, <a href="_ID">object::ID</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code>entry <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_p2p_transfer_and_create_target_kiosk">p2p_transfer_and_create_target_kiosk</a>&lt;T: key + store&gt;(
     source: &<b>mut</b> Kiosk,
@@ -1208,8 +994,6 @@ This will always work if the signer is the owner of the kiosk.
     (target_kiosk_id, target_token)
 }
 </code></pre>
-
-
 
 </details>
 
@@ -1233,15 +1017,11 @@ We adhere to the deposit rules of the target kiosk.
 If we didn't, it'd be pointless to even have them since a spammer
 could simply simulate a transfer and select any target.
 
-
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_transfer_delegated">transfer_delegated</a>&lt;T: store, key&gt;(source: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, target: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, nft_id: <a href="_ID">object::ID</a>, entity_id: &<a href="_UID">object::UID</a>, price: u64, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): <a href="_TransferRequest">transfer_request::TransferRequest</a>&lt;T&gt;
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_transfer_delegated">transfer_delegated</a>&lt;T: key + store&gt;(
     source: &<b>mut</b> Kiosk,
@@ -1259,8 +1039,6 @@ could simply simulate a transfer and select any target.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_transfer_signed"></a>
@@ -1272,15 +1050,11 @@ Similar to <code>transfer_delegated</code> but instead of proving origin with
 
 This will always work if the signer is the owner of the kiosk.
 
-
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_transfer_signed">transfer_signed</a>&lt;T: store, key&gt;(source: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, target: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, nft_id: <a href="_ID">object::ID</a>, price: u64, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): <a href="_TransferRequest">transfer_request::TransferRequest</a>&lt;T&gt;
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_transfer_signed">transfer_signed</a>&lt;T: key + store&gt;(
     source: &<b>mut</b> Kiosk,
@@ -1297,24 +1071,17 @@ This will always work if the signer is the owner of the kiosk.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_transfer_locked_nft"></a>
 
 ## Function `transfer_locked_nft`
 
-
-
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_transfer_locked_nft">transfer_locked_nft</a>&lt;T: store, key&gt;(source: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, target: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, nft_id: <a href="_ID">object::ID</a>, entity_id: &<a href="_UID">object::UID</a>, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): <a href="_TransferRequest">transfer_request::TransferRequest</a>&lt;T&gt;
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_transfer_locked_nft">transfer_locked_nft</a>&lt;T: key + store&gt;(
     source: &<b>mut</b> Kiosk,
@@ -1340,8 +1107,6 @@ This will always work if the signer is the owner of the kiosk.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_withdraw_nft"></a>
@@ -1358,15 +1123,11 @@ You almost certainly want to use <code>transfer_delegated</code>.
 
 Handy for migrations.
 
-
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_withdraw_nft">withdraw_nft</a>&lt;T: store, key&gt;(self: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, nft_id: <a href="_ID">object::ID</a>, entity_id: &<a href="_UID">object::UID</a>, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): (T, <a href="_WithdrawRequest">withdraw_request::WithdrawRequest</a>&lt;T&gt;)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_withdraw_nft">withdraw_nft</a>&lt;T: key + store&gt;(
     self: &<b>mut</b> Kiosk,
@@ -1380,8 +1141,6 @@ Handy for migrations.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_withdraw_nft_signed"></a>
@@ -1393,15 +1152,11 @@ The owner can always initiate a withdraw.
 
 A withdraw can be prevented with an allowlist.
 
-
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_withdraw_nft_signed">withdraw_nft_signed</a>&lt;T: store, key&gt;(self: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, nft_id: <a href="_ID">object::ID</a>, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): (T, <a href="_WithdrawRequest">withdraw_request::WithdrawRequest</a>&lt;T&gt;)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_withdraw_nft_signed">withdraw_nft_signed</a>&lt;T: key + store&gt;(
     self: &<b>mut</b> Kiosk,
@@ -1414,8 +1169,6 @@ A withdraw can be prevented with an allowlist.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_transfer_between_owned"></a>
@@ -1424,15 +1177,11 @@ A withdraw can be prevented with an allowlist.
 
 If both kiosks are owned by the same user, then we allow free transfer.
 
-
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_transfer_between_owned">transfer_between_owned</a>&lt;T: store, key&gt;(source: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, target: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, nft_id: <a href="_ID">object::ID</a>, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_transfer_between_owned">transfer_between_owned</a>&lt;T: key + store&gt;(
     source: &<b>mut</b> Kiosk,
@@ -1460,24 +1209,17 @@ If both kiosks are owned by the same user, then we allow free transfer.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_install_extension"></a>
 
 ## Function `install_extension`
 
-
-
 <pre><code><b>public</b> entry <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_install_extension">install_extension</a>(self: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, kiosk_cap: <a href="_KioskOwnerCap">kiosk::KioskOwnerCap</a>, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_install_extension">install_extension</a>(
     self: &<b>mut</b> Kiosk,
@@ -1502,24 +1244,17 @@ If both kiosks are owned by the same user, then we allow free transfer.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_uninstall_extension"></a>
 
 ## Function `uninstall_extension`
 
-
-
 <pre><code><b>public</b> entry <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_uninstall_extension">uninstall_extension</a>(self: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, owner_token: <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_OwnerToken">ob_kiosk::OwnerToken</a>, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_uninstall_extension">uninstall_extension</a>(
     self: &<b>mut</b> Kiosk,
@@ -1552,24 +1287,17 @@ If both kiosks are owned by the same user, then we allow free transfer.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_register_nft"></a>
 
 ## Function `register_nft`
 
-
-
 <pre><code><b>public</b> entry <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_register_nft">register_nft</a>&lt;T: key&gt;(self: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, nft_id: <a href="_ID">object::ID</a>, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_register_nft">register_nft</a>&lt;T: key&gt;(
     self: &<b>mut</b> Kiosk,
@@ -1595,8 +1323,6 @@ If both kiosks are owned by the same user, then we allow free transfer.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_transfer_nft_"></a>
@@ -1605,15 +1331,11 @@ If both kiosks are owned by the same user, then we allow free transfer.
 
 After authorization that the call is permitted, gets the NFT.
 
-
 <pre><code><b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_transfer_nft_">transfer_nft_</a>&lt;T: store, key&gt;(self: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, nft_id: <a href="_ID">object::ID</a>, originator: <b>address</b>, price: u64, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): (T, <a href="_TransferRequest">transfer_request::TransferRequest</a>&lt;T&gt;)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_transfer_nft_">transfer_nft_</a>&lt;T: key + store&gt;(
     self: &<b>mut</b> Kiosk,
@@ -1628,8 +1350,6 @@ After authorization that the call is permitted, gets the NFT.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_withdraw_nft_"></a>
@@ -1638,15 +1358,11 @@ After authorization that the call is permitted, gets the NFT.
 
 After authorization that the call is permitted, gets the NFT.
 
-
 <pre><code><b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_withdraw_nft_">withdraw_nft_</a>&lt;T: store, key&gt;(self: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, nft_id: <a href="_ID">object::ID</a>, originator: <b>address</b>, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): (T, <a href="_WithdrawRequest">withdraw_request::WithdrawRequest</a>&lt;T&gt;)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_withdraw_nft_">withdraw_nft_</a>&lt;T: key + store&gt;(
     self: &<b>mut</b> Kiosk,
@@ -1660,24 +1376,17 @@ After authorization that the call is permitted, gets the NFT.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_get_nft"></a>
 
 ## Function `get_nft`
 
-
-
 <pre><code><b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_get_nft">get_nft</a>&lt;T: store, key&gt;(self: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, nft_id: <a href="_ID">object::ID</a>, originator: <b>address</b>, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): T
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_get_nft">get_nft</a>&lt;T: key + store&gt;(
     self: &<b>mut</b> Kiosk,
@@ -1695,24 +1404,17 @@ After authorization that the call is permitted, gets the NFT.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_new_"></a>
 
 ## Function `new_`
 
-
-
 <pre><code><b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_new_">new_</a>(owner: <b>address</b>, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): <a href="_Kiosk">kiosk::Kiosk</a>
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_new_">new_</a>(owner: <b>address</b>, ctx: &<b>mut</b> TxContext): Kiosk {
     <b>let</b> (<a href="">kiosk</a>, kiosk_cap) = <a href="_new">kiosk::new</a>(ctx);
@@ -1731,8 +1433,6 @@ After authorization that the call is permitted, gets the NFT.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_set_transfer_request_auth"></a>
@@ -1748,15 +1448,11 @@ Allowlist could also be implemented with a UID but that would require
 that the trading contracts maintain a global object.
 In some cases this is doable, in other it's inconvenient.
 
-
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_set_transfer_request_auth">set_transfer_request_auth</a>&lt;T, Auth&gt;(req: &<b>mut</b> <a href="_TransferRequest">transfer_request::TransferRequest</a>&lt;T&gt;, _auth: &Auth)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_set_transfer_request_auth">set_transfer_request_auth</a>&lt;T, Auth&gt;(
     req: &<b>mut</b> TransferRequest&lt;T&gt;, _auth: &Auth,
@@ -1766,24 +1462,17 @@ In some cases this is doable, in other it's inconvenient.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_set_transfer_request_auth_"></a>
 
 ## Function `set_transfer_request_auth_`
 
-
-
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_set_transfer_request_auth_">set_transfer_request_auth_</a>&lt;T, P, Auth&gt;(req: &<b>mut</b> <a href="_RequestBody">request::RequestBody</a>&lt;<a href="_WithNft">request::WithNft</a>&lt;T, P&gt;&gt;, _auth: &Auth)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_set_transfer_request_auth_">set_transfer_request_auth_</a>&lt;T, P, Auth&gt;(
     req: &<b>mut</b> RequestBody&lt;WithNft&lt;T, P&gt;&gt;, _auth: &Auth,
@@ -1793,8 +1482,6 @@ In some cases this is doable, in other it's inconvenient.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_get_transfer_request_auth"></a>
@@ -1803,23 +1490,17 @@ In some cases this is doable, in other it's inconvenient.
 
 What's the authority that created this request?
 
-
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_get_transfer_request_auth">get_transfer_request_auth</a>&lt;T&gt;(req: &<a href="_TransferRequest">transfer_request::TransferRequest</a>&lt;T&gt;): &<a href="_TypeName">type_name::TypeName</a>
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_get_transfer_request_auth">get_transfer_request_auth</a>&lt;T&gt;(req: &TransferRequest&lt;T&gt;): &TypeName {
     <b>let</b> metadata = <a href="_metadata">transfer_request::metadata</a>(req);
     df::borrow(metadata, <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_AuthTransferRequestDfKey">AuthTransferRequestDfKey</a> {})
 }
 </code></pre>
-
-
 
 </details>
 
@@ -1829,15 +1510,11 @@ What's the authority that created this request?
 
 What's the authority that created this request?
 
-
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_get_transfer_request_auth_">get_transfer_request_auth_</a>&lt;T, P&gt;(req: &<a href="_RequestBody">request::RequestBody</a>&lt;<a href="_WithNft">request::WithNft</a>&lt;T, P&gt;&gt;): &<a href="_TypeName">type_name::TypeName</a>
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_get_transfer_request_auth_">get_transfer_request_auth_</a>&lt;T, P&gt;(
     req: &RequestBody&lt;WithNft&lt;T, P&gt;&gt;,
@@ -1846,8 +1523,6 @@ What's the authority that created this request?
     df::borrow(metadata, <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_AuthTransferRequestDfKey">AuthTransferRequestDfKey</a> {})
 }
 </code></pre>
-
-
 
 </details>
 
@@ -1858,15 +1533,11 @@ What's the authority that created this request?
 Removes _all_ entities from access to the NFT.
 Cannot be performed if the NFT is exclusively listed.
 
-
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_delist_nft_as_owner">delist_nft_as_owner</a>(self: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, nft_id: <a href="_ID">object::ID</a>, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_delist_nft_as_owner">delist_nft_as_owner</a>(
     self: &<b>mut</b> Kiosk, nft_id: ID, ctx: &<b>mut</b> TxContext,
@@ -1881,8 +1552,6 @@ Cannot be performed if the NFT is exclusively listed.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_remove_auth_transfer_as_owner"></a>
@@ -1892,15 +1561,11 @@ Cannot be performed if the NFT is exclusively listed.
 Removes a specific NFT from access to the NFT.
 Cannot be performed if the NFT is exclusively listed.
 
-
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_remove_auth_transfer_as_owner">remove_auth_transfer_as_owner</a>(self: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, nft_id: <a href="_ID">object::ID</a>, entity: <b>address</b>, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_remove_auth_transfer_as_owner">remove_auth_transfer_as_owner</a>(
     self: &<b>mut</b> Kiosk, nft_id: ID, entity: <b>address</b>, ctx: &<b>mut</b> TxContext,
@@ -1915,8 +1580,6 @@ Cannot be performed if the NFT is exclusively listed.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_remove_auth_transfer"></a>
@@ -1925,15 +1588,11 @@ Cannot be performed if the NFT is exclusively listed.
 
 This is the only path to delist an exclusively listed NFT.
 
-
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_remove_auth_transfer">remove_auth_transfer</a>(self: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, nft_id: <a href="_ID">object::ID</a>, entity: &<a href="_UID">object::UID</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_remove_auth_transfer">remove_auth_transfer</a>(
     self: &<b>mut</b> Kiosk, nft_id: ID, entity: &UID,
@@ -1949,8 +1608,6 @@ This is the only path to delist an exclusively listed NFT.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_restrict_deposits"></a>
@@ -1959,15 +1616,11 @@ This is the only path to delist an exclusively listed NFT.
 
 Only owner or allowlisted collections can deposit.
 
-
 <pre><code><b>public</b> entry <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_restrict_deposits">restrict_deposits</a>(self: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_restrict_deposits">restrict_deposits</a>(
     self: &<b>mut</b> Kiosk, ctx: &<b>mut</b> TxContext,
@@ -1980,8 +1633,6 @@ Only owner or allowlisted collections can deposit.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_enable_any_deposit"></a>
@@ -1990,15 +1641,11 @@ Only owner or allowlisted collections can deposit.
 
 No restriction on deposits.
 
-
 <pre><code><b>public</b> entry <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_enable_any_deposit">enable_any_deposit</a>(self: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_enable_any_deposit">enable_any_deposit</a>(
     self: &<b>mut</b> Kiosk, ctx: &<b>mut</b> TxContext,
@@ -2010,8 +1657,6 @@ No restriction on deposits.
     settings.enable_any_deposit = <b>true</b>;
 }
 </code></pre>
-
-
 
 </details>
 
@@ -2025,15 +1670,11 @@ collection.
 However, if the flag <code>DepositSetting::enable_any_deposit</code> is set to
 true, then it takes precedence.
 
-
 <pre><code><b>public</b> entry <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_disable_deposits_of_collection">disable_deposits_of_collection</a>&lt;C&gt;(self: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_disable_deposits_of_collection">disable_deposits_of_collection</a>&lt;C&gt;(
     self: &<b>mut</b> Kiosk, ctx: &<b>mut</b> TxContext,
@@ -2047,8 +1688,6 @@ true, then it takes precedence.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_enable_deposits_of_collection"></a>
@@ -2061,15 +1700,11 @@ collection.
 However, if the flag <code>Kiosk::enable_any_deposit</code> is set to
 true, then it takes precedence anyway.
 
-
 <pre><code><b>public</b> entry <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_enable_deposits_of_collection">enable_deposits_of_collection</a>&lt;C&gt;(self: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_enable_deposits_of_collection">enable_deposits_of_collection</a>&lt;C&gt;(
     self: &<b>mut</b> Kiosk, ctx: &<b>mut</b> TxContext,
@@ -2083,24 +1718,17 @@ true, then it takes precedence anyway.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_borrow_nft_mut"></a>
 
 ## Function `borrow_nft_mut`
 
-
-
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_borrow_nft_mut">borrow_nft_mut</a>&lt;T: store, key&gt;(self: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, nft_id: <a href="_ID">object::ID</a>, field: <a href="_Option">option::Option</a>&lt;<a href="_TypeName">type_name::TypeName</a>&gt;, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): <a href="_BorrowRequest">borrow_request::BorrowRequest</a>&lt;<a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_Witness">ob_kiosk::Witness</a>, T&gt;
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_borrow_nft_mut">borrow_nft_mut</a>&lt;T: key + store&gt;(
     self: &<b>mut</b> Kiosk,
@@ -2120,24 +1748,17 @@ true, then it takes precedence anyway.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_return_nft"></a>
 
 ## Function `return_nft`
 
-
-
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_return_nft">return_nft</a>&lt;OTW: drop, T: store, key&gt;(self: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, borrowed_nft: <a href="_BorrowRequest">borrow_request::BorrowRequest</a>&lt;<a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_Witness">ob_kiosk::Witness</a>, T&gt;, policy: &<a href="_Policy">request::Policy</a>&lt;<a href="_WithNft">request::WithNft</a>&lt;T, <a href="_BORROW_REQ">borrow_request::BORROW_REQ</a>&gt;&gt;)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_return_nft">return_nft</a>&lt;OTW: drop, T: key + store&gt;(
     self: &<b>mut</b> Kiosk,
@@ -2154,31 +1775,22 @@ true, then it takes precedence anyway.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_is_ob_kiosk"></a>
 
 ## Function `is_ob_kiosk`
 
-
-
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_is_ob_kiosk">is_ob_kiosk</a>(self: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>): bool
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_is_ob_kiosk">is_ob_kiosk</a>(self: &<b>mut</b> Kiosk): bool {
     df::exists_(ext(self), <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_NftRefsDfKey">NftRefsDfKey</a> {})
 }
 </code></pre>
-
-
 
 </details>
 
@@ -2188,22 +1800,16 @@ true, then it takes precedence anyway.
 
 Either sender is owner or permissionless deposits of <code>T</code> enabled.
 
-
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_can_deposit">can_deposit</a>&lt;T&gt;(self: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): bool
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_can_deposit">can_deposit</a>&lt;T&gt;(self: &<b>mut</b> Kiosk, ctx: &<b>mut</b> TxContext): bool {
     sender(ctx) == <a href="_owner">kiosk::owner</a>(self) || <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_can_deposit_permissionlessly">can_deposit_permissionlessly</a>&lt;T&gt;(self)
 }
 </code></pre>
-
-
 
 </details>
 
@@ -2211,16 +1817,11 @@ Either sender is owner or permissionless deposits of <code>T</code> enabled.
 
 ## Function `can_deposit_permissionlessly`
 
-
-
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_can_deposit_permissionlessly">can_deposit_permissionlessly</a>&lt;T&gt;(self: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>): bool
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_can_deposit_permissionlessly">can_deposit_permissionlessly</a>&lt;T&gt;(self: &<b>mut</b> Kiosk): bool {
     <b>if</b> (<a href="_owner">kiosk::owner</a>(self) == <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_PermissionlessAddr">PermissionlessAddr</a>) {
@@ -2236,31 +1837,22 @@ Either sender is owner or permissionless deposits of <code>T</code> enabled.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_nft_type"></a>
 
 ## Function `assert_nft_type`
 
-
-
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_nft_type">assert_nft_type</a>&lt;T: store, key&gt;(self: &<a href="_Kiosk">kiosk::Kiosk</a>, nft_id: <a href="_ID">object::ID</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_nft_type">assert_nft_type</a>&lt;T: key + store&gt;(self: &Kiosk, nft_id: ID) {
     <b>assert</b>!(<a href="_has_item_with_type">kiosk::has_item_with_type</a>&lt;T&gt;(self, nft_id), <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_ENftTypeMismatch">ENftTypeMismatch</a>);
 }
 </code></pre>
-
-
 
 </details>
 
@@ -2268,23 +1860,16 @@ Either sender is owner or permissionless deposits of <code>T</code> enabled.
 
 ## Function `assert_can_deposit`
 
-
-
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_can_deposit">assert_can_deposit</a>&lt;T&gt;(self: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_can_deposit">assert_can_deposit</a>&lt;T&gt;(self: &<b>mut</b> Kiosk, ctx: &<b>mut</b> TxContext) {
     <b>assert</b>!(<a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_can_deposit">can_deposit</a>&lt;T&gt;(self, ctx), <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_ECannotDeposit">ECannotDeposit</a>);
 }
 </code></pre>
-
-
 
 </details>
 
@@ -2292,23 +1877,16 @@ Either sender is owner or permissionless deposits of <code>T</code> enabled.
 
 ## Function `assert_can_deposit_permissionlessly`
 
-
-
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_can_deposit_permissionlessly">assert_can_deposit_permissionlessly</a>&lt;T&gt;(self: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_can_deposit_permissionlessly">assert_can_deposit_permissionlessly</a>&lt;T&gt;(self: &<b>mut</b> Kiosk) {
     <b>assert</b>!(<a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_can_deposit_permissionlessly">can_deposit_permissionlessly</a>&lt;T&gt;(self), <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_EPermissionlessDepositsDisabled">EPermissionlessDepositsDisabled</a>);
 }
 </code></pre>
-
-
 
 </details>
 
@@ -2316,23 +1894,16 @@ Either sender is owner or permissionless deposits of <code>T</code> enabled.
 
 ## Function `assert_owner_address`
 
-
-
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_owner_address">assert_owner_address</a>(self: &<a href="_Kiosk">kiosk::Kiosk</a>, owner: <b>address</b>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_owner_address">assert_owner_address</a>(self: &Kiosk, owner: <b>address</b>) {
     <b>assert</b>!(<a href="_owner">kiosk::owner</a>(self) == owner, <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_ENotOwner">ENotOwner</a>);
 }
 </code></pre>
-
-
 
 </details>
 
@@ -2342,15 +1913,11 @@ Either sender is owner or permissionless deposits of <code>T</code> enabled.
 
 Either the kiosk is permissionless, or the sender is the owner.
 
-
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_permission">assert_permission</a>(self: &<a href="_Kiosk">kiosk::Kiosk</a>, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_permission">assert_permission</a>(self: &Kiosk, ctx: &<b>mut</b> TxContext) {
     <b>let</b> owner = <a href="_owner">kiosk::owner</a>(self);
@@ -2358,31 +1925,22 @@ Either the kiosk is permissionless, or the sender is the owner.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_has_nft"></a>
 
 ## Function `assert_has_nft`
 
-
-
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_has_nft">assert_has_nft</a>(self: &<a href="_Kiosk">kiosk::Kiosk</a>, nft_id: <a href="_ID">object::ID</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_has_nft">assert_has_nft</a>(self: &Kiosk, nft_id: ID) {
     <b>assert</b>!(<a href="_has_item">kiosk::has_item</a>(self, nft_id), <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_EMissingNft">EMissingNft</a>)
 }
 </code></pre>
-
-
 
 </details>
 
@@ -2390,23 +1948,16 @@ Either the kiosk is permissionless, or the sender is the owner.
 
 ## Function `assert_missing_ref`
 
-
-
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_missing_ref">assert_missing_ref</a>(refs: &<a href="_Table">table::Table</a>&lt;<a href="_ID">object::ID</a>, <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_NftRef">ob_kiosk::NftRef</a>&gt;, nft_id: <a href="_ID">object::ID</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_missing_ref">assert_missing_ref</a>(refs: &Table&lt;ID, <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_NftRef">NftRef</a>&gt;, nft_id: ID) {
     <b>assert</b>!(!<a href="_contains">table::contains</a>(refs, nft_id), <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_EMissingNft">EMissingNft</a>)
 }
 </code></pre>
-
-
 
 </details>
 
@@ -2414,16 +1965,11 @@ Either the kiosk is permissionless, or the sender is the owner.
 
 ## Function `assert_not_exclusively_listed`
 
-
-
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_not_exclusively_listed">assert_not_exclusively_listed</a>(self: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, nft_id: <a href="_ID">object::ID</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_not_exclusively_listed">assert_not_exclusively_listed</a>(
     self: &<b>mut</b> Kiosk, nft_id: ID
@@ -2434,24 +1980,17 @@ Either the kiosk is permissionless, or the sender is the owner.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_not_listed"></a>
 
 ## Function `assert_not_listed`
 
-
-
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_not_listed">assert_not_listed</a>(self: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, nft_id: <a href="_ID">object::ID</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_not_listed">assert_not_listed</a>(self: &<b>mut</b> Kiosk, nft_id: ID) {
     <b>let</b> refs = df::borrow(ext(self), <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_NftRefsDfKey">NftRefsDfKey</a> {});
@@ -2460,31 +1999,22 @@ Either the kiosk is permissionless, or the sender is the owner.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_is_ob_kiosk"></a>
 
 ## Function `assert_is_ob_kiosk`
 
-
-
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_is_ob_kiosk">assert_is_ob_kiosk</a>(self: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_is_ob_kiosk">assert_is_ob_kiosk</a>(self: &<b>mut</b> Kiosk) {
     <b>assert</b>!(<a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_is_ob_kiosk">is_ob_kiosk</a>(self), <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_EKioskNotOriginByteVersion">EKioskNotOriginByteVersion</a>);
 }
 </code></pre>
-
-
 
 </details>
 
@@ -2492,23 +2022,16 @@ Either the kiosk is permissionless, or the sender is the owner.
 
 ## Function `assert_kiosk_id`
 
-
-
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_kiosk_id">assert_kiosk_id</a>(self: &<a href="_Kiosk">kiosk::Kiosk</a>, id: <a href="_ID">object::ID</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_kiosk_id">assert_kiosk_id</a>(self: &Kiosk, id: ID) {
     <b>assert</b>!(<a href="_id">object::id</a>(self) == id, <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_EIncorrectKioskId">EIncorrectKioskId</a>);
 }
 </code></pre>
-
-
 
 </details>
 
@@ -2516,23 +2039,16 @@ Either the kiosk is permissionless, or the sender is the owner.
 
 ## Function `assert_ref_not_exclusively_listed`
 
-
-
 <pre><code><b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_ref_not_exclusively_listed">assert_ref_not_exclusively_listed</a>(ref: &<a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_NftRef">ob_kiosk::NftRef</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_ref_not_exclusively_listed">assert_ref_not_exclusively_listed</a>(ref: &<a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_NftRef">NftRef</a>) {
     <b>assert</b>!(!ref.is_exclusively_listed, <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_ENftAlreadyExclusivelyListed">ENftAlreadyExclusivelyListed</a>);
 }
 </code></pre>
-
-
 
 </details>
 
@@ -2540,23 +2056,16 @@ Either the kiosk is permissionless, or the sender is the owner.
 
 ## Function `assert_ref_not_listed`
 
-
-
 <pre><code><b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_ref_not_listed">assert_ref_not_listed</a>(ref: &<a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_NftRef">ob_kiosk::NftRef</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_ref_not_listed">assert_ref_not_listed</a>(ref: &<a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_NftRef">NftRef</a>) {
     <b>assert</b>!(<a href="_size">vec_set::size</a>(&ref.auths) == 0, <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_ENftAlreadyListed">ENftAlreadyListed</a>);
 }
 </code></pre>
-
-
 
 </details>
 
@@ -2564,16 +2073,11 @@ Either the kiosk is permissionless, or the sender is the owner.
 
 ## Function `check_entity_and_pop_ref`
 
-
-
 <pre><code><b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_check_entity_and_pop_ref">check_entity_and_pop_ref</a>(self: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, entity: <b>address</b>, nft_id: <a href="_ID">object::ID</a>, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_check_entity_and_pop_ref">check_entity_and_pop_ref</a>(
     self: &<b>mut</b> Kiosk, entity: <b>address</b>, nft_id: ID, ctx: &<b>mut</b> TxContext
@@ -2591,31 +2095,22 @@ Either the kiosk is permissionless, or the sender is the owner.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_deposit_setting_mut"></a>
 
 ## Function `deposit_setting_mut`
 
-
-
 <pre><code><b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_deposit_setting_mut">deposit_setting_mut</a>(self: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>): &<b>mut</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_DepositSetting">ob_kiosk::DepositSetting</a>
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_deposit_setting_mut">deposit_setting_mut</a>(self: &<b>mut</b> Kiosk): &<b>mut</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_DepositSetting">DepositSetting</a> {
     df::borrow_mut(ext(self), <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_DepositSettingDfKey">DepositSettingDfKey</a> {})
 }
 </code></pre>
-
-
 
 </details>
 
@@ -2623,23 +2118,16 @@ Either the kiosk is permissionless, or the sender is the owner.
 
 ## Function `nft_refs_mut`
 
-
-
 <pre><code><b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_nft_refs_mut">nft_refs_mut</a>(self: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>): &<b>mut</b> <a href="_Table">table::Table</a>&lt;<a href="_ID">object::ID</a>, <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_NftRef">ob_kiosk::NftRef</a>&gt;
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_nft_refs_mut">nft_refs_mut</a>(self: &<b>mut</b> Kiosk): &<b>mut</b> Table&lt;ID, <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_NftRef">NftRef</a>&gt; {
     df::borrow_mut(ext(self), <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_NftRefsDfKey">NftRefsDfKey</a> {})
 }
 </code></pre>
-
-
 
 </details>
 
@@ -2647,23 +2135,16 @@ Either the kiosk is permissionless, or the sender is the owner.
 
 ## Function `pop_cap`
 
-
-
 <pre><code><b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_pop_cap">pop_cap</a>(self: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>): <a href="_KioskOwnerCap">kiosk::KioskOwnerCap</a>
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_pop_cap">pop_cap</a>(self: &<b>mut</b> Kiosk): <a href="_KioskOwnerCap">kiosk::KioskOwnerCap</a> {
     df::remove(ext(self), <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_KioskOwnerCapDfKey">KioskOwnerCapDfKey</a> {})
 }
 </code></pre>
-
-
 
 </details>
 
@@ -2671,23 +2152,16 @@ Either the kiosk is permissionless, or the sender is the owner.
 
 ## Function `set_cap`
 
-
-
 <pre><code><b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_set_cap">set_cap</a>(self: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, cap: <a href="_KioskOwnerCap">kiosk::KioskOwnerCap</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_set_cap">set_cap</a>(self: &<b>mut</b> Kiosk, cap: <a href="_KioskOwnerCap">kiosk::KioskOwnerCap</a>) {
     df::add(ext(self), <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_KioskOwnerCapDfKey">KioskOwnerCapDfKey</a> {}, cap);
 }
 </code></pre>
-
-
 
 </details>
 
@@ -2695,16 +2169,11 @@ Either the kiosk is permissionless, or the sender is the owner.
 
 ## Function `init`
 
-
-
 <pre><code><b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_init">init</a>(otw: <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_OB_KIOSK">ob_kiosk::OB_KIOSK</a>, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_init">init</a>(otw: <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_OB_KIOSK">OB_KIOSK</a>, ctx: &<b>mut</b> TxContext) {
     <b>let</b> publisher = <a href="_claim">package::claim</a>(otw, ctx);
@@ -2726,24 +2195,17 @@ Either the kiosk is permissionless, or the sender is the owner.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_version"></a>
 
 ## Function `assert_version`
 
-
-
 <pre><code><b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_version">assert_version</a>(kiosk_uid: &<a href="_UID">object::UID</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_version">assert_version</a>(kiosk_uid: &UID) {
     <b>let</b> version = df::borrow&lt;<a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_VersionDfKey">VersionDfKey</a>, u64&gt;(kiosk_uid, <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_VersionDfKey">VersionDfKey</a> {});
@@ -2752,24 +2214,17 @@ Either the kiosk is permissionless, or the sender is the owner.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_migrate"></a>
 
 ## Function `migrate`
 
-
-
 <pre><code>entry <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_migrate">migrate</a>(self: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code>entry <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_migrate">migrate</a>(self: &<b>mut</b> Kiosk, ctx: &<b>mut</b> TxContext) {
     <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_assert_permission">assert_permission</a>(self, ctx);
@@ -2782,24 +2237,17 @@ Either the kiosk is permissionless, or the sender is the owner.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_migrate_as_pub"></a>
 
 ## Function `migrate_as_pub`
 
-
-
 <pre><code>entry <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_migrate_as_pub">migrate_as_pub</a>(self: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, pub: &<a href="_Publisher">package::Publisher</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code>entry <b>fun</b> <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_migrate_as_pub">migrate_as_pub</a>(self: &<b>mut</b> Kiosk, pub: &Publisher) {
     <b>assert</b>!(<a href="_from_package">package::from_package</a>&lt;KIOSK&gt;(pub), 0);
@@ -2811,7 +2259,5 @@ Either the kiosk is permissionless, or the sender is the owner.
     *version = <a href="ob_kiosk.md#0x95a441d389b07437d00dd07e0b6f05f513d7659b13fd7c5d3923c7d9d847199b_ob_kiosk_VERSION">VERSION</a>;
 }
 </code></pre>
-
-
 
 </details>

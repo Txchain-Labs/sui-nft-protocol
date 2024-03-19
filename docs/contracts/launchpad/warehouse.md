@@ -1,4 +1,3 @@
-
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse"></a>
 
 # Module `0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b::warehouse`
@@ -14,34 +13,32 @@ scheme.
 before it is merged to a <code>Venue</code>, allowing <code><a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">Warehouse</a></code> to be constructed
 while avoiding shared consensus transactions on <code>Listing</code>.
 
-
--  [Resource `RedeemCommitment`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_RedeemCommitment)
--  [Resource `Warehouse`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse)
--  [Constants](#@Constants_0)
--  [Function `new`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_new)
--  [Function `init_warehouse`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_init_warehouse)
--  [Function `deposit_nft`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_deposit_nft)
--  [Function `redeem_nft`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_redeem_nft)
--  [Function `redeem_nft_and_transfer`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_redeem_nft_and_transfer)
--  [Function `redeem_nft_at_index`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_redeem_nft_at_index)
--  [Function `redeem_nft_at_index_and_transfer`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_redeem_nft_at_index_and_transfer)
--  [Function `redeem_nft_with_id`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_redeem_nft_with_id)
--  [Function `redeem_nft_with_id_and_transfer`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_redeem_nft_with_id_and_transfer)
--  [Function `redeem_pseudorandom_nft`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_redeem_pseudorandom_nft)
--  [Function `redeem_pseudorandom_nft_and_transfer`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_redeem_pseudorandom_nft_and_transfer)
--  [Function `new_redeem_commitment`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_new_redeem_commitment)
--  [Function `init_redeem_commitment`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_init_redeem_commitment)
--  [Function `redeem_random_nft`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_redeem_random_nft)
--  [Function `redeem_random_nft_and_transfer`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_redeem_random_nft_and_transfer)
--  [Function `destroy`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_destroy)
--  [Function `destroy_commitment`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_destroy_commitment)
--  [Function `is_empty`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_is_empty)
--  [Function `nfts`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_nfts)
--  [Function `supply`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_supply)
--  [Function `idx_with_id`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_idx_with_id)
--  [Function `assert_is_empty`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_assert_is_empty)
--  [Function `select`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_select)
-
+- [Resource `RedeemCommitment`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_RedeemCommitment)
+- [Resource `Warehouse`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse)
+- [Constants](#@Constants_0)
+- [Function `new`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_new)
+- [Function `init_warehouse`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_init_warehouse)
+- [Function `deposit_nft`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_deposit_nft)
+- [Function `redeem_nft`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_redeem_nft)
+- [Function `redeem_nft_and_transfer`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_redeem_nft_and_transfer)
+- [Function `redeem_nft_at_index`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_redeem_nft_at_index)
+- [Function `redeem_nft_at_index_and_transfer`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_redeem_nft_at_index_and_transfer)
+- [Function `redeem_nft_with_id`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_redeem_nft_with_id)
+- [Function `redeem_nft_with_id_and_transfer`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_redeem_nft_with_id_and_transfer)
+- [Function `redeem_pseudorandom_nft`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_redeem_pseudorandom_nft)
+- [Function `redeem_pseudorandom_nft_and_transfer`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_redeem_pseudorandom_nft_and_transfer)
+- [Function `new_redeem_commitment`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_new_redeem_commitment)
+- [Function `init_redeem_commitment`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_init_redeem_commitment)
+- [Function `redeem_random_nft`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_redeem_random_nft)
+- [Function `redeem_random_nft_and_transfer`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_redeem_random_nft_and_transfer)
+- [Function `destroy`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_destroy)
+- [Function `destroy_commitment`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_destroy_commitment)
+- [Function `is_empty`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_is_empty)
+- [Function `nfts`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_nfts)
+- [Function `supply`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_supply)
+- [Function `idx_with_id`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_idx_with_id)
+- [Function `assert_is_empty`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_assert_is_empty)
+- [Function `select`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_select)
 
 <pre><code><b>use</b> <a href="">0x1::hash</a>;
 <b>use</b> <a href="">0x1::vector</a>;
@@ -54,23 +51,17 @@ while avoiding shared consensus transactions on <code>Listing</code>.
 <b>use</b> <a href="">0x9e5962d5183664be8a7762fbe94eee6e3457c0cc701750c94c17f7f8ac5a32fb::pseudorandom</a>;
 </code></pre>
 
-
-
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_RedeemCommitment"></a>
 
 ## Resource `RedeemCommitment`
 
 Used for the client to commit a pseudo-random
 
-
 <pre><code><b>struct</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_RedeemCommitment">RedeemCommitment</a> <b>has</b> key
 </code></pre>
 
-
-
 <details>
 <summary>Fields</summary>
-
 
 <dl>
 <dt>
@@ -85,9 +76,10 @@ Used for the client to commit a pseudo-random
 <dd>
  Hashed sender commitment
 
- Sender will have to provide the pre-hashed value to be able to use
- this <code><a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_RedeemCommitment">RedeemCommitment</a></code>. This value can be pseudo-random as long
- as it is not predictable by the validator.
+Sender will have to provide the pre-hashed value to be able to use
+this <code><a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_RedeemCommitment">RedeemCommitment</a></code>. This value can be pseudo-random as long
+as it is not predictable by the validator.
+
 </dd>
 <dt>
 <code>contract_commitment: <a href="">vector</a>&lt;u8&gt;</code>
@@ -96,7 +88,6 @@ Used for the client to commit a pseudo-random
  Open commitment made by validator
 </dd>
 </dl>
-
 
 </details>
 
@@ -110,15 +101,11 @@ The reason that the type is limited is to easily support random
 withdrawals. If multiple types are allowed then user will not be able
 to predict the type of the object they withdraw.
 
-
 <pre><code><b>struct</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">Warehouse</a>&lt;T: store, key&gt; <b>has</b> store, key
 </code></pre>
 
-
-
 <details>
 <summary>Fields</summary>
-
 
 <dl>
 <dt>
@@ -133,9 +120,10 @@ to predict the type of the object they withdraw.
 <dd>
  Initial vector of NFT IDs stored within <code><a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">Warehouse</a></code>
 
- If this vector is overflowed, additional NFT IDs will be stored
- within dynamic fields. Avoids overhead of dynamic fields for most
- use-cases.
+If this vector is overflowed, additional NFT IDs will be stored
+within dynamic fields. Avoids overhead of dynamic fields for most
+use-cases.
+
 </dd>
 <dt>
 <code>total_deposited: u64</code>
@@ -145,13 +133,11 @@ to predict the type of the object they withdraw.
 </dd>
 </dl>
 
-
 </details>
 
 <a name="@Constants_0"></a>
 
 ## Constants
-
 
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_EIndexOutOfBounds"></a>
 
@@ -159,11 +145,8 @@ to predict the type of the object they withdraw.
 
 Call <code><a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_redeem_nft_at_index">warehouse::redeem_nft_at_index</a></code> with an index that exists.
 
-
 <pre><code><b>const</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_EIndexOutOfBounds">EIndexOutOfBounds</a>: u64 = 3;
 </code></pre>
-
-
 
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_ENotEmpty"></a>
 
@@ -172,11 +155,8 @@ Call <code><a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658
 Call <code><a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_redeem_nft">warehouse::redeem_nft</a></code> or a <code>Listing</code> market to withdraw remaining
 NFTs.
 
-
 <pre><code><b>const</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_ENotEmpty">ENotEmpty</a>: u64 = 2;
 </code></pre>
-
-
 
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_EEmpty"></a>
 
@@ -184,11 +164,8 @@ NFTs.
 
 Call <code><a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_deposit_nft">warehouse::deposit_nft</a></code> or <code><a href="listing.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_listing_add_nft">listing::add_nft</a></code> to add NFTs.
 
-
 <pre><code><b>const</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_EEmpty">EEmpty</a>: u64 = 1;
 </code></pre>
-
-
 
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_EInvalidCommitment"></a>
 
@@ -196,22 +173,16 @@ Commitment in <code><a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149
 
 Call <code>warehouse::random_redeem_nft</code> with the correct commitment.
 
-
 <pre><code><b>const</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_EInvalidCommitment">EInvalidCommitment</a>: u64 = 6;
 </code></pre>
-
-
 
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_EInvalidCommitmentLength"></a>
 
 Attempted to construct a <code><a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_RedeemCommitment">RedeemCommitment</a></code> with a hash length
 different than 32 bytes
 
-
 <pre><code><b>const</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_EInvalidCommitmentLength">EInvalidCommitmentLength</a>: u64 = 5;
 </code></pre>
-
-
 
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_EInvalidNftId"></a>
 
@@ -219,22 +190,16 @@ different than 32 bytes
 
 Call <code><a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_redeem_nft_with_id">warehouse::redeem_nft_with_id</a></code> with an ID that exists.
 
-
 <pre><code><b>const</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_EInvalidNftId">EInvalidNftId</a>: u64 = 4;
 </code></pre>
-
-
 
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_LIMIT"></a>
 
 Limit of NFTs held within each ID chunk
 The real limitation is at <code>7998</code> but we give a slight buffer
 
-
 <pre><code><b>const</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_LIMIT">LIMIT</a>: u64 = 7500;
 </code></pre>
-
-
 
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_new"></a>
 
@@ -242,15 +207,11 @@ The real limitation is at <code>7998</code> but we give a slight buffer
 
 Create a new <code><a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">Warehouse</a></code>
 
-
 <pre><code><b>public</b> <b>fun</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_new">new</a>&lt;T: store, key&gt;(ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">warehouse::Warehouse</a>&lt;T&gt;
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_new">new</a>&lt;T: key + store&gt;(ctx: &<b>mut</b> TxContext): <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">Warehouse</a>&lt;T&gt; {
     <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">Warehouse</a> {
@@ -261,8 +222,6 @@ Create a new <code><a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149e
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_init_warehouse"></a>
@@ -271,22 +230,16 @@ Create a new <code><a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149e
 
 Creates a <code><a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">Warehouse</a></code> and transfers to transaction sender
 
-
 <pre><code><b>public</b> entry <b>fun</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_init_warehouse">init_warehouse</a>&lt;T: store, key&gt;(ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_init_warehouse">init_warehouse</a>&lt;T: key + store&gt;(ctx: &<b>mut</b> TxContext) {
     <a href="_public_transfer">transfer::public_transfer</a>(<a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_new">new</a>&lt;T&gt;(ctx), <a href="_sender">tx_context::sender</a>(ctx));
 }
 </code></pre>
-
-
 
 </details>
 
@@ -299,15 +252,11 @@ Deposits NFT to <code><a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e11
 Endpoint is unprotected and relies on safely obtaining a mutable
 reference to <code><a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">Warehouse</a></code>.
 
-
 <pre><code><b>public</b> entry <b>fun</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_deposit_nft">deposit_nft</a>&lt;T: store, key&gt;(<a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse">warehouse</a>: &<b>mut</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">warehouse::Warehouse</a>&lt;T&gt;, nft: T)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_deposit_nft">deposit_nft</a>&lt;T: key + store&gt;(
     <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse">warehouse</a>: &<b>mut</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">Warehouse</a>&lt;T&gt;,
@@ -322,8 +271,6 @@ reference to <code><a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149e
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_redeem_nft"></a>
@@ -332,23 +279,17 @@ reference to <code><a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149e
 
 Redeems NFT from <code><a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">Warehouse</a></code> sequentially
 
-
 <a name="@Panics_1"></a>
 
 ###### Panics
 
-
 Panics if <code><a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">Warehouse</a></code> is empty.
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_redeem_nft">redeem_nft</a>&lt;T: store, key&gt;(<a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse">warehouse</a>: &<b>mut</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">warehouse::Warehouse</a>&lt;T&gt;): T
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_redeem_nft">redeem_nft</a>&lt;T: key + store&gt;(
     <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse">warehouse</a>: &<b>mut</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">Warehouse</a>&lt;T&gt;,
@@ -362,8 +303,6 @@ Panics if <code><a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_redeem_nft_and_transfer"></a>
@@ -374,33 +313,25 @@ Redeems NFT from <code><a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1
 
 See <code>redeem_nft</code> for more details.
 
-
 <a name="@Usage_2"></a>
 
 ###### Usage
-
 
 Entry mint functions like <code>suimarines::mint_nft</code> take an <code><a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">Warehouse</a></code>
 object to deposit into. Calling <code>redeem_nft_and_transfer</code> allows one to
 withdraw an NFT and own it directly.
 
-
 <a name="@Panics_3"></a>
 
 ###### Panics
 
-
 Panics if <code><a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">Warehouse</a></code> is empty.
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_redeem_nft_and_transfer">redeem_nft_and_transfer</a>&lt;T: store, key&gt;(<a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse">warehouse</a>: &<b>mut</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">warehouse::Warehouse</a>&lt;T&gt;, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_redeem_nft_and_transfer">redeem_nft_and_transfer</a>&lt;T: key + store&gt;(
     <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse">warehouse</a>: &<b>mut</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">Warehouse</a>&lt;T&gt;,
@@ -410,8 +341,6 @@ Panics if <code><a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d
     <a href="_public_transfer">transfer::public_transfer</a>(nft, <a href="_sender">tx_context::sender</a>(ctx));
 }
 </code></pre>
-
-
 
 </details>
 
@@ -423,23 +352,17 @@ Redeems NFT from specific index in <code><a href="warehouse.md#0xc74531639fadfb0
 
 Does not retain original order of NFTs in the bookkeeping vector.
 
-
 <a name="@Panics_4"></a>
 
 ###### Panics
 
-
 Panics if index does not exist in <code><a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">Warehouse</a></code>.
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_redeem_nft_at_index">redeem_nft_at_index</a>&lt;T: store, key&gt;(<a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse">warehouse</a>: &<b>mut</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">warehouse::Warehouse</a>&lt;T&gt;, index: u64): T
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_redeem_nft_at_index">redeem_nft_at_index</a>&lt;T: key + store&gt;(
     <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse">warehouse</a>: &<b>mut</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">Warehouse</a>&lt;T&gt;,
@@ -456,8 +379,6 @@ Panics if index does not exist in <code><a href="warehouse.md#0xc74531639fadfb02
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_redeem_nft_at_index_and_transfer"></a>
@@ -468,23 +389,17 @@ Redeems NFT from specific index in <code><a href="warehouse.md#0xc74531639fadfb0
 
 See <code>redeem_nft_at_index</code> for more details.
 
-
 <a name="@Panics_5"></a>
 
 ###### Panics
 
-
 Panics if index does not exist in <code><a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">Warehouse</a></code>.
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_redeem_nft_at_index_and_transfer">redeem_nft_at_index_and_transfer</a>&lt;T: store, key&gt;(<a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse">warehouse</a>: &<b>mut</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">warehouse::Warehouse</a>&lt;T&gt;, index: u64, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_redeem_nft_at_index_and_transfer">redeem_nft_at_index_and_transfer</a>&lt;T: key + store&gt;(
     <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse">warehouse</a>: &<b>mut</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">Warehouse</a>&lt;T&gt;,
@@ -496,8 +411,6 @@ Panics if index does not exist in <code><a href="warehouse.md#0xc74531639fadfb02
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_redeem_nft_with_id"></a>
@@ -508,23 +421,17 @@ Redeems NFT with specific ID from <code><a href="warehouse.md#0xc74531639fadfb02
 
 Does not retain original order of NFTs in the bookkeeping vector.
 
-
 <a name="@Panics_6"></a>
 
 ###### Panics
 
-
 Panics if NFT with ID does not exist in <code><a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">Warehouse</a></code>.
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_redeem_nft_with_id">redeem_nft_with_id</a>&lt;T: store, key&gt;(<a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse">warehouse</a>: &<b>mut</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">warehouse::Warehouse</a>&lt;T&gt;, nft_id: <a href="_ID">object::ID</a>): T
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_redeem_nft_with_id">redeem_nft_with_id</a>&lt;T: key + store&gt;(
     <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse">warehouse</a>: &<b>mut</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">Warehouse</a>&lt;T&gt;,
@@ -534,8 +441,6 @@ Panics if NFT with ID does not exist in <code><a href="warehouse.md#0xc74531639f
     <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_redeem_nft_at_index">redeem_nft_at_index</a>(<a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse">warehouse</a>, idx)
 }
 </code></pre>
-
-
 
 </details>
 
@@ -547,23 +452,17 @@ Redeems NFT from specific index in <code><a href="warehouse.md#0xc74531639fadfb0
 
 See <code>redeem_nft_with_id</code> for more details.
 
-
 <a name="@Panics_7"></a>
 
 ###### Panics
 
-
 Panics if index does not exist in <code><a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">Warehouse</a></code>.
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_redeem_nft_with_id_and_transfer">redeem_nft_with_id_and_transfer</a>&lt;T: store, key&gt;(<a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse">warehouse</a>: &<b>mut</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">warehouse::Warehouse</a>&lt;T&gt;, nft_id: <a href="_ID">object::ID</a>, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_redeem_nft_with_id_and_transfer">redeem_nft_with_id_and_transfer</a>&lt;T: key + store&gt;(
     <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse">warehouse</a>: &<b>mut</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">Warehouse</a>&lt;T&gt;,
@@ -574,8 +473,6 @@ Panics if index does not exist in <code><a href="warehouse.md#0xc74531639fadfb02
     <a href="_public_transfer">transfer::public_transfer</a>(nft, <a href="_sender">tx_context::sender</a>(ctx));
 }
 </code></pre>
-
-
 
 </details>
 
@@ -588,23 +485,17 @@ Pseudo-randomly redeems NFT from <code><a href="warehouse.md#0xc74531639fadfb02d
 Endpoint is susceptible to validator prediction of the resulting index,
 use <code>random_redeem_nft</code> instead.
 
-
 <a name="@Panics_8"></a>
 
 ###### Panics
 
-
 Panics if <code><a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">Warehouse</a></code> is empty
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_redeem_pseudorandom_nft">redeem_pseudorandom_nft</a>&lt;T: store, key&gt;(<a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse">warehouse</a>: &<b>mut</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">warehouse::Warehouse</a>&lt;T&gt;, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): T
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_redeem_pseudorandom_nft">redeem_pseudorandom_nft</a>&lt;T: key + store&gt;(
     <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse">warehouse</a>: &<b>mut</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">Warehouse</a>&lt;T&gt;,
@@ -624,8 +515,6 @@ Panics if <code><a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_redeem_pseudorandom_nft_and_transfer"></a>
@@ -637,25 +526,19 @@ sender
 
 See <code>redeem_pseudorandom_nft</code> for more details.
 
-
 <a name="@Usage_9"></a>
 
 ###### Usage
-
 
 Entry mint functions like <code>suimarines::mint_nft</code> take an <code><a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">Warehouse</a></code>
 object to deposit into. Calling <code>redeem_nft_and_transfer</code> allows one to
 withdraw an NFT and own it directly.
 
-
 <pre><code><b>public</b> entry <b>fun</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_redeem_pseudorandom_nft_and_transfer">redeem_pseudorandom_nft_and_transfer</a>&lt;T: store, key&gt;(<a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse">warehouse</a>: &<b>mut</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">warehouse::Warehouse</a>&lt;T&gt;, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_redeem_pseudorandom_nft_and_transfer">redeem_pseudorandom_nft_and_transfer</a>&lt;T: key + store&gt;(
     <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse">warehouse</a>: &<b>mut</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">Warehouse</a>&lt;T&gt;,
@@ -665,8 +548,6 @@ withdraw an NFT and own it directly.
     <a href="_public_transfer">transfer::public_transfer</a>(nft, <a href="_sender">tx_context::sender</a>(ctx));
 }
 </code></pre>
-
-
 
 </details>
 
@@ -680,23 +561,17 @@ Contract commitment must be unfeasible to predict by the transaction
 sender. The underlying value of the commitment can be pseudo-random as
 long as it is not predictable by the validator.
 
-
 <a name="@Panics_10"></a>
 
 ###### Panics
 
-
 Panics if commitment is not 32 bytes.
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_new_redeem_commitment">new_redeem_commitment</a>(hashed_sender_commitment: <a href="">vector</a>&lt;u8&gt;, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_RedeemCommitment">warehouse::RedeemCommitment</a>
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_new_redeem_commitment">new_redeem_commitment</a>(
     hashed_sender_commitment: <a href="">vector</a>&lt;u8&gt;,
@@ -715,8 +590,6 @@ Panics if commitment is not 32 bytes.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_init_redeem_commitment"></a>
@@ -730,23 +603,17 @@ Contract commitment must be unfeasible to predict by the transaction
 caller. The underlying value of the commitment can be pseudo-random as
 long as it is not predictable by the validator.
 
-
 <a name="@Panics_11"></a>
 
 ###### Panics
 
-
 Panics if commitment is not 32 bytes.
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_init_redeem_commitment">init_redeem_commitment</a>(hashed_sender_commitment: <a href="">vector</a>&lt;u8&gt;, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_init_redeem_commitment">init_redeem_commitment</a>(
     hashed_sender_commitment: <a href="">vector</a>&lt;u8&gt;,
@@ -756,8 +623,6 @@ Panics if commitment is not 32 bytes.
     <a href="_transfer">transfer::transfer</a>(commitment, <a href="_sender">tx_context::sender</a>(ctx));
 }
 </code></pre>
-
-
 
 </details>
 
@@ -772,24 +637,18 @@ transaction to ensure that validators may not bias results favorably.
 You can obtain a <code><a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_RedeemCommitment">RedeemCommitment</a></code> by calling
 <code>init_redeem_commitment</code>.
 
-
 <a name="@Panics_12"></a>
 
 ###### Panics
 
-
 Panics if <code><a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">Warehouse</a></code> is empty or <code>user_commitment</code> does not match the
 hashed commitment in <code><a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_RedeemCommitment">RedeemCommitment</a></code>.
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_redeem_random_nft">redeem_random_nft</a>&lt;T: store, key&gt;(<a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse">warehouse</a>: &<b>mut</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">warehouse::Warehouse</a>&lt;T&gt;, commitment: <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_RedeemCommitment">warehouse::RedeemCommitment</a>, user_commitment: <a href="">vector</a>&lt;u8&gt;, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): T
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_redeem_random_nft">redeem_random_nft</a>&lt;T: key + store&gt;(
     <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse">warehouse</a>: &<b>mut</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">Warehouse</a>&lt;T&gt;,
@@ -827,8 +686,6 @@ hashed commitment in <code><a href="warehouse.md#0xc74531639fadfb02d30f05f37de4c
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_redeem_random_nft_and_transfer"></a>
@@ -839,24 +696,18 @@ Randomly redeems NFT from <code><a href="warehouse.md#0xc74531639fadfb02d30f05f3
 
 See <code>redeem_random_nft</code> for more details.
 
-
 <a name="@Panics_13"></a>
 
 ###### Panics
 
-
 Panics if <code><a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">Warehouse</a></code> is empty or <code>user_commitment</code> does not match the
 hashed commitment in <code><a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_RedeemCommitment">RedeemCommitment</a></code>.
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_redeem_random_nft_and_transfer">redeem_random_nft_and_transfer</a>&lt;T: store, key&gt;(<a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse">warehouse</a>: &<b>mut</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">warehouse::Warehouse</a>&lt;T&gt;, commitment: <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_RedeemCommitment">warehouse::RedeemCommitment</a>, user_commitment: <a href="">vector</a>&lt;u8&gt;, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_redeem_random_nft_and_transfer">redeem_random_nft_and_transfer</a>&lt;T: key + store&gt;(
     <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse">warehouse</a>: &<b>mut</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">Warehouse</a>&lt;T&gt;,
@@ -871,8 +722,6 @@ hashed commitment in <code><a href="warehouse.md#0xc74531639fadfb02d30f05f37de4c
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_destroy"></a>
@@ -881,23 +730,17 @@ hashed commitment in <code><a href="warehouse.md#0xc74531639fadfb02d30f05f37de4c
 
 Destroys <code><a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">Warehouse</a></code>
 
-
 <a name="@Panics_14"></a>
 
 ###### Panics
 
-
 Panics if <code><a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">Warehouse</a></code> is not empty
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_destroy">destroy</a>&lt;T: store, key&gt;(<a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse">warehouse</a>: <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">warehouse::Warehouse</a>&lt;T&gt;)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_destroy">destroy</a>&lt;T: key + store&gt;(<a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse">warehouse</a>: <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">Warehouse</a>&lt;T&gt;) {
     <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_assert_is_empty">assert_is_empty</a>(&<a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse">warehouse</a>);
@@ -908,8 +751,6 @@ Panics if <code><a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_destroy_commitment"></a>
@@ -918,15 +759,11 @@ Panics if <code><a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d
 
 Destroyes <code><a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_RedeemCommitment">RedeemCommitment</a></code>
 
-
 <pre><code><b>public</b> entry <b>fun</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_destroy_commitment">destroy_commitment</a>(commitment: <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_RedeemCommitment">warehouse::RedeemCommitment</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_destroy_commitment">destroy_commitment</a>(commitment: <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_RedeemCommitment">RedeemCommitment</a>) {
     <b>let</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_RedeemCommitment">RedeemCommitment</a> {
@@ -939,8 +776,6 @@ Destroyes <code><a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_is_empty"></a>
@@ -949,22 +784,16 @@ Destroyes <code><a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d
 
 Return whether there are any <code>Nft</code> in the <code><a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">Warehouse</a></code>
 
-
 <pre><code><b>public</b> <b>fun</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_is_empty">is_empty</a>&lt;T: store, key&gt;(<a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse">warehouse</a>: &<a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">warehouse::Warehouse</a>&lt;T&gt;): bool
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_is_empty">is_empty</a>&lt;T: key + store&gt;(<a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse">warehouse</a>: &<a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">Warehouse</a>&lt;T&gt;): bool {
     <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse">warehouse</a>.total_deposited == 0
 }
 </code></pre>
-
-
 
 </details>
 
@@ -974,22 +803,16 @@ Return whether there are any <code>Nft</code> in the <code><a href="warehouse.md
 
 Returns list of all NFTs stored in <code><a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">Warehouse</a></code>
 
-
 <pre><code><b>public</b> <b>fun</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_nfts">nfts</a>&lt;T: store, key&gt;(<a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse">warehouse</a>: &<a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">warehouse::Warehouse</a>&lt;T&gt;): &<a href="_DynVec">dynamic_vector::DynVec</a>&lt;<a href="_ID">object::ID</a>&gt;
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_nfts">nfts</a>&lt;T: key + store&gt;(<a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse">warehouse</a>: &<a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">Warehouse</a>&lt;T&gt;): &DynVec&lt;ID&gt; {
     &<a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse">warehouse</a>.nfts
 }
 </code></pre>
-
-
 
 </details>
 
@@ -999,22 +822,16 @@ Returns list of all NFTs stored in <code><a href="warehouse.md#0xc74531639fadfb0
 
 Return the net amount of <code>Nft</code>s deposited in the <code><a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">Warehouse</a></code>
 
-
 <pre><code><b>public</b> <b>fun</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_supply">supply</a>&lt;T: store, key&gt;(<a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse">warehouse</a>: &<a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">warehouse::Warehouse</a>&lt;T&gt;): u64
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_supply">supply</a>&lt;T: key + store&gt;(<a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse">warehouse</a>: &<a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">Warehouse</a>&lt;T&gt;): u64 {
     <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse">warehouse</a>.total_deposited
 }
 </code></pre>
-
-
 
 </details>
 
@@ -1024,23 +841,17 @@ Return the net amount of <code>Nft</code>s deposited in the <code><a href="wareh
 
 Get index of NFT given ID
 
-
 <a name="@Panics_15"></a>
 
 ###### Panics
 
-
 Panics if NFT was not registered in <code><a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">Warehouse</a></code>.
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_idx_with_id">idx_with_id</a>&lt;T: store, key&gt;(<a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse">warehouse</a>: &<b>mut</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">warehouse::Warehouse</a>&lt;T&gt;, nft_id: &<a href="_ID">object::ID</a>): u64
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_idx_with_id">idx_with_id</a>&lt;T: key + store&gt;(
     <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse">warehouse</a>: &<b>mut</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">Warehouse</a>&lt;T&gt;,
@@ -1071,8 +882,6 @@ Panics if NFT was not registered in <code><a href="warehouse.md#0xc74531639fadfb
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_assert_is_empty"></a>
@@ -1081,30 +890,22 @@ Panics if NFT was not registered in <code><a href="warehouse.md#0xc74531639fadfb
 
 Asserts that <code><a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">Warehouse</a></code> is empty
 
-
 <a name="@Panics_16"></a>
 
 ###### Panics
 
-
 Panics if <code><a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">Warehouse</a></code> has elements.
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_assert_is_empty">assert_is_empty</a>&lt;T: store, key&gt;(<a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse">warehouse</a>: &<a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">warehouse::Warehouse</a>&lt;T&gt;)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_assert_is_empty">assert_is_empty</a>&lt;T: key + store&gt;(<a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse">warehouse</a>: &<a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_Warehouse">Warehouse</a>&lt;T&gt;) {
     <b>assert</b>!(<a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_is_empty">is_empty</a>(<a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse">warehouse</a>), <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_ENotEmpty">ENotEmpty</a>);
 }
 </code></pre>
-
-
 
 </details>
 
@@ -1117,15 +918,11 @@ Outputs modulo of a random <code>u256</code> number and a bound
 Due to <code>random &gt;&gt; bound</code> we <code>select</code> does not exhibit significant
 modulo bias.
 
-
 <pre><code><b>fun</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_select">select</a>(bound: u64, random: &<a href="">vector</a>&lt;u8&gt;): u64
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>fun</b> <a href="warehouse.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_warehouse_select">select</a>(bound: u64, random: &<a href="">vector</a>&lt;u8&gt;): u64 {
     <b>let</b> random = <a href="_u256_from_bytes">pseudorandom::u256_from_bytes</a>(random);
@@ -1133,7 +930,5 @@ modulo bias.
     (mod <b>as</b> u64)
 }
 </code></pre>
-
-
 
 </details>

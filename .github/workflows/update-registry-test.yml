@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       revision:
-        description: 'Commit Hash (Defaults to last commit)'
+        description: "Commit Hash (Defaults to last commit)"
         required: false
 
 jobs:

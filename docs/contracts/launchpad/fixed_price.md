@@ -1,4 +1,3 @@
-
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price"></a>
 
 # Module `0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b::fixed_price`
@@ -11,22 +10,20 @@ inventory get sold at a fixed price.
 NFT creators can decide to use multiple markets to create a tiered market
 sale by segregating NFTs by different sale segments.
 
-
--  [Resource `FixedPriceMarket`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_FixedPriceMarket)
--  [Struct `MarketKey`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_MarketKey)
--  [Function `new`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_new)
--  [Function `init_market`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_init_market)
--  [Function `init_venue`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_init_venue)
--  [Function `create_venue`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_create_venue)
--  [Function `borrow_market`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_borrow_market)
--  [Function `buy_nft`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_buy_nft)
--  [Function `buy_nft_into_kiosk`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_buy_nft_into_kiosk)
--  [Function `buy_whitelisted_nft`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_buy_whitelisted_nft)
--  [Function `buy_whitelisted_nft_into_kiosk`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_buy_whitelisted_nft_into_kiosk)
--  [Function `buy_nft_`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_buy_nft_)
--  [Function `set_price`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_set_price)
--  [Function `price`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_price)
-
+- [Resource `FixedPriceMarket`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_FixedPriceMarket)
+- [Struct `MarketKey`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_MarketKey)
+- [Function `new`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_new)
+- [Function `init_market`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_init_market)
+- [Function `init_venue`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_init_venue)
+- [Function `create_venue`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_create_venue)
+- [Function `borrow_market`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_borrow_market)
+- [Function `buy_nft`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_buy_nft)
+- [Function `buy_nft_into_kiosk`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_buy_nft_into_kiosk)
+- [Function `buy_whitelisted_nft`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_buy_whitelisted_nft)
+- [Function `buy_whitelisted_nft_into_kiosk`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_buy_whitelisted_nft_into_kiosk)
+- [Function `buy_nft_`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_buy_nft_)
+- [Function `set_price`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_set_price)
+- [Function `price`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_price)
 
 <pre><code><b>use</b> <a href="">0x2::balance</a>;
 <b>use</b> <a href="">0x2::coin</a>;
@@ -40,23 +37,17 @@ sale by segregating NFTs by different sale segments.
 <b>use</b> <a href="venue.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_venue">0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b::venue</a>;
 </code></pre>
 
-
-
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_FixedPriceMarket"></a>
 
 ## Resource `FixedPriceMarket`
 
 Fixed price market object
 
-
 <pre><code><b>struct</b> <a href="fixed_price.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_FixedPriceMarket">FixedPriceMarket</a>&lt;FT&gt; <b>has</b> store, key
 </code></pre>
 
-
-
 <details>
 <summary>Fields</summary>
-
 
 <dl>
 <dt>
@@ -79,23 +70,17 @@ Fixed price market object
 </dd>
 </dl>
 
-
 </details>
 
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_MarketKey"></a>
 
 ## Struct `MarketKey`
 
-
-
 <pre><code><b>struct</b> <a href="fixed_price.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_MarketKey">MarketKey</a> <b>has</b> <b>copy</b>, drop, store
 </code></pre>
 
-
-
 <details>
 <summary>Fields</summary>
-
 
 <dl>
 <dt>
@@ -105,7 +90,6 @@ Fixed price market object
 
 </dd>
 </dl>
-
 
 </details>
 
@@ -120,15 +104,11 @@ Price is denominated in fungible token, <code>FT</code>, such as SUI.
 Requires that <code>Inventory</code> with given ID exists on the <code>Listing</code> that
 this market will be inserted into.
 
-
 <pre><code><b>public</b> <b>fun</b> <a href="fixed_price.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_new">new</a>&lt;FT&gt;(inventory_id: <a href="_ID">object::ID</a>, price: u64, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): <a href="fixed_price.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_FixedPriceMarket">fixed_price::FixedPriceMarket</a>&lt;FT&gt;
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="fixed_price.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_new">new</a>&lt;FT&gt;(
     inventory_id: ID,
@@ -142,8 +122,6 @@ this market will be inserted into.
     }
 }
 </code></pre>
-
-
 
 </details>
 
@@ -161,15 +139,11 @@ this market will be inserted into.
 This market can later be consumed by <code><a href="listing.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_listing_init_venue">listing::init_venue</a></code> or
 <code><a href="venue.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_venue_init_venue">venue::init_venue</a></code> for later use in a launchpad listing.
 
-
 <pre><code><b>public</b> entry <b>fun</b> <a href="fixed_price.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_init_market">init_market</a>&lt;FT&gt;(inventory_id: <a href="_ID">object::ID</a>, price: u64, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="fixed_price.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_init_market">init_market</a>&lt;FT&gt;(
     inventory_id: ID,
@@ -180,8 +154,6 @@ This market can later be consumed by <code><a href="listing.md#0xc74531639fadfb0
     <a href="_public_transfer">transfer::public_transfer</a>(market, <a href="_sender">tx_context::sender</a>(ctx));
 }
 </code></pre>
-
-
 
 </details>
 
@@ -199,24 +171,18 @@ this market will be inserted into.
 Resultant <code>Venue</code> can later be consumed by <code><a href="listing.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_listing_add_venue">listing::add_venue</a></code> for
 later use in a launchpad listing.
 
-
 <a name="@Panics_0"></a>
 
 ###### Panics
 
-
 Panics if <code>Inventory</code> with given ID does not exist on <code>Listing</code> or
 if transaction sender is not the <code>Listing</code> admin.
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="fixed_price.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_init_venue">init_venue</a>&lt;C, FT&gt;(<a href="listing.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_listing">listing</a>: &<b>mut</b> <a href="listing.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_listing_Listing">listing::Listing</a>, inventory_id: <a href="_ID">object::ID</a>, is_whitelisted: bool, price: u64, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="fixed_price.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_init_venue">init_venue</a>&lt;C, FT&gt;(
     <a href="listing.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_listing">listing</a>: &<b>mut</b> Listing,
@@ -228,8 +194,6 @@ if transaction sender is not the <code>Listing</code> admin.
     <a href="fixed_price.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_create_venue">create_venue</a>&lt;C, FT&gt;(<a href="listing.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_listing">listing</a>, inventory_id, is_whitelisted, price, ctx);
 }
 </code></pre>
-
-
 
 </details>
 
@@ -247,24 +211,18 @@ this market will be inserted into.
 Resultant <code>Venue</code> can later be consumed by <code><a href="listing.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_listing_add_venue">listing::add_venue</a></code> for
 later use in a launchpad listing.
 
-
 <a name="@Panics_1"></a>
 
 ###### Panics
 
-
 Panics if <code>Inventory</code> with given ID does not exist on <code>Listing</code> or
 if transaction sender is not the <code>Listing</code> admin.
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="fixed_price.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_create_venue">create_venue</a>&lt;C, FT&gt;(<a href="listing.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_listing">listing</a>: &<b>mut</b> <a href="listing.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_listing_Listing">listing::Listing</a>, inventory_id: <a href="_ID">object::ID</a>, is_whitelisted: bool, price: u64, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): <a href="_ID">object::ID</a>
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="fixed_price.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_create_venue">create_venue</a>&lt;C, FT&gt;(
     <a href="listing.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_listing">listing</a>: &<b>mut</b> Listing,
@@ -280,8 +238,6 @@ if transaction sender is not the <code>Listing</code> admin.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_borrow_market"></a>
@@ -290,22 +246,16 @@ if transaction sender is not the <code>Listing</code> admin.
 
 Borrows <code><a href="fixed_price.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_FixedPriceMarket">FixedPriceMarket</a>&lt;FT&gt;</code> from <code>Venue</code>
 
-
 <pre><code><b>public</b> <b>fun</b> <a href="fixed_price.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_borrow_market">borrow_market</a>&lt;FT&gt;(<a href="venue.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_venue">venue</a>: &<a href="venue.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_venue_Venue">venue::Venue</a>): &<a href="fixed_price.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_FixedPriceMarket">fixed_price::FixedPriceMarket</a>&lt;FT&gt;
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="fixed_price.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_borrow_market">borrow_market</a>&lt;FT&gt;(<a href="venue.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_venue">venue</a>: &Venue): &<a href="fixed_price.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_FixedPriceMarket">FixedPriceMarket</a>&lt;FT&gt; {
     <a href="venue.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_venue_borrow_market">venue::borrow_market</a>(<a href="fixed_price.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_MarketKey">MarketKey</a> {}, <a href="venue.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_venue">venue</a>)
 }
 </code></pre>
-
-
 
 </details>
 
@@ -315,24 +265,18 @@ Borrows <code><a href="fixed_price.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d
 
 Buy NFT for non-whitelisted sale into new Kiosk
 
-
 <a name="@Panics_2"></a>
 
 ###### Panics
 
-
 Panics if <code>Venue</code> does not exist, is not live, or is whitelisted or
 wallet does not have the necessary funds.
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="fixed_price.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_buy_nft">buy_nft</a>&lt;T: store, key, FT&gt;(<a href="listing.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_listing">listing</a>: &<b>mut</b> <a href="listing.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_listing_Listing">listing::Listing</a>, venue_id: <a href="_ID">object::ID</a>, wallet: &<b>mut</b> <a href="_Coin">coin::Coin</a>&lt;FT&gt;, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="fixed_price.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_buy_nft">buy_nft</a>&lt;T: key + store, FT&gt;(
     <a href="listing.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_listing">listing</a>: &<b>mut</b> Listing,
@@ -350,8 +294,6 @@ wallet does not have the necessary funds.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_buy_nft_into_kiosk"></a>
@@ -360,24 +302,18 @@ wallet does not have the necessary funds.
 
 Buy NFT for non-whitelisted sale
 
-
 <a name="@Panics_3"></a>
 
 ###### Panics
 
-
 Panics if <code>Venue</code> does not exist, is not live, or is whitelisted or
 wallet does not have the necessary funds.
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="fixed_price.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_buy_nft_into_kiosk">buy_nft_into_kiosk</a>&lt;T: store, key, FT&gt;(<a href="listing.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_listing">listing</a>: &<b>mut</b> <a href="listing.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_listing_Listing">listing::Listing</a>, venue_id: <a href="_ID">object::ID</a>, wallet: &<b>mut</b> <a href="_Coin">coin::Coin</a>&lt;FT&gt;, buyer_kiosk: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="fixed_price.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_buy_nft_into_kiosk">buy_nft_into_kiosk</a>&lt;T: key + store, FT&gt;(
     <a href="listing.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_listing">listing</a>: &<b>mut</b> Listing,
@@ -396,8 +332,6 @@ wallet does not have the necessary funds.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_buy_whitelisted_nft"></a>
@@ -406,24 +340,18 @@ wallet does not have the necessary funds.
 
 Buy NFT for whitelisted sale into new Kiosk
 
-
 <a name="@Panics_4"></a>
 
 ###### Panics
 
-
 - If <code>Venue</code> does not exist, is not live, or is not whitelisted
 - If whitelist <code>Certificate</code> was not issued for given market
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="fixed_price.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_buy_whitelisted_nft">buy_whitelisted_nft</a>&lt;T: store, key, FT&gt;(<a href="listing.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_listing">listing</a>: &<b>mut</b> <a href="listing.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_listing_Listing">listing::Listing</a>, venue_id: <a href="_ID">object::ID</a>, wallet: &<b>mut</b> <a href="_Coin">coin::Coin</a>&lt;FT&gt;, whitelist_token: <a href="market_whitelist.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_market_whitelist_Certificate">market_whitelist::Certificate</a>, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="fixed_price.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_buy_whitelisted_nft">buy_whitelisted_nft</a>&lt;T: key + store, FT&gt;(
     <a href="listing.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_listing">listing</a>: &<b>mut</b> Listing,
@@ -440,8 +368,6 @@ Buy NFT for whitelisted sale into new Kiosk
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_buy_whitelisted_nft_into_kiosk"></a>
@@ -451,24 +377,18 @@ Buy NFT for whitelisted sale into new Kiosk
 Buy NFT for whitelisted sale
 Deposits the NFT to a kiosk
 
-
 <a name="@Panics_5"></a>
 
 ###### Panics
 
-
 - If <code>Venue</code> does not exist, is not live, or is not whitelisted
 - If whitelist <code>Certificate</code> was not issued for given market
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="fixed_price.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_buy_whitelisted_nft_into_kiosk">buy_whitelisted_nft_into_kiosk</a>&lt;T: store, key, FT&gt;(<a href="listing.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_listing">listing</a>: &<b>mut</b> <a href="listing.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_listing_Listing">listing::Listing</a>, venue_id: <a href="_ID">object::ID</a>, wallet: &<b>mut</b> <a href="_Coin">coin::Coin</a>&lt;FT&gt;, safe: &<b>mut</b> <a href="_Kiosk">kiosk::Kiosk</a>, whitelist_token: <a href="market_whitelist.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_market_whitelist_Certificate">market_whitelist::Certificate</a>, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="fixed_price.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_buy_whitelisted_nft_into_kiosk">buy_whitelisted_nft_into_kiosk</a>&lt;T: key + store, FT&gt;(
     <a href="listing.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_listing">listing</a>: &<b>mut</b> Listing,
@@ -489,8 +409,6 @@ Deposits the NFT to a kiosk
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_buy_nft_"></a>
@@ -499,24 +417,18 @@ Deposits the NFT to a kiosk
 
 Internal method to buy NFT
 
-
 <a name="@Panics_6"></a>
 
 ###### Panics
 
-
 Panics if <code>Venue</code> or associated <code>Inventory</code> does not exist or wallet
 does not have required funds.
-
 
 <pre><code><b>fun</b> <a href="fixed_price.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_buy_nft_">buy_nft_</a>&lt;T: store, key, FT&gt;(<a href="listing.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_listing">listing</a>: &<b>mut</b> <a href="listing.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_listing_Listing">listing::Listing</a>, venue_id: <a href="_ID">object::ID</a>, <a href="">balance</a>: &<b>mut</b> <a href="_Balance">balance::Balance</a>&lt;FT&gt;, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): T
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>fun</b> <a href="fixed_price.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_buy_nft_">buy_nft_</a>&lt;T: key + store, FT&gt;(
     <a href="listing.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_listing">listing</a>: &<b>mut</b> Listing,
@@ -541,8 +453,6 @@ does not have required funds.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_set_price"></a>
@@ -551,23 +461,17 @@ does not have required funds.
 
 Change market price
 
-
 <a name="@Panics_7"></a>
 
 ###### Panics
 
-
 Panics if transaction sender is not <code>Listing</code> admin.
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="fixed_price.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_set_price">set_price</a>&lt;FT&gt;(<a href="listing.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_listing">listing</a>: &<b>mut</b> <a href="listing.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_listing_Listing">listing::Listing</a>, venue_id: <a href="_ID">object::ID</a>, new_price: u64, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="fixed_price.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_set_price">set_price</a>&lt;FT&gt;(
     <a href="listing.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_listing">listing</a>: &<b>mut</b> Listing,
@@ -585,8 +489,6 @@ Panics if transaction sender is not <code>Listing</code> admin.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_price"></a>
@@ -595,21 +497,15 @@ Panics if transaction sender is not <code>Listing</code> admin.
 
 Return market price
 
-
 <pre><code><b>public</b> <b>fun</b> <a href="fixed_price.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_price">price</a>&lt;FT&gt;(market: &<a href="fixed_price.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_FixedPriceMarket">fixed_price::FixedPriceMarket</a>&lt;FT&gt;): u64
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="fixed_price.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_price">price</a>&lt;FT&gt;(market: &<a href="fixed_price.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_fixed_price_FixedPriceMarket">FixedPriceMarket</a>&lt;FT&gt;): u64 {
     market.price
 }
 </code></pre>
-
-
 
 </details>

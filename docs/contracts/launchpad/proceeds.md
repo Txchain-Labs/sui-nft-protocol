@@ -1,4 +1,3 @@
-
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds"></a>
 
 # Module `0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b::proceeds`
@@ -7,22 +6,20 @@ Module performing custody of the funds acquired from the sale proceeds of
 an NFT <code>Listing</code>. In addition, <code><a href="proceeds.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_Proceeds">Proceeds</a></code> also performs the bookeeping
 of the sales, in quantities and <FT>-amount.
 
-The process of retrieving the funds from the  <code><a href="proceeds.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_Proceeds">Proceeds</a></code> object embedded in
+The process of retrieving the funds from the <code><a href="proceeds.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_Proceeds">Proceeds</a></code> object embedded in
 a <code>Listing</code> guarantees that fees are transferred to the <code><a href="marketplace.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_marketplace">marketplace</a>.receiver</code>
 and therefore the <code>Listing.receiver</code> receives the proceeds net of fees.
 
-
--  [Resource `Proceeds`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_Proceeds)
--  [Struct `QtSold`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_QtSold)
--  [Function `empty`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_empty)
--  [Function `add`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_add)
--  [Function `collect_with_fees`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_collect_with_fees)
--  [Function `collect_without_fees`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_collect_without_fees)
--  [Function `collected`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_collected)
--  [Function `total`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_total)
--  [Function `balance`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_balance)
--  [Function `balance_mut`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_balance_mut)
-
+- [Resource `Proceeds`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_Proceeds)
+- [Struct `QtSold`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_QtSold)
+- [Function `empty`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_empty)
+- [Function `add`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_add)
+- [Function `collect_with_fees`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_collect_with_fees)
+- [Function `collect_without_fees`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_collect_without_fees)
+- [Function `collected`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_collected)
+- [Function `total`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_total)
+- [Function `balance`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_balance)
+- [Function `balance_mut`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_balance_mut)
 
 <pre><code><b>use</b> <a href="">0x1::type_name</a>;
 <b>use</b> <a href="">0x2::balance</a>;
@@ -33,22 +30,15 @@ and therefore the <code>Listing.receiver</code> receives the proceeds net of fee
 <b>use</b> <a href="">0x2::tx_context</a>;
 </code></pre>
 
-
-
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_Proceeds"></a>
 
 ## Resource `Proceeds`
 
-
-
 <pre><code><b>struct</b> <a href="proceeds.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_Proceeds">Proceeds</a> <b>has</b> store, key
 </code></pre>
 
-
-
 <details>
 <summary>Fields</summary>
-
 
 <dl>
 <dt>
@@ -65,23 +55,17 @@ and therefore the <code>Listing.receiver</code> receives the proceeds net of fee
 </dd>
 </dl>
 
-
 </details>
 
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_QtSold"></a>
 
 ## Struct `QtSold`
 
-
-
 <pre><code><b>struct</b> <a href="proceeds.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_QtSold">QtSold</a> <b>has</b> <b>copy</b>, drop, store
 </code></pre>
 
-
-
 <details>
 <summary>Fields</summary>
-
 
 <dl>
 <dt>
@@ -98,23 +82,17 @@ and therefore the <code>Listing.receiver</code> receives the proceeds net of fee
 </dd>
 </dl>
 
-
 </details>
 
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_empty"></a>
 
 ## Function `empty`
 
-
-
 <pre><code><b>public</b> <b>fun</b> <a href="proceeds.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_empty">empty</a>(ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): <a href="proceeds.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_Proceeds">proceeds::Proceeds</a>
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="proceeds.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_empty">empty</a>(
     ctx: &<b>mut</b> TxContext,
@@ -126,24 +104,17 @@ and therefore the <code>Listing.receiver</code> receives the proceeds net of fee
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_add"></a>
 
 ## Function `add`
 
-
-
 <pre><code><b>public</b>(<b>friend</b>) <b>fun</b> <a href="proceeds.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_add">add</a>&lt;FT&gt;(<a href="proceeds.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds">proceeds</a>: &<b>mut</b> <a href="proceeds.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_Proceeds">proceeds::Proceeds</a>, new_proceeds: <a href="_Balance">balance::Balance</a>&lt;FT&gt;, qty_sold: u64)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b>(<b>friend</b>) <b>fun</b> <a href="proceeds.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_add">add</a>&lt;FT&gt;(
     <a href="proceeds.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds">proceeds</a>: &<b>mut</b> <a href="proceeds.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_Proceeds">Proceeds</a>,
@@ -174,24 +145,17 @@ and therefore the <code>Listing.receiver</code> receives the proceeds net of fee
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_collect_with_fees"></a>
 
 ## Function `collect_with_fees`
 
-
-
 <pre><code><b>public</b>(<b>friend</b>) <b>fun</b> <a href="proceeds.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_collect_with_fees">collect_with_fees</a>&lt;FT&gt;(<a href="proceeds.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds">proceeds</a>: &<b>mut</b> <a href="proceeds.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_Proceeds">proceeds::Proceeds</a>, fees: u64, marketplace_receiver: <b>address</b>, listing_receiver: <b>address</b>, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b>(<b>friend</b>) <b>fun</b> <a href="proceeds.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_collect_with_fees">collect_with_fees</a>&lt;FT&gt;(
     <a href="proceeds.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds">proceeds</a>: &<b>mut</b> <a href="proceeds.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_Proceeds">Proceeds</a>,
@@ -230,24 +194,17 @@ and therefore the <code>Listing.receiver</code> receives the proceeds net of fee
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_collect_without_fees"></a>
 
 ## Function `collect_without_fees`
 
-
-
 <pre><code><b>public</b>(<b>friend</b>) <b>fun</b> <a href="proceeds.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_collect_without_fees">collect_without_fees</a>&lt;FT&gt;(<a href="proceeds.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds">proceeds</a>: &<b>mut</b> <a href="proceeds.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_Proceeds">proceeds::Proceeds</a>, listing_receiver: <b>address</b>, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b>(<b>friend</b>) <b>fun</b> <a href="proceeds.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_collect_without_fees">collect_without_fees</a>&lt;FT&gt;(
     <a href="proceeds.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds">proceeds</a>: &<b>mut</b> <a href="proceeds.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_Proceeds">Proceeds</a>,
@@ -272,31 +229,22 @@ and therefore the <code>Listing.receiver</code> receives the proceeds net of fee
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_collected"></a>
 
 ## Function `collected`
 
-
-
 <pre><code><b>public</b> <b>fun</b> <a href="proceeds.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_collected">collected</a>(<a href="proceeds.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds">proceeds</a>: &<a href="proceeds.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_Proceeds">proceeds::Proceeds</a>): u64
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="proceeds.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_collected">collected</a>(<a href="proceeds.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds">proceeds</a>: &<a href="proceeds.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_Proceeds">Proceeds</a>): u64 {
     <a href="proceeds.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds">proceeds</a>.qt_sold.collected
 }
 </code></pre>
-
-
 
 </details>
 
@@ -304,23 +252,16 @@ and therefore the <code>Listing.receiver</code> receives the proceeds net of fee
 
 ## Function `total`
 
-
-
 <pre><code><b>public</b> <b>fun</b> <a href="proceeds.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_total">total</a>(<a href="proceeds.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds">proceeds</a>: &<a href="proceeds.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_Proceeds">proceeds::Proceeds</a>): u64
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="proceeds.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_total">total</a>(<a href="proceeds.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds">proceeds</a>: &<a href="proceeds.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_Proceeds">Proceeds</a>): u64 {
     <a href="proceeds.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds">proceeds</a>.qt_sold.total
 }
 </code></pre>
-
-
 
 </details>
 
@@ -328,16 +269,11 @@ and therefore the <code>Listing.receiver</code> receives the proceeds net of fee
 
 ## Function `balance`
 
-
-
 <pre><code><b>public</b> <b>fun</b> <a href="">balance</a>&lt;FT&gt;(<a href="proceeds.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds">proceeds</a>: &<a href="proceeds.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_Proceeds">proceeds::Proceeds</a>): &<a href="_Balance">balance::Balance</a>&lt;FT&gt;
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="">balance</a>&lt;FT&gt;(<a href="proceeds.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds">proceeds</a>: &<a href="proceeds.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_Proceeds">Proceeds</a>): &Balance&lt;FT&gt; {
     df::borrow(
@@ -347,24 +283,17 @@ and therefore the <code>Listing.receiver</code> receives the proceeds net of fee
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_balance_mut"></a>
 
 ## Function `balance_mut`
 
-
-
 <pre><code><b>fun</b> <a href="proceeds.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_balance_mut">balance_mut</a>&lt;FT&gt;(<a href="proceeds.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds">proceeds</a>: &<b>mut</b> <a href="proceeds.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_Proceeds">proceeds::Proceeds</a>): &<b>mut</b> <a href="_Balance">balance::Balance</a>&lt;FT&gt;
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>fun</b> <a href="proceeds.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_balance_mut">balance_mut</a>&lt;FT&gt;(
     <a href="proceeds.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds">proceeds</a>: &<b>mut</b> <a href="proceeds.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_proceeds_Proceeds">Proceeds</a>,
@@ -375,7 +304,5 @@ and therefore the <code>Listing.receiver</code> receives the proceeds net of fee
     )
 }
 </code></pre>
-
-
 
 </details>

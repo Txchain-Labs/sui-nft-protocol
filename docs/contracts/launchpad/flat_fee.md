@@ -1,4 +1,3 @@
-
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_flat_fee"></a>
 
 # Module `0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b::flat_fee`
@@ -6,14 +5,12 @@
 A module responsible for the calculation and distribution
 of Launchpad proceeds and fees.
 
-
--  [Resource `FlatFee`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_flat_fee_FlatFee)
--  [Constants](#@Constants_0)
--  [Function `new`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_flat_fee_new)
--  [Function `init_fee`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_flat_fee_init_fee)
--  [Function `collect_proceeds_and_fees`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_flat_fee_collect_proceeds_and_fees)
--  [Function `calc_fee`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_flat_fee_calc_fee)
-
+- [Resource `FlatFee`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_flat_fee_FlatFee)
+- [Constants](#@Constants_0)
+- [Function `new`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_flat_fee_new)
+- [Function `init_fee`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_flat_fee_init_fee)
+- [Function `collect_proceeds_and_fees`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_flat_fee_collect_proceeds_and_fees)
+- [Function `calc_fee`](#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_flat_fee_calc_fee)
 
 <pre><code><b>use</b> <a href="">0x2::balance</a>;
 <b>use</b> <a href="">0x2::object</a>;
@@ -27,22 +24,15 @@ of Launchpad proceeds and fees.
 <b>use</b> <a href="">0xed6c6fe0732be937f4379bc0b471f0f6bfbe0e8741968009e0f01e6de3d59f32::object_box</a>;
 </code></pre>
 
-
-
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_flat_fee_FlatFee"></a>
 
 ## Resource `FlatFee`
 
-
-
 <pre><code><b>struct</b> <a href="flat_fee.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_flat_fee_FlatFee">FlatFee</a> <b>has</b> store, key
 </code></pre>
 
-
-
 <details>
 <summary>Fields</summary>
-
 
 <dl>
 <dt>
@@ -59,38 +49,28 @@ of Launchpad proceeds and fees.
 </dd>
 </dl>
 
-
 </details>
 
 <a name="@Constants_0"></a>
 
 ## Constants
 
-
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_flat_fee_EInvalidFeePolicy"></a>
 
 <code>Listing</code> did not have <code><a href="flat_fee.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_flat_fee_FlatFee">FlatFee</a></code> policy
 
-
 <pre><code><b>const</b> <a href="flat_fee.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_flat_fee_EInvalidFeePolicy">EInvalidFeePolicy</a>: u64 = 1;
 </code></pre>
-
-
 
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_flat_fee_new"></a>
 
 ## Function `new`
 
-
-
 <pre><code><b>public</b> <b>fun</b> <a href="flat_fee.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_flat_fee_new">new</a>(rate_bps: u64, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): <a href="flat_fee.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_flat_fee_FlatFee">flat_fee::FlatFee</a>
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="flat_fee.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_flat_fee_new">new</a>(rate_bps: u64, ctx: &<b>mut</b> TxContext): <a href="flat_fee.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_flat_fee_FlatFee">FlatFee</a> {
     <a href="flat_fee.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_flat_fee_FlatFee">FlatFee</a> {
@@ -100,24 +80,17 @@ of Launchpad proceeds and fees.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_flat_fee_init_fee"></a>
 
 ## Function `init_fee`
 
-
-
 <pre><code><b>public</b> entry <b>fun</b> <a href="flat_fee.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_flat_fee_init_fee">init_fee</a>(rate: u64, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="flat_fee.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_flat_fee_init_fee">init_fee</a>(
     rate: u64,
@@ -126,8 +99,6 @@ of Launchpad proceeds and fees.
     public_transfer(<a href="flat_fee.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_flat_fee_new">new</a>(rate, ctx), <a href="_sender">tx_context::sender</a>(ctx));
 }
 </code></pre>
-
-
 
 </details>
 
@@ -140,24 +111,18 @@ Collect proceeds and fees
 Requires that caller is listing admin in order to protect against
 rugpulls.
 
-
 <a name="@Panics_1"></a>
 
 ###### Panics
 
-
 Panics if <code>Listing</code> was not attached to the <code>Marketplace</code> or
 <code>Marketplace</code> did not define a flat fee.
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="flat_fee.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_flat_fee_collect_proceeds_and_fees">collect_proceeds_and_fees</a>&lt;FT&gt;(<a href="marketplace.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_marketplace">marketplace</a>: &<a href="marketplace.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_marketplace_Marketplace">marketplace::Marketplace</a>, <a href="listing.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_listing">listing</a>: &<b>mut</b> <a href="listing.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_listing_Listing">listing::Listing</a>, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> entry <b>fun</b> <a href="flat_fee.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_flat_fee_collect_proceeds_and_fees">collect_proceeds_and_fees</a>&lt;FT&gt;(
     <a href="marketplace.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_marketplace">marketplace</a>: &Marketplace,
@@ -199,24 +164,17 @@ Panics if <code>Listing</code> was not attached to the <code>Marketplace</code> 
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_flat_fee_calc_fee"></a>
 
 ## Function `calc_fee`
 
-
-
 <pre><code><b>fun</b> <a href="flat_fee.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_flat_fee_calc_fee">calc_fee</a>(proceeds_value: u64, rate_bps: u64): u64
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>fun</b> <a href="flat_fee.md#0xc74531639fadfb02d30f05f37de4cf1e1149ed8d23658edd089004830068180b_flat_fee_calc_fee">calc_fee</a>(proceeds_value: u64, rate_bps: u64): u64 {
     <b>let</b> (_, div) = <a href="_div_round">math::div_round</a>(rate_bps, (<a href="_bps">utils::bps</a>() <b>as</b> u64));
@@ -224,7 +182,5 @@ Panics if <code>Listing</code> was not attached to the <code>Marketplace</code> 
     result
 }
 </code></pre>
-
-
 
 </details>

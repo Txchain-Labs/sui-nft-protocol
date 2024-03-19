@@ -1,4 +1,3 @@
-
 <a name="0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request"></a>
 
 # Module `0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43::request`
@@ -15,57 +14,57 @@ this implementation is generic enough that it can be used in any other contexts,
 that do not involve NFTs.
 
 This module consists of three core objects:
+
 - <code><a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_Policy">Policy</a>&lt;P&gt;</code> is the object that registers the rules enforced for the policy <code>P</code>,
-as well configuration state associated to each rule;
+  as well configuration state associated to each rule;
 - <code><a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_PolicyCap">PolicyCap</a></code> is a capability object that gives managerial access for a given
-policy object
+  policy object
 - <code><a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_RequestBody">RequestBody</a>&lt;P&gt;</code> is the inner body of a hot-potato object that contains the
-receipts collected by performing the enforced actions, as well as the metata associated
-to them as well as the policy resolution logic. <code><a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_RequestBody">RequestBody</a>&lt;P&gt;</code> is meant to be wrapped
-by a hot-potato object, but is itself a hot-potato.
+  receipts collected by performing the enforced actions, as well as the metata associated
+  to them as well as the policy resolution logic. <code><a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_RequestBody">RequestBody</a>&lt;P&gt;</code> is meant to be wrapped
+  by a hot-potato object, but is itself a hot-potato.
 
 Instances of this patter are for example:
+
 - <code>Request&lt;<a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_WithNft">WithNft</a>&lt;T&gt;, WITHDRAW_REQ&gt;</code> which is responsible for checking that
-an NFT withdrawal can be performed.
+  an NFT withdrawal can be performed.
 - <code>Request&lt;<a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_WithNft">WithNft</a>&lt;T&gt;, BORROW_REQ&gt;</code> which is responsible for checking that
-an NFT flash-borrow can be performed.
+  an NFT flash-borrow can be performed.
 
 It's heavily integrated with <code>nft_protocol::ob_kiosk</code>, in particular via
 the withdraw and borrow policy. For compatability with the Sui TransferPolicy,
 the transfer request uses instead the native <code>sui::transfer_policy::TransferRequest</code>.
 
-
--  [Struct `WithNft`](#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_WithNft)
--  [Struct `RequestBody`](#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_RequestBody)
--  [Resource `Policy`](#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_Policy)
--  [Resource `PolicyCap`](#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_PolicyCap)
--  [Struct `RuleStateDfKey`](#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_RuleStateDfKey)
--  [Constants](#@Constants_0)
--  [Function `new`](#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_new)
--  [Function `destroy`](#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_destroy)
--  [Function `metadata_mut`](#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_metadata_mut)
--  [Function `metadata`](#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_metadata)
--  [Function `add_receipt`](#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_add_receipt)
--  [Function `confirm`](#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_confirm)
--  [Function `receipts`](#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_receipts)
--  [Function `new_policy`](#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_new_policy)
--  [Function `new_policy_with_type`](#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_new_policy_with_type)
--  [Function `enforce_rule`](#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_enforce_rule)
--  [Function `enforce_rule_no_state`](#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_enforce_rule_no_state)
--  [Function `drop_rule`](#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_drop_rule)
--  [Function `drop_rule_no_state`](#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_drop_rule_no_state)
--  [Function `rule_state`](#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_rule_state)
--  [Function `rule_state_mut`](#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_rule_state_mut)
--  [Function `rules`](#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_rules)
--  [Function `policy_cap_for`](#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_policy_cap_for)
--  [Function `policy_metadata_mut`](#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_policy_metadata_mut)
--  [Function `policy_metadata`](#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_policy_metadata)
--  [Function `confirm_`](#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_confirm_)
--  [Function `assert_publisher`](#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_assert_publisher)
--  [Function `assert_version`](#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_assert_version)
--  [Function `migrate`](#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_migrate)
--  [Function `migrate_as_pub`](#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_migrate_as_pub)
-
+- [Struct `WithNft`](#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_WithNft)
+- [Struct `RequestBody`](#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_RequestBody)
+- [Resource `Policy`](#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_Policy)
+- [Resource `PolicyCap`](#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_PolicyCap)
+- [Struct `RuleStateDfKey`](#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_RuleStateDfKey)
+- [Constants](#@Constants_0)
+- [Function `new`](#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_new)
+- [Function `destroy`](#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_destroy)
+- [Function `metadata_mut`](#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_metadata_mut)
+- [Function `metadata`](#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_metadata)
+- [Function `add_receipt`](#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_add_receipt)
+- [Function `confirm`](#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_confirm)
+- [Function `receipts`](#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_receipts)
+- [Function `new_policy`](#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_new_policy)
+- [Function `new_policy_with_type`](#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_new_policy_with_type)
+- [Function `enforce_rule`](#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_enforce_rule)
+- [Function `enforce_rule_no_state`](#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_enforce_rule_no_state)
+- [Function `drop_rule`](#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_drop_rule)
+- [Function `drop_rule_no_state`](#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_drop_rule_no_state)
+- [Function `rule_state`](#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_rule_state)
+- [Function `rule_state_mut`](#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_rule_state_mut)
+- [Function `rules`](#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_rules)
+- [Function `policy_cap_for`](#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_policy_cap_for)
+- [Function `policy_metadata_mut`](#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_policy_metadata_mut)
+- [Function `policy_metadata`](#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_policy_metadata)
+- [Function `confirm_`](#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_confirm_)
+- [Function `assert_publisher`](#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_assert_publisher)
+- [Function `assert_version`](#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_assert_version)
+- [Function `migrate`](#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_migrate)
+- [Function `migrate_as_pub`](#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_migrate_as_pub)
 
 <pre><code><b>use</b> <a href="">0x1::type_name</a>;
 <b>use</b> <a href="">0x2::dynamic_field</a>;
@@ -76,8 +75,6 @@ the transfer request uses instead the native <code>sui::transfer_policy::Transfe
 <b>use</b> <a href="init.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_ob_request">0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43::ob_request</a>;
 </code></pre>
 
-
-
 <a name="0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_WithNft"></a>
 
 ## Struct `WithNft`
@@ -87,15 +84,11 @@ the transfer request uses instead the native <code>sui::transfer_policy::Transfe
 
 Used as <code><a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_RequestBody">RequestBody</a>&lt;<a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_WithNft">WithNft</a>&lt;T, P&gt;&gt;</code>
 
-
 <pre><code><b>struct</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_WithNft">WithNft</a>&lt;T, P&gt;
 </code></pre>
 
-
-
 <details>
 <summary>Fields</summary>
-
 
 <dl>
 <dt>
@@ -105,7 +98,6 @@ Used as <code><a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f09
 
 </dd>
 </dl>
-
 
 </details>
 
@@ -117,15 +109,11 @@ Collects receipts which are later checked in <code>confirm</code> function.
 
 <code>P</code> represents the policy type that can confirm this request body.
 
-
 <pre><code><b>struct</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_RequestBody">RequestBody</a>&lt;P&gt;
 </code></pre>
 
-
-
 <details>
 <summary>Fields</summary>
-
 
 <dl>
 <dt>
@@ -134,8 +122,9 @@ Collects receipts which are later checked in <code>confirm</code> function.
 <dd>
  Collected Receipts.
 
- Used to verify that all of the rules were followed and
- <code><a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_RequestBody">RequestBody</a></code> can be confirmed.
+Used to verify that all of the rules were followed and
+<code><a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_RequestBody">RequestBody</a></code> can be confirmed.
+
 </dd>
 <dt>
 <code>metadata: <a href="_UID">object::UID</a></code>
@@ -146,7 +135,6 @@ Collects receipts which are later checked in <code>confirm</code> function.
  It doesn't have to be emptied out for this type to be destroyed.
 </dd>
 </dl>
-
 
 </details>
 
@@ -159,15 +147,11 @@ and destroyed.
 
 <code>P</code> represents the policy type that can confirm this request body.
 
-
 <pre><code><b>struct</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_Policy">Policy</a>&lt;P&gt; <b>has</b> store, key
 </code></pre>
 
-
-
 <details>
 <summary>Fields</summary>
-
 
 <dl>
 <dt>
@@ -190,7 +174,6 @@ and destroyed.
 </dd>
 </dl>
 
-
 </details>
 
 <a name="0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_PolicyCap"></a>
@@ -200,15 +183,11 @@ and destroyed.
 Should be kept by the creator.
 Allows adding and removing policy rules.
 
-
 <pre><code><b>struct</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_PolicyCap">PolicyCap</a> <b>has</b> store, key
 </code></pre>
 
-
-
 <details>
 <summary>Fields</summary>
-
 
 <dl>
 <dt>
@@ -225,7 +204,6 @@ Allows adding and removing policy rules.
 </dd>
 </dl>
 
-
 </details>
 
 <a name="0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_RuleStateDfKey"></a>
@@ -234,15 +212,11 @@ Allows adding and removing policy rules.
 
 We use this to store a state for a particular rule.
 
-
 <pre><code><b>struct</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_RuleStateDfKey">RuleStateDfKey</a>&lt;Rule&gt; <b>has</b> <b>copy</b>, drop, store
 </code></pre>
 
-
-
 <details>
 <summary>Fields</summary>
-
 
 <dl>
 <dt>
@@ -253,95 +227,64 @@ We use this to store a state for a particular rule.
 </dd>
 </dl>
 
-
 </details>
 
 <a name="@Constants_0"></a>
 
 ## Constants
 
-
 <a name="0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_EIllegalRule"></a>
 
 A completed rule is not set in the list of required rules
 
-
 <pre><code><b>const</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_EIllegalRule">EIllegalRule</a>: u64 = 2;
 </code></pre>
-
-
 
 <a name="0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_EPolicyNotSatisfied"></a>
 
 The number of receipts does not match the list of required rules
 
-
 <pre><code><b>const</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_EPolicyNotSatisfied">EPolicyNotSatisfied</a>: u64 = 3;
 </code></pre>
-
-
 
 <a name="0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_EInvalidPublisher"></a>
 
 Package publisher mismatch
 
-
 <pre><code><b>const</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_EInvalidPublisher">EInvalidPublisher</a>: u64 = 1;
 </code></pre>
-
-
 
 <a name="0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_ENotAllowed"></a>
 
 Wrong capability, cannot authorize action
 
-
 <pre><code><b>const</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_ENotAllowed">ENotAllowed</a>: u64 = 4;
 </code></pre>
 
-
-
 <a name="0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_ENotUpgraded"></a>
-
-
 
 <pre><code><b>const</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_ENotUpgraded">ENotUpgraded</a>: u64 = 999;
 </code></pre>
 
-
-
 <a name="0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_EWrongVersion"></a>
-
-
 
 <pre><code><b>const</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_EWrongVersion">EWrongVersion</a>: u64 = 1000;
 </code></pre>
 
-
-
 <a name="0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_VERSION"></a>
-
-
 
 <pre><code><b>const</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_VERSION">VERSION</a>: u64 = 1;
 </code></pre>
-
-
 
 <a name="0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_new"></a>
 
 ## Function `new`
 
-
-
 <pre><code><b>public</b> <b>fun</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_new">new</a>&lt;P&gt;(ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_RequestBody">request::RequestBody</a>&lt;P&gt;
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_new">new</a>&lt;P&gt;(ctx: &<b>mut</b> TxContext): <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_RequestBody">RequestBody</a>&lt;P&gt; {
     <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_RequestBody">RequestBody</a> {
@@ -350,8 +293,6 @@ Wrong capability, cannot authorize action
     }
 }
 </code></pre>
-
-
 
 </details>
 
@@ -365,15 +306,11 @@ define under which conditions is it ok to destroy it _without_ rule
 checks.
 To destroy it _with_ rule checks, use <code>confirm</code> function.
 
-
 <pre><code><b>public</b> <b>fun</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_destroy">destroy</a>&lt;P&gt;(self: <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_RequestBody">request::RequestBody</a>&lt;P&gt;): <a href="_VecSet">vec_set::VecSet</a>&lt;<a href="_TypeName">type_name::TypeName</a>&gt;
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_destroy">destroy</a>&lt;P&gt;(self: <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_RequestBody">RequestBody</a>&lt;P&gt;): VecSet&lt;TypeName&gt; {
     <b>let</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_RequestBody">RequestBody</a> { metadata, receipts } = self;
@@ -381,8 +318,6 @@ To destroy it _with_ rule checks, use <code>confirm</code> function.
     receipts
 }
 </code></pre>
-
-
 
 </details>
 
@@ -397,20 +332,14 @@ Implementations are responsible for not leaving dangling data inside the
 metadata.
 If they do, the data will haunt the chain forever.
 
-
 <pre><code><b>public</b> <b>fun</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_metadata_mut">metadata_mut</a>&lt;P&gt;(self: &<b>mut</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_RequestBody">request::RequestBody</a>&lt;P&gt;): &<b>mut</b> <a href="_UID">object::UID</a>
 </code></pre>
-
-
 
 <details>
 <summary>Implementation</summary>
 
-
 <pre><code><b>public</b> <b>fun</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_metadata_mut">metadata_mut</a>&lt;P&gt;(self: &<b>mut</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_RequestBody">RequestBody</a>&lt;P&gt;): &<b>mut</b> UID { &<b>mut</b> self.metadata }
 </code></pre>
-
-
 
 </details>
 
@@ -420,20 +349,14 @@ If they do, the data will haunt the chain forever.
 
 Reads what metadata is already there.
 
-
 <pre><code><b>public</b> <b>fun</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_metadata">metadata</a>&lt;P&gt;(self: &<a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_RequestBody">request::RequestBody</a>&lt;P&gt;): &<a href="_UID">object::UID</a>
 </code></pre>
-
-
 
 <details>
 <summary>Implementation</summary>
 
-
 <pre><code><b>public</b> <b>fun</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_metadata">metadata</a>&lt;P&gt;(self: &<a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_RequestBody">RequestBody</a>&lt;P&gt;): &UID { &self.metadata }
 </code></pre>
-
-
 
 </details>
 
@@ -444,22 +367,16 @@ Reads what metadata is already there.
 Adds a <code>Receipt</code> to the <code><a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_RequestBody">RequestBody</a></code>, unblocking the request and
 confirming that the policy RequestBodys are satisfied.
 
-
 <pre><code><b>public</b> <b>fun</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_add_receipt">add_receipt</a>&lt;P, Rule&gt;(self: &<b>mut</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_RequestBody">request::RequestBody</a>&lt;P&gt;, _rule: &Rule)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_add_receipt">add_receipt</a>&lt;P, Rule&gt;(self: &<b>mut</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_RequestBody">RequestBody</a>&lt;P&gt;, _rule: &Rule) {
     <a href="_insert">vec_set::insert</a>(&<b>mut</b> self.receipts, <a href="_get">type_name::get</a>&lt;Rule&gt;())
 }
 </code></pre>
-
-
 
 </details>
 
@@ -469,15 +386,11 @@ confirming that the policy RequestBodys are satisfied.
 
 Asserts all rules have been met.
 
-
 <pre><code><b>public</b> <b>fun</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_confirm">confirm</a>&lt;P&gt;(self: <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_RequestBody">request::RequestBody</a>&lt;P&gt;, policy: &<a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_Policy">request::Policy</a>&lt;P&gt;)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_confirm">confirm</a>&lt;P&gt;(self: <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_RequestBody">RequestBody</a>&lt;P&gt;, policy: &<a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_Policy">Policy</a>&lt;P&gt;) {
     <b>let</b> receipts = <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_destroy">destroy</a>(self);
@@ -487,31 +400,22 @@ Asserts all rules have been met.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_receipts"></a>
 
 ## Function `receipts`
 
-
-
 <pre><code><b>public</b> <b>fun</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_receipts">receipts</a>&lt;P&gt;(<a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request">request</a>: &<a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_RequestBody">request::RequestBody</a>&lt;P&gt;): &<a href="_VecSet">vec_set::VecSet</a>&lt;<a href="_TypeName">type_name::TypeName</a>&gt;
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_receipts">receipts</a>&lt;P&gt;(<a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request">request</a>: &<a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_RequestBody">RequestBody</a>&lt;P&gt;): &VecSet&lt;TypeName&gt; {
     &<a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request">request</a>.receipts
 }
 </code></pre>
-
-
 
 </details>
 
@@ -523,15 +427,11 @@ Creates a new policy object for for <code>P</code> and returns it along with a
 cap object <code><a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_PolicyCap">PolicyCap</a></code> which gives the holder managerial access over the
 policy. This function is meant to be called by upstream modules.
 
-
 <pre><code><b>public</b> <b>fun</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_new_policy">new_policy</a>&lt;P: drop&gt;(_witness: P, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): (<a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_Policy">request::Policy</a>&lt;P&gt;, <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_PolicyCap">request::PolicyCap</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_new_policy">new_policy</a>&lt;P: drop&gt;(
     _witness: P,
@@ -551,8 +451,6 @@ policy. This function is meant to be called by upstream modules.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_new_policy_with_type"></a>
@@ -568,15 +466,11 @@ would be <code>P</code>.
 In fact, this is how <code><a href="transfer.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_transfer_request_TransferRequest">transfer_request::TransferRequest</a>&lt;T&gt;</code> is
 implemented.
 
-
 <pre><code><b>public</b> <b>fun</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_new_policy_with_type">new_policy_with_type</a>&lt;T, P: drop&gt;(_witness: P, publisher: &<a href="_Publisher">package::Publisher</a>, ctx: &<b>mut</b> <a href="_TxContext">tx_context::TxContext</a>): (<a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_Policy">request::Policy</a>&lt;<a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_WithNft">request::WithNft</a>&lt;T, P&gt;&gt;, <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_PolicyCap">request::PolicyCap</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_new_policy_with_type">new_policy_with_type</a>&lt;T, P: drop&gt;(
     _witness: P,
@@ -599,8 +493,6 @@ implemented.
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_enforce_rule"></a>
@@ -610,15 +502,11 @@ implemented.
 Registers rule in the Policy object and adds
 config state to the object
 
-
 <pre><code><b>public</b> <b>fun</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_enforce_rule">enforce_rule</a>&lt;P, Rule, State: store&gt;(self: &<b>mut</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_Policy">request::Policy</a>&lt;P&gt;, cap: &<a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_PolicyCap">request::PolicyCap</a>, state: State)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_enforce_rule">enforce_rule</a>&lt;P, Rule, State: store&gt;(
     self: &<b>mut</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_Policy">Policy</a>&lt;P&gt;, cap: &<a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_PolicyCap">PolicyCap</a>, state: State,
@@ -631,8 +519,6 @@ config state to the object
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_enforce_rule_no_state"></a>
@@ -642,15 +528,11 @@ config state to the object
 Registers rule in the Policy object without adding extra
 config state to the object
 
-
 <pre><code><b>public</b> <b>fun</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_enforce_rule_no_state">enforce_rule_no_state</a>&lt;P, Rule&gt;(self: &<b>mut</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_Policy">request::Policy</a>&lt;P&gt;, cap: &<a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_PolicyCap">request::PolicyCap</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_enforce_rule_no_state">enforce_rule_no_state</a>&lt;P, Rule&gt;(
     self: &<b>mut</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_Policy">Policy</a>&lt;P&gt;, cap: &<a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_PolicyCap">PolicyCap</a>,
@@ -662,24 +544,17 @@ config state to the object
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_drop_rule"></a>
 
 ## Function `drop_rule`
 
-
-
 <pre><code><b>public</b> <b>fun</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_drop_rule">drop_rule</a>&lt;P, Rule, State: store&gt;(self: &<b>mut</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_Policy">request::Policy</a>&lt;P&gt;, cap: &<a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_PolicyCap">request::PolicyCap</a>): State
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_drop_rule">drop_rule</a>&lt;P, Rule, State: store&gt;(
     self: &<b>mut</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_Policy">Policy</a>&lt;P&gt;, cap: &<a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_PolicyCap">PolicyCap</a>,
@@ -691,24 +566,17 @@ config state to the object
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_drop_rule_no_state"></a>
 
 ## Function `drop_rule_no_state`
 
-
-
 <pre><code><b>public</b> <b>fun</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_drop_rule_no_state">drop_rule_no_state</a>&lt;P, Rule&gt;(self: &<b>mut</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_Policy">request::Policy</a>&lt;P&gt;, cap: &<a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_PolicyCap">request::PolicyCap</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_drop_rule_no_state">drop_rule_no_state</a>&lt;P, Rule&gt;(
     self: &<b>mut</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_Policy">Policy</a>&lt;P&gt;, cap: &<a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_PolicyCap">PolicyCap</a>,
@@ -720,24 +588,17 @@ config state to the object
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_rule_state"></a>
 
 ## Function `rule_state`
 
-
-
 <pre><code><b>public</b> <b>fun</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_rule_state">rule_state</a>&lt;P, Rule: drop, State: drop, store&gt;(self: &<a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_Policy">request::Policy</a>&lt;P&gt;, _: Rule): &State
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_rule_state">rule_state</a>&lt;P, Rule: drop, State: store + drop&gt;(
     self: &<a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_Policy">Policy</a>&lt;P&gt;, _: Rule,
@@ -746,24 +607,17 @@ config state to the object
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_rule_state_mut"></a>
 
 ## Function `rule_state_mut`
 
-
-
 <pre><code><b>public</b> <b>fun</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_rule_state_mut">rule_state_mut</a>&lt;P, Rule: drop, State: drop, store&gt;(self: &<b>mut</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_Policy">request::Policy</a>&lt;P&gt;, _: Rule): &<b>mut</b> State
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_rule_state_mut">rule_state_mut</a>&lt;P, Rule: drop, State: store + drop&gt;(
     self: &<b>mut</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_Policy">Policy</a>&lt;P&gt;, _: Rule,
@@ -773,31 +627,22 @@ config state to the object
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_rules"></a>
 
 ## Function `rules`
 
-
-
 <pre><code><b>public</b> <b>fun</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_rules">rules</a>&lt;P&gt;(policy: &<a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_Policy">request::Policy</a>&lt;P&gt;): &<a href="_VecSet">vec_set::VecSet</a>&lt;<a href="_TypeName">type_name::TypeName</a>&gt;
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_rules">rules</a>&lt;P&gt;(policy: &<a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_Policy">Policy</a>&lt;P&gt;): &VecSet&lt;TypeName&gt; {
     &policy.rules
 }
 </code></pre>
-
-
 
 </details>
 
@@ -805,23 +650,16 @@ config state to the object
 
 ## Function `policy_cap_for`
 
-
-
 <pre><code><b>public</b> <b>fun</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_policy_cap_for">policy_cap_for</a>(policy: &<a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_PolicyCap">request::PolicyCap</a>): &<a href="_ID">object::ID</a>
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_policy_cap_for">policy_cap_for</a>(policy: &<a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_PolicyCap">PolicyCap</a>): &ID {
     &policy.for
 }
 </code></pre>
-
-
 
 </details>
 
@@ -829,16 +667,11 @@ config state to the object
 
 ## Function `policy_metadata_mut`
 
-
-
 <pre><code><b>public</b> <b>fun</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_policy_metadata_mut">policy_metadata_mut</a>&lt;P&gt;(policy: &<b>mut</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_Policy">request::Policy</a>&lt;P&gt;): &<b>mut</b> <a href="_UID">object::UID</a>
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_policy_metadata_mut">policy_metadata_mut</a>&lt;P&gt;(policy: &<b>mut</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_Policy">Policy</a>&lt;P&gt;): &<b>mut</b> UID {
     <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_assert_version">assert_version</a>(policy);
@@ -847,31 +680,22 @@ config state to the object
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_policy_metadata"></a>
 
 ## Function `policy_metadata`
 
-
-
 <pre><code><b>public</b> <b>fun</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_policy_metadata">policy_metadata</a>&lt;P&gt;(policy: &<a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_Policy">request::Policy</a>&lt;P&gt;): &<a href="_UID">object::UID</a>
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_policy_metadata">policy_metadata</a>&lt;P&gt;(policy: &<a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_Policy">Policy</a>&lt;P&gt;): &UID {
     &policy.id
 }
 </code></pre>
-
-
 
 </details>
 
@@ -879,16 +703,11 @@ config state to the object
 
 ## Function `confirm_`
 
-
-
 <pre><code><b>fun</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_confirm_">confirm_</a>(completed: <a href="">vector</a>&lt;<a href="_TypeName">type_name::TypeName</a>&gt;, rules: &<a href="_VecSet">vec_set::VecSet</a>&lt;<a href="_TypeName">type_name::TypeName</a>&gt;)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>fun</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_confirm_">confirm_</a>(completed: <a href="">vector</a>&lt;TypeName&gt;, rules: &VecSet&lt;TypeName&gt;) {
     <b>let</b> total = <a href="_length">vector::length</a>(&completed);
@@ -902,8 +721,6 @@ config state to the object
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_assert_publisher"></a>
@@ -912,30 +729,22 @@ config state to the object
 
 Asserts that <code>Publisher</code> is of type <code>T</code>
 
-
 <a name="@Panics_1"></a>
 
 ###### Panics
 
-
 Panics if <code>Publisher</code> is mismatched
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_assert_publisher">assert_publisher</a>&lt;T&gt;(pub: &<a href="_Publisher">package::Publisher</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>public</b> <b>fun</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_assert_publisher">assert_publisher</a>&lt;T&gt;(pub: &Publisher) {
     <b>assert</b>!(<a href="_from_package">package::from_package</a>&lt;T&gt;(pub), <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_EInvalidPublisher">EInvalidPublisher</a>);
 }
 </code></pre>
-
-
 
 </details>
 
@@ -943,23 +752,16 @@ Panics if <code>Publisher</code> is mismatched
 
 ## Function `assert_version`
 
-
-
 <pre><code><b>fun</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_assert_version">assert_version</a>&lt;P&gt;(policy: &<a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_Policy">request::Policy</a>&lt;P&gt;)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code><b>fun</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_assert_version">assert_version</a>&lt;P&gt;(policy: &<a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_Policy">Policy</a>&lt;P&gt;) {
     <b>assert</b>!(policy.version == <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_VERSION">VERSION</a>, <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_EWrongVersion">EWrongVersion</a>);
 }
 </code></pre>
-
-
 
 </details>
 
@@ -967,16 +769,11 @@ Panics if <code>Publisher</code> is mismatched
 
 ## Function `migrate`
 
-
-
 <pre><code>entry <b>fun</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_migrate">migrate</a>&lt;P&gt;(policy: &<b>mut</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_Policy">request::Policy</a>&lt;P&gt;, cap: &<a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_PolicyCap">request::PolicyCap</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code>entry <b>fun</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_migrate">migrate</a>&lt;P&gt;(policy: &<b>mut</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_Policy">Policy</a>&lt;P&gt;, cap: &<a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_PolicyCap">PolicyCap</a>) {
     <b>assert</b>!(<a href="_id">object::id</a>(policy) == cap.for, <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_ENotAllowed">ENotAllowed</a>);
@@ -985,24 +782,17 @@ Panics if <code>Publisher</code> is mismatched
 }
 </code></pre>
 
-
-
 </details>
 
 <a name="0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_migrate_as_pub"></a>
 
 ## Function `migrate_as_pub`
 
-
-
 <pre><code>entry <b>fun</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_migrate_as_pub">migrate_as_pub</a>&lt;P&gt;(policy: &<b>mut</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_Policy">request::Policy</a>&lt;P&gt;, pub: &<a href="_Publisher">package::Publisher</a>)
 </code></pre>
 
-
-
 <details>
 <summary>Implementation</summary>
-
 
 <pre><code>entry <b>fun</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_migrate_as_pub">migrate_as_pub</a>&lt;P&gt;(policy: &<b>mut</b> <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_Policy">Policy</a>&lt;P&gt;, pub: &Publisher) {
     <b>assert</b>!(<a href="_from_package">package::from_package</a>&lt;OB_REQUEST&gt;(pub), 0);
@@ -1010,7 +800,5 @@ Panics if <code>Publisher</code> is mismatched
     policy.version = <a href="request.md#0xe2c7a6843cb13d9549a9d2dc1c266b572ead0b4b9f090e7c3c46de2714102b43_request_VERSION">VERSION</a>;
 }
 </code></pre>
-
-
 
 </details>
