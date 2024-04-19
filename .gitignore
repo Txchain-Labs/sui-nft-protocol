@@ -16,3 +16,4 @@ local
 unpublished
 bin/pub.py
 logs
+node_modules
